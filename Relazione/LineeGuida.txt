@@ -1,0 +1,42 @@
+Informazioni generali
+L'esame del corso di Basi di Dati prevede la discussione di un elaborato di progetto il cui scopo è l'applicazione pratica delle metodologie di progettazione presentate durante il corso.
+
+L'elaborato, che può essere svolto singolarmente o in gruppo (massimo 3 persone), consiste nella progettazione e realizzazione di un'applicazione database. Il dominio applicativo oggetto dell'elaborato può essere scelto autonomamente, ma l'approvazione della proposta è subordinata all'iscrizione di ciascun gruppo nell'archivio degli elaborati. La complessità del dominio oggetto dell'elaborato deve essere adeguata al numero di componenti del gruppo di lavoro.
+
+L'iscrizione del gruppo (anche se formato da un solo studente) con relativa proposta di elaborato può essere effettuata attraverso l'apposita pagina. In mancanza di risposta da parte del tutor entro 1 settimana, la proposta effettuata è da ritenersi approvata. Si prega di contattare il tutor solo in caso di malfunzionamento. Siete pregati di sottomettere la vostra proposta prima di iniziare la realizzazione del progetto.
+
+La consegna dell'elaborato è condizione necessaria per lo svolgimento della prova scritta e deve avvenire nella data fissata per ciascun appello. La consegna con esito positivo dà accesso alla prova scritta (anche dello stesso appello); in caso di esito negativo è possibile riconsegnare l'elaborato in uno degli appelli successivi. Una volta consegnato, l'elaborato ha validità illimitata.
+
+ATTENZIONE: Ciascun gruppo dovrà assicurarsi che l'applicazione realizzata funzioni correttamente sui computer del laboratorio, dove sarà effettuata la consegna, oppure munirsi di computer portatile da utilizzare per la presentazione del progetto nel caso in cui gli strumenti di sviluppo utilizzati non siano presenti in laboratorio.
+
+Descrizione dell'elaborato
+L'elaborato consiste nella progettazione e realizzazione di un'applicazione database basata su DBMS relazionale (es. gestione di un servizio di manutenzione impianti, gestione di un hotel, ecc...).
+
+-L'elaborato deve far uso del metodo di progettazione proposto nel corso: devono essere affrontate le problematiche di progettazione concettuale e logica e deve infine essere documentata l'architettura del software applicativo realizzato.
+
+-Il progetto può essere sviluppato utilizzando un qualsiasi DBMS relazionale per la base dati e deve essere dotato di un'adeguata interfaccia utente, eventualmente in ambiente web.
+Relazione
+La relazione da presentare allegata al progetto deve documentare in modo esauriente le seguenti fasi della progettazione.
+
+#Analisi dei requisiti
+--Intervista
+--Rilevamento delle ambiguità e correzioni proposte
+--Definizione delle specifiche in linguaggio naturale ed estrazione dei concetti principali
+
+#Progettazione Concettuale
+--Schema scheletro
+--Raffinamenti proposti
+--Schema concettuale finale
+
+#Progettazione logica
+--Stima del volume dei dati
+--Descrizione delle operazioni principali e stima della loro frequenza
+--Schemi di navigazione e tabelle degli accessi
+--Raffinamento dello schema (eliminazione di identificatori esterni, attributi composti e gerarchie, scelta delle chiavi)
+--Analisi delle ridondanze
+--Traduzione di entità e associazioni in relazioni
+--Schema relazionale finale
+--Traduzione delle operazioni in query SQL
+
+#Progettazione dell'applicazione
+--Descrizione dell'architettura dell'applicazione realizzata con obbligo di inserire alcuni screenshot dell'interfaccia utente
