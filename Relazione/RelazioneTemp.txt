@@ -1,0 +1,5 @@
+-->INTRODUZIONE<--
+
+Il progetto consiste nella realizzazione di un sistema database che funga da supporto alla creazione di Tornei Internazionali di Videogiochi.
+Il database ha l'obiettivo principale di immagazzinare le informazioni relative a: videogiochi, giocatori e partite. 
+L'applicazione permetterà la creazione di vari tornei in tutto il mondo consultando statistiche dei giocatori nei vari videogiochi e cercando il luogo migliore in cui ospitarli, ovvero con strutture adeguatamente attrezzate e tenendo conto dell'audience e sponsor locali.  
