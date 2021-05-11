@@ -1,0 +1,76 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage{alltt, fancyvrb, url}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+% Questo commentalo se vuoi scrivere in inglese.
+\usepackage[italian]{babel}
+
+\usepackage[italian]{cleveref}
+
+\title{Relazione per il progetto di\\``Basi di Dati''}
+
+\author{Linda Fabbri,\\Federico Raffoni,\\Simone Rega}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Introduzione}
+
+Il progetto consiste nella realizzazione di un sistema database che funga da supporto alla creazione di Tornei Internazionali di Videogiochi.
+Il database ha l'obiettivo principale di immagazzinare le informazioni relative a: videogiochi, giocatori e partite. 
+L'applicazione permetterà la creazione di vari tornei in tutto il mondo consultando statistiche dei giocatori nei vari videogiochi e cercando il luogo migliore in cui ospitarli, ovvero con strutture adeguatamente attrezzate e tenendo conto dell'audience e sponsor locali.
+
+
+\chapter{Analisi dei Requisiti}
+La seguente descrizione riporta in linguaggio naturale i requisiti per il nostro sistema informativo, per poi poterne estrarre i principali concetti fondamentali:
+\section{Requisiti in linguaggio naturale}
+"Jeff Kaplan, prima di lasciare le redini del videogioco Overwatch, ha deciso di commissionare un sistema informativo di supporto per la gestione di tornei internazionali di cui finanzierà i premi.
+Si vuole tenere traccia dei giocatori iscritti, memorizzandone nome, cognome, nickname, codice fiscale, stato in cui risiede, mail e statistiche di gioco (per statistiche si intendono il livello/rank e le ore di gioco).
+Un giocatore può participare a uno o più tornei come membro di una squadra, per quanto riguarda i tornei si memorizzano: stato, città e arena in cui si svolge, numero di squadre totali e videogioco per cui si disputa il torneo in questione.
+Di ogni Videogioco si vuole tener traccia del Nome, della data di creazione ,della sua azienda produttrice, della tipologia di gioco e del numero di componenti di ogni squadra.
+In ogni Arena possono assistere alle Partite un numero massimo di spettatori, i quali per poter assistere dovranno pagare un biglietto nominativo; saranno inoltre presenti vari Sponsor e Speaker che commenteranno il torneo in tempo reale.
+\section{Estrazione dei concetti fondamentali}
+
+
+\chapter{Progettazione Concettuale}
+
+\section{Anteprima Schema Scheletro}
+\section{Anteprima sviluppo delle "Persone"}
+\section{Anteprima sviluppo dei "Videogiochi"}
+\section{Anteprima sviluppo delle "Partite"}
+\section{Anteprima sviluppo dei "Tornei"}
+\section{Schema Generale}
+
+
+\chapter{Progettazione Logica}
+\section{Stima del volume dei dati}
+\section{Descrizione delle operazioni principali e stima della loro frequenza}
+\section{Schemi di navigazione e tabelle degli accessi}
+\section{Raffinamento dello schema}
+\subsection{Eliminazione Gerarchie}
+\subsection{Eliminazione attributi composti}
+\subsection{Scelta delle Chiavi}
+\section{Analisi delle ridondanze}
+\section{Traduzione di entità e associazioni in relazioni}
+\section{Schema relazionale finale}
+
+
+\chapter{Progettazione Fisica}
+\section{Traduzione in SQL}
+
+
+\chapter{Progettazione dell'Applicazione}
+\section{Descrizione della scelta del linguaggio e del DBMS}
+\section{Descrizione dell'architettura}
+\section{Interfaccia Utente}
+\subsection{Amministratore Torneo}
+\subsection{Giocatore}
+\end{document}
