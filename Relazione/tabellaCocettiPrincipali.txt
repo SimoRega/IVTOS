@@ -1,0 +1,3 @@
+Player		Colui che gioca ad almeno un videogioco e si iscrive ad un Torneo previa adesione in una squadra	videogiocatore
+Coach		Colui che allena la squadra		allenatore
+Arbitro 	Colui che visiona e regolamenta le partite		
