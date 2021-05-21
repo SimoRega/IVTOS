@@ -4,6 +4,8 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+\usepackage{array}
+\usepackage[table]{xcolor}
 
 % Questo commentalo se vuoi scrivere in inglese.
 \usepackage[italian]{babel}
@@ -43,7 +45,37 @@ Di ogni Videogioco si vuole tener traccia del Nome, della data di creazione ,del
 In ogni Arena possono assistere alle Partite un numero massimo di Spettatori, i quali per poter assistere dovranno pagare un Biglietto nominativo; ogni partita sarà visionata da un Arbitro e commentata da uno Speaker.
 
 \section{Estrazione dei concetti fondamentali}
-
+\renewcommand{\arraystretch}{1.5}
+\setlength{\arrayrulewidth}{0.5mm}
+\begin{tabular}{|m{2cm}|m{8cm}|m{3cm}|}
+	\hline\rowcolor{pink}
+	Soggetto & Descrizione & Sinonimi\\
+	\hline\hline
+	Player & Colui che gioca ad almeno un videogioco e si iscrive ad un Torneo previ adesione ad una Squadra & Videogiocatore\\
+	\hline
+	Squadra & Gruppo di persone che giocano allo stesso videogioco, la sua grandezza è determinata dal videogioco stesso & Team\\
+	\hline
+	Coach & Colui che allena la Squadra & Allenatore\\
+	\hline
+	Arbitro & Colui che regolamenta e visiona le partite del torneo & -\\
+	\hline
+	Speaker & Colui che commenta in tempo reale le partite del torneo & Commentatore\\
+	\hline
+	Spettatore & Colui che compra un biglietto per assistere ad una partita di un torneo & -\\
+	\hline
+	Biglietto  & Ticket univoco e nominativo che permette la visualizzazione di un partita di un torneo ad uno spettatore in una precisa data & Ticket\\
+	\hline
+	Videogioco & Software videoludico a cui giocano i player e su cui si basano i tornei & Videogame\\
+	\hline
+	Azienda Videogioco & Software house che sviluppa il videogioco & Casa Produttrice\\
+	\hline
+	Sponsor & Aziende o compagnie che sponsorizzano il torneo e lo finanziano & -\\
+	\hline
+	Arena & Luogo fisico dove si svolgono tutte le partite di un determinato torneo & Stadio\\
+	\hline
+	Partita & Insieme di scontri virtuali tra due squadre & Game, Match\\
+	\hline
+\end{tabular}
 
 \chapter{Progettazione Concettuale}
 
@@ -57,6 +89,41 @@ In ogni Arena possono assistere alle Partite un numero massimo di Spettatori, i 
 
 \chapter{Progettazione Logica}
 \section{Stima del volume dei dati}
+\renewcommand{\arraystretch}{1.5}
+\setlength{\arrayrulewidth}{0.5mm}
+\setlength{\tabcolsep}{18pt}
+\begin{center}
+\begin{tabular}{|m{2cm}|c|m{4cm}|}
+	\hline\rowcolor{pink}
+	Soggetto & Tipo & Stima Volume\\
+	\hline\hline
+	Player & E & 1.000.000\\
+	\hline
+	Videogiochi & E & 10\\
+	\hline
+	Videogame Giocati & A & 10.000.000\\
+	\hline
+	Squadra & E & 200.000\\
+	\hline
+	Coach & E & 50.000\\
+	\hline
+	Speaker & E & 10.000\\
+	\hline
+	Spettatori & E & 10.000.000\\
+	\hline
+	Azienda Videogioco & E & 5\\
+	\hline
+	Sponsor & E & 10\\
+	\hline
+	Partite & E & 100.000\\
+	\hline
+	Tornei & E & 10.000\\
+	\hline
+	Iscrizioni Torneo & A & 200.000\\
+	\hline
+	
+\end{tabular}
+\end{center}
 \section{Descrizione delle operazioni principali e stima della loro frequenza}
 \section{Schemi di navigazione e tabelle degli accessi}
 \section{Raffinamento dello schema}

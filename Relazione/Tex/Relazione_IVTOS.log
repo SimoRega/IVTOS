@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.24)  20 MAY 2021 11:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.15)  21 MAY 2021 16:48
 entering extended mode
 **./Relazione_IVTOS.tex
 (Relazione_IVTOS.tex
 LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18>
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+L3 programming layer <2021-02-18> xparse <2020-03-03>
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
 File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
 \c@part=\count179
@@ -22,13 +22,13 @@ File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/base\alltt.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/base\alltt.sty
 Package: alltt 1997/06/16 v2.0g defines alltt environment
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
 Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
@@ -39,50 +39,50 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \FV@StepNumber=\count190
 \FV@OutFile=\write3
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
 fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen139
 \Gin@req@width=\dimen140
-) (C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+) (C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2021-02-10 v7.00j Hypertext links for LaTeX
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
 .sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
 ty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
@@ -90,52 +90,52 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.s
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.s
 ty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
 keys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
 ty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+) (C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro
 .sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen141
 \Hy@linkcounter=\count191
 \Hy@pagecounter=\count192
- (C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
+ (C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2021-02-10 v7.00j Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref-langp
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref-langp
 atches.def
-File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
+File: hyperref-langpatches.def 2021-02-10 v7.00j Hyperref: patches for babel la
 nguages
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count193
- (C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
+ (C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2021-02-10 v7.00j Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
@@ -150,10 +150,10 @@ Package hyperref Info: Bookmarks ON on input line 4445.
 LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen142
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
 .sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
@@ -171,7 +171,7 @@ Package hyperref Info: PDF/A mode OFF on input line 6105.
 LaTeX Info: Redefining \ref on input line 6145.
 LaTeX Info: Redefining \pageref on input line 6149.
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
@@ -181,10 +181,10 @@ with kernel methods
 \c@Hfootnote=\count198
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2021-02-10 v7.00j Hyperref driver for pdfTeX
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
@@ -192,11 +192,11 @@ with kernel methods
 \Fld@listcount=\count199
 \c@bookmark@seq@number=\count266
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
 ounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
@@ -205,39 +205,71 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip49
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
-Package: babel 2021/04/07 3.57 The Babel package
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\array.sty
+Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
+\col@sep=\dimen145
+\ar@mcellbox=\box48
+\extrarowheight=\dimen146
+\NC@list=\toks18
+\extratabsurround=\skip50
+\backup@length=\skip51
+\ar@cellbox=\box49
+)
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
-File: babel.def 2021/04/07 3.57 Babel common definitions
-\babel@savecnt=\count267
-\U@D=\dimen145
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks19
+\minrowclearance=\skip52
+)
+\rownum=\count267
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2021/01/26 3.53 The Babel package
+
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
+File: babel.def 2021/01/26 3.53 Babel common definitions
+\babel@savecnt=\count268
+\U@D=\dimen147
 \l@babelnohyphens=\language79
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read3
 )
-\bbl@dirlevel=\count268
+\bbl@dirlevel=\count269
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/babel-italian\italian.l
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/babel-italian\italian.l
 df
 Language: italian 2020/05/21 v.1.4.04 Italian support for the babel system
-\it@lettering=\count269
-\it@doublequoteactive=\count270
-\it@ISOcompliance=\count271
+\it@lettering=\count270
+\it@doublequoteactive=\count271
+\it@ISOcompliance=\count272
 ))
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count272
+\etb@tempcnta=\count273
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/cleveref\cleveref.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/cleveref\cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
 Package cleveref Info: `hyperref' support loaded on input line 2370.
 LaTeX Info: Redefining \cref on input line 2370.
@@ -251,53 +283,53 @@ LaTeX Info: Redefining \Cpagerefrange on input line 2370.
 LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
-File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count273
-\l__pdf_internal_box=\box48
+File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count274
+\l__pdf_internal_box=\box50
 ) (Relazione_IVTOS.aux)
 \openout1 = `Relazione_IVTOS.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count274
-\scratchdimen=\dimen146
-\scratchbox=\box49
-\nofMPsegments=\count275
-\nofMParguments=\count276
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count277
-\MPscratchDim=\dimen147
-\MPnumerator=\count278
-\makeMPintoPDFobject=\count279
-\everyMPtoPDFconversion=\toks19
+\scratchcounter=\count275
+\scratchdimen=\dimen148
+\scratchbox=\box51
+\nofMPsegments=\count276
+\nofMParguments=\count277
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count278
+\MPscratchDim=\dimen149
+\MPnumerator=\count279
+\makeMPintoPDFobject=\count280
+\everyMPtoPDFconversion=\toks21
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
 Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -306,34 +338,30 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
+)
+Package hyperref Info: Link coloring OFF on input line 21.
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
-fg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-))
-Package hyperref Info: Link coloring OFF on input line 19.
-
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(C:\Users\Linda\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+(C:\Users\Simon\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count280
+\c@section@level=\count281
 )
-LaTeX Info: Redefining \ref on input line 19.
-LaTeX Info: Redefining \pageref on input line 19.
-LaTeX Info: Redefining \nameref on input line 19.
+LaTeX Info: Redefining \ref on input line 21.
+LaTeX Info: Redefining \pageref on input line 21.
+LaTeX Info: Redefining \nameref on input line 21.
  (Relazione_IVTOS.out) (Relazione_IVTOS.out)
 \@outlinefile=\write4
 \openout4 = `Relazione_IVTOS.out'.
 
-LaTeX Info: Redefining \it@ocap on input line 19.
-LaTeX Info: Redefining \it@ccap on input line 19.
+LaTeX Info: Redefining \it@ocap on input line 21.
+LaTeX Info: Redefining \it@ccap on input line 21.
 
 
 File italian.ldf warning: 
@@ -341,15 +369,15 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 19.
+italian.ldf    on input line 21.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 22.
+(Font)              <14.4> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 22.
+(Font)              <7> on input line 24.
 [1
 
-{C:/Users/Linda/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+{C:/Users/Simon/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 (Relazione_IVTOS.toc
 Package cleveref Info: loaded `italian' language definitions on input line 1.
 Package cleveref Info: loaded `italian' language definitions on input line 2.
@@ -363,7 +391,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ...rizione dell'architettura}{9}{section.6.2}
+l.29 ...izione dell'architettura}{10}{section.6.2}
                                                   % [1
 
 ])
@@ -379,16 +407,12 @@ Capitolo 2.
 [4
 
 ]
-! You can't use `macro parameter character #' in restricted horizontal mode.
-l.59 	#
-       
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
+Underfull \hbox (badness 10000) in paragraph at lines 70--70
+[]|\OT1/cmr/m/n/12 Azienda
+ []
 
 
-Overfull \hbox (224.26102pt too wide) in paragraph at lines 46--65
+Overfull \hbox (21.5763pt too wide) in paragraph at lines 50--79
 [] 
  []
 
@@ -398,15 +422,35 @@ Capitolo 3.
 
 ]
 Capitolo 4.
+
+Overfull \hbox (2.81888pt too wide) in paragraph at lines 102--102
+[]|\OT1/cmr/m/n/12 Videogiochi| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
+[]|\OT1/cmr/m/n/12 Videogame
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
+[]|\OT1/cmr/m/n/12 Azienda
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
+[]|\OT1/cmr/m/n/12 Iscrizioni
+ []
+
 [7
 
-]
+] [8]
 Capitolo 5.
-[8
+[9
 
 ]
 Capitolo 6.
-[9
+[10
 
 ] (Relazione_IVTOS.aux
 Package cleveref Info: loaded `italian' language definitions on input line 21.
@@ -416,20 +460,20 @@ Package rerunfilecheck Info: File `Relazione_IVTOS.out' has not changed.
 (rerunfilecheck)             Checksum: EEF16303F08F09DC102EEB3DF5F410EB;6080.
  ) 
 Here is how much of TeX's memory you used:
- 11071 strings out of 479321
- 178608 string characters out of 2856583
- 545579 words of memory out of 3000000
- 28376 multiletter control sequences out of 15000+600000
- 409204 words of font info for 46 fonts, out of 8000000 for 9000
+ 11618 strings out of 479334
+ 184873 string characters out of 2857084
+ 560126 words of memory out of 3000000
+ 28903 multiletter control sequences out of 15000+200000
+ 409204 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,7n,74p,473b,752s stack positions out of 5000i,500n,10000p,200000b,80000s
-<C:/Users/Linda/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbx12.pfb><C:/Users/Linda/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr12.pfb><C:/Users/Linda/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+ 71i,10n,74p,473b,753s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmbx12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmr12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmr17.pfb>
-Output written on Relazione_IVTOS.pdf (10 pages, 82213 bytes).
+Output written on Relazione_IVTOS.pdf (11 pages, 84628 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
+ 226 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
  241 words of extra memory for PDF output out of 10000 (max. 10000000)
 

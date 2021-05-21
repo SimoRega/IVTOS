@@ -13,20 +13,20 @@
 \contentsline {section}{\numberline {3.6}Schema Generale}{6}{section.3.6}%
 \contentsline {chapter}{\numberline {4}Progettazione Logica}{7}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Stima del volume dei dati}{7}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Descrizione delle operazioni principali e stima della loro frequenza}{7}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Schemi di navigazione e tabelle degli accessi}{7}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Raffinamento dello schema}{7}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Eliminazione Gerarchie}{7}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Eliminazione attributi composti}{7}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Scelta delle Chiavi}{7}{subsection.4.4.3}%
-\contentsline {section}{\numberline {4.5}Analisi delle ridondanze}{7}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Traduzione di entità e associazioni in relazioni}{7}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Schema relazionale finale}{7}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Progettazione Fisica}{8}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Traduzione in SQL}{8}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Progettazione dell'Applicazione}{9}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Descrizione della scelta del linguaggio e del DBMS}{9}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Descrizione dell'architettura}{9}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Interfaccia Utente}{9}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Amministratore Torneo}{9}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Giocatore}{9}{subsection.6.3.2}%
+\contentsline {section}{\numberline {4.2}Descrizione delle operazioni principali e stima della loro frequenza}{8}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Schemi di navigazione e tabelle degli accessi}{8}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Raffinamento dello schema}{8}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Eliminazione Gerarchie}{8}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Eliminazione attributi composti}{8}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Scelta delle Chiavi}{8}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}Analisi delle ridondanze}{8}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Traduzione di entità e associazioni in relazioni}{8}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Schema relazionale finale}{8}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Progettazione Fisica}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Traduzione in SQL}{9}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Progettazione dell'Applicazione}{10}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Descrizione della scelta del linguaggio e del DBMS}{10}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Descrizione dell'architettura}{10}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Interfaccia Utente}{10}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Amministratore Torneo}{10}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Giocatore}{10}{subsection.6.3.2}%

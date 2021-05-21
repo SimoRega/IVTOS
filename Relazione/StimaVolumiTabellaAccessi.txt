@@ -1,0 +1,4 @@
+player 1000000
+videogiochi 10
+squadra 200000
+coach	
