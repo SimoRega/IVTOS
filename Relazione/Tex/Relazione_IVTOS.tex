@@ -77,6 +77,34 @@ In ogni Arena possono assistere alle Partite un numero massimo di Spettatori, i 
 	\hline
 \end{tabular}
 
+A seguito della lettura e comprensione dei requisiti, si procede redigendo un testo che ne
+riassuma tutti i concetti e in particolare ne estragga quelli principali eliminando le ambiguità
+sopra rilevate:\\
+
+Per ogni \textbf{Player} si memorizzano: Codice Fiscale, nickname, nome e cognome, genere, mail e data di nascita. Ogni Player può partecipare ad una sola squadra per volta. Ogni \textbf{Player} può giocare a più Videogiochi.
+
+Per ogni \textbf{Videogame} si memorizzano: nome, data di creazione.
+
+Per ogni \textbf{Squadra} si memorizzano: IdSquadra, nome e data di creazione. Una specifica squadra può giocare a più videogiochi.La \textbf{Squadra} è composta da 5 \textbf{Player} ed \textit{eventualmente} 1 \textbf{Coach}. La \textbf{Squadra} può iscriversi a più \textbf{Tornei} contemporaneamente.
+
+Per ogni \textbf{Torneo} si memorizzano : la data di inizio, la data di fine e il numero massimo di iscrizioni. Il \textbf{Torneo} si svolge interamente in una singola \textbf{Arena} e può essere finanziato da uno \textbf{Sponsor}. Il \textbf{Torneo} inoltre riguarda un singolo \textbf{Videogioco} e prevede diverse \textbf{Partite}. In ogni \textbf{Torneo} partecipano 32 squadre che si sfidano ad eliminazione diretta \textit{(chi perde è fuori)}.
+
+Per ogni \textbf{Partita} si memorizzano: le due squadre che si sfidano e la data dell'incontro.
+
+Per ogni \textbf{Biglietto} si memorizzano: il costo, la Partita e l'Arena in cui si disputa.
+
+Per ogni \textbf{Spettatore} si vuole memorizzare: Codice Fiscale, nome e cognome, genere, mail e data di nascita. Ogni \textbf{Spettatore} può comprare un solo \textbf{Biglietto} per una determinata \textbf{Partita}.\\
+
+Segue un elenco delle principali azioni richieste:
+\begin{itemize}
+	\item Aggiunta di un nuovo Player
+	\item Aggiunta di un Player ad una Squadra
+	\item Creazione di un Torneo
+	\item Iscrizione di una Squadra ad un Torneo
+	\item Creazione di nuove Partite
+	\item Acquisto di Biglietti
+\end{itemize}
+
 \chapter{Progettazione Concettuale}
 
 \section{Anteprima Schema Scheletro}
@@ -89,42 +117,88 @@ In ogni Arena possono assistere alle Partite un numero massimo di Spettatori, i 
 
 \chapter{Progettazione Logica}
 \section{Stima del volume dei dati}
-\renewcommand{\arraystretch}{1.5}
-\setlength{\arrayrulewidth}{0.5mm}
-\setlength{\tabcolsep}{18pt}
-\begin{center}
-\begin{tabular}{|m{2cm}|c|m{4cm}|}
+\renewcommand{\arraystretch}{1.5} %stretch scale delle celle
+\setlength{\arrayrulewidth}{0.5mm}%grandezza bordi
+\setlength{\tabcolsep}{10pt}%padding testo nelle celle
+\setlength\doublerulesep{0.31cm}%spazio tra due linee
+
+\begin{tabular}{|m{2cm}|c|m{2cm}|}
 	\hline\rowcolor{pink}
-	Soggetto & Tipo & Stima Volume\\
+	Soggetto & Tipo & Volume\\
 	\hline\hline
-	Player & E & 1.000.000\\
+	
+	Player & E & 500.000\\
 	\hline
 	Videogiochi & E & 10\\
 	\hline
-	Videogame Giocati & A & 10.000.000\\
+	Gioca & A & 1.000.000\\
 	\hline
-	Squadra & E & 200.000\\
+	Azienda Videogioco & E & 5\\
+	
+	
+	\hline
+	\hline
+	
+	Squadra & E & 100.000\\
 	\hline
 	Coach & E & 50.000\\
 	\hline
-	Speaker & E & 10.000\\
+	Adesione Player & E & 150.000\\ 
 	\hline
-	Spettatori & E & 10.000.000\\
+	Adesione Coach & E & 75.000\\ 
+	
 	\hline
-	Azienda Videogioco & E & 5\\
+\end{tabular}
+\setlength\doublerulesep{0.18cm} %spazio tra due linee
+\begin{tabular}{|m{2cm}|c|m{2cm}|}
+	\hline\rowcolor{pink}
+	Soggetto & Tipo & Volume\\
+	\hline\hline
+	Speaker & E & 1.000\\
 	\hline
-	Sponsor & E & 10\\
+	Arbitro & E & 1.000\\
 	\hline
-	Partite & E & 100.000\\
+	Spettatori & E & 1.000.000.000\\
 	\hline
+	Acquisto Biglietto & E & 200.000.000\\ 
+	\hline
+	Sponsor & E & 100\\
+	
+	\hline\hline
+	
 	Tornei & E & 10.000\\
 	\hline
-	Iscrizioni Torneo & A & 200.000\\
+	Partite & E & 310.000\\
+	\hline
+	Previste & A & 310.000\\ 
+	\hline
+	Iscrizioni Torneo & A & 320.000\\ 
 	\hline
 	
+	
 \end{tabular}
-\end{center}
 \section{Descrizione delle operazioni principali e stima della loro frequenza}
+Le operazioni da effettuare sono quelle già elencate nella fase di analisi. Segue una tabella
+riportante la loro descrizione e relativa frequenza:
+\begin{center}
+	\begin{tabular}{|c|m{8cm}|c|}
+		\hline\rowcolor{pink}
+		Codice & Descrizione Operazione & Frequenza\\
+		\hline\hline
+		1 & Aggiunta di un nuovo Player & 69.420.000\\ 
+		\hline
+		2 & Aggiunta di un Player ad una Squadra & 69.420.000\\ 
+		\hline
+		3 & Creazione di un Torneo & 69.420.000\\ 
+		\hline
+		4 & Iscrizione di una Squadra ad un Torneo & 69.420.000\\ 
+		\hline
+		5 & Creazione di nuove Partite in un Torneo & 69.420.000\\ 
+		\hline
+		6 & Acquisto di un nuovo Biglietto & 69.420.000.000\\ 
+		\hline
+	\end{tabular}
+\end{center}
 \section{Schemi di navigazione e tabelle degli accessi}
 \section{Raffinamento dello schema}
 \subsection{Eliminazione Gerarchie}

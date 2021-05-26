@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.15)  21 MAY 2021 16:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.15)  26 MAY 2021 12:51
 entering extended mode
 **./Relazione_IVTOS.tex
 (Relazione_IVTOS.tex
@@ -391,7 +391,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ...izione dell'architettura}{10}{section.6.2}
+l.28 ...ttazione dell'Applicazione}{11}{chapter.6}
                                                   % [1
 
 ])
@@ -416,64 +416,115 @@ Overfull \hbox (21.5763pt too wide) in paragraph at lines 50--79
 [] 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+ []
+
 [5]
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+[6]
 Capitolo 3.
-[6
+[7
 
 ]
 Capitolo 4.
 
-Overfull \hbox (2.81888pt too wide) in paragraph at lines 102--102
+Overfull \hbox (2.81888pt too wide) in paragraph at lines 132--132
 []|\OT1/cmr/m/n/12 Videogiochi| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
-[]|\OT1/cmr/m/n/12 Videogame
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--114
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
 []|\OT1/cmr/m/n/12 Azienda
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--122
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
+[]|\OT1/cmr/m/n/12 Adesione
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/cmr/m/n/12 Adesione
+ []
+
+
+Overfull \hbox (11.63545pt too wide) in paragraph at lines 161--162
+[]|\OT1/cmr/m/n/12 1.000.000.000| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--163
+[]|\OT1/cmr/m/n/12 Acquisto
+ []
+
+
+Overfull \hbox (2.49666pt too wide) in paragraph at lines 163--164
+[]|\OT1/cmr/m/n/12 200.000.000| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--175
 []|\OT1/cmr/m/n/12 Iscrizioni
  []
 
-[7
 
-] [8]
+Overfull \hbox (23.18298pt too wide) in paragraph at lines 125--180
+[]  [] 
+ []
+
+
+Overfull \hbox (12.65167pt too wide) in paragraph at lines 184--201
+ [] 
+ []
+
+[8
+
+] [9]
 Capitolo 5.
-[9
+[10
 
 ]
 Capitolo 6.
-[10
+[11
 
 ] (Relazione_IVTOS.aux
 Package cleveref Info: loaded `italian' language definitions on input line 21.
 Package cleveref Info: loaded `italian' language definitions on input line 22.
 )
-Package rerunfilecheck Info: File `Relazione_IVTOS.out' has not changed.
-(rerunfilecheck)             Checksum: EEF16303F08F09DC102EEB3DF5F410EB;6080.
+
+Package rerunfilecheck Warning: File `Relazione_IVTOS.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Relazione_IVTOS.out':
+(rerunfilecheck)             Before: E40BC34501A401E4536EEBECCF102746;6134
+(rerunfilecheck)             After:  EEF16303F08F09DC102EEB3DF5F410EB;6080.
  ) 
 Here is how much of TeX's memory you used:
- 11618 strings out of 479334
- 184873 string characters out of 2857084
- 560126 words of memory out of 3000000
- 28903 multiletter control sequences out of 15000+200000
- 409204 words of font info for 46 fonts, out of 3000000 for 9000
+ 11626 strings out of 479334
+ 184971 string characters out of 2857084
+ 564126 words of memory out of 3000000
+ 28907 multiletter control sequences out of 15000+200000
+ 409888 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,10n,74p,473b,753s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbx12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmr17.pfb>
-Output written on Relazione_IVTOS.pdf (11 pages, 84628 bytes).
+ 71i,10n,74p,504b,772s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{subsection.2.2.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+ <C:\Users\Simon\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm12
+00.pk><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmr12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmr17.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Relazione_IVTOS.pdf (12 pages, 101262 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
- 241 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 245 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 500000)
+ 249 words of extra memory for PDF output out of 10000 (max. 10000000)
 
