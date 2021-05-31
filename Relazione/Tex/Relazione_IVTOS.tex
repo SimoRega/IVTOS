@@ -98,6 +98,9 @@ Per ogni \textbf{Spettatore} si vuole memorizzare: Codice Fiscale, nome e cognom
 Segue un elenco delle principali azioni richieste:
 \begin{itemize}
 	\item Aggiunta di un nuovo Player
+	\item Aggiunta Videogioco giocato da un Player
+	\item Aggiunta di un nuovo Spettatore
+	\item Creazione di una Squadra
 	\item Aggiunta di un Player ad una Squadra
 	\item Creazione di un Torneo
 	\item Iscrizione di una Squadra ad un Torneo
@@ -187,7 +190,7 @@ bla bla bla
 	\hline
 	Arbitro & E & 1.000\\
 	\hline
-	Spettatori & E & 1.000.000.000\\
+	Spettatori & E & 200.000.000\\
 	\hline
 	Acquisto Biglietto & E & 200.000.000\\ 
 	\hline
@@ -214,21 +217,165 @@ riportante la loro descrizione e relativa frequenza:
 		\hline\rowcolor{pink}
 		Codice & Descrizione Operazione & Frequenza\\
 		\hline\hline
-		1 & Aggiunta di un nuovo Player & 69.420.000\\ 
+		1 & Aggiunta di un nuovo Player & 50 al giorno\\ 
+		\hline	
+		2 & Aggiunta Videogioco giocato da un Player & 400 a settimana \\
 		\hline
-		2 & Aggiunta di un Player ad una Squadra & 69.420.000\\ 
+		3 & Aggiunta di un nuovo Spettatore & 30.000 a settimana \\
 		\hline
-		3 & Creazione di un Torneo & 69.420.000\\ 
+		4 & Creazione di una Squadra & 100 al mese\\
+		\hline 
+		5 & Aggiunta di un Player ad una Squadra & 1.500 al mese\\ 
 		\hline
-		4 & Iscrizione di una Squadra ad un Torneo & 69.420.000\\ 
+		6 & Creazione di un Torneo & 1 a settimana\\ 
 		\hline
-		5 & Creazione di nuove Partite in un Torneo & 69.420.000\\ 
+		7 & Iscrizione di una Squadra ad un Torneo & 32 a settimana\\ 
 		\hline
-		6 & Acquisto di un nuovo Biglietto & 69.420.000.000\\ 
+		8 & Creazione di nuove Partite in un Torneo & 31 a settimana\\ 
+		\hline
+		9 & Acquisto di un nuovo Biglietto & 30.000 a settimana\\ 
 		\hline
 	\end{tabular}
 \end{center}
 \section{Schemi di navigazione e tabelle degli accessi}
+Sono riportate in seguito le tabelle degli accessi delle operazioni sopra riportate; inoltre, ove
+non risulti banale, sono stati inseriti i relativi schemi di navigazione. Al fine del calcolo degli
+costi, si considerano di peso doppio gli accessi in scrittura rispetto a quelli in lettura.
+\renewcommand{\arraystretch}{1.15} %stretch scale delle celle
+\setlength{\arrayrulewidth}{0.5mm}%grandezza bordi
+\setlength{\tabcolsep}{10pt}%padding testo nelle celle
+\setlength\doublerulesep{0.1cm}%spazio tra due linee
+\subsection*{(1) Aggiunta di un nuovo Player}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline
+		Player & E & 1 & S\\
+		\hline\hline
+		\multicolumn{2}{l}{
+			\textbf{Totale:} 1S * 50 al giorno → 100 al giorno} \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection*{(2) Aggiunta di un videogioco giocato da un Player}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline
+		Gioca & R & 1 & S\\
+		\hline\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} 1S * 400 a settimana → 800 a settimana} \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection*{(3) Aggiunta di un nuovo Spettatore}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline
+		Spettatore & E & 1 & S\\
+		\hline\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:}  1S * 30.000 a settimana → 60.000 a settimana } \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection*{(4) Creazione di una Squadra}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline
+		Squadra & E & 1 & S\\
+		\hline\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} 1S * 100 al mese  → 200 al mese} \\
+		\hline\hline
+	\end{tabular}
+\end{center}
+\subsection*{(5) Aggiunta di un Player ad una Squadra}
+controllo la squadra se gia piena e ce lo caccio dentro
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline		
+		Squadra & E & 1 & L\\
+		Adesione Player & A & 1 & S\\
+		\hline
+		\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} (1L + 2S) * 150.000 al giorno → 450.000 al giorno} \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection*{(6) Creazione di un Torneo}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline		
+		Torneo & E & 1 & S\\
+		Arena & E & 1 & L\\
+		Partite Previste & A & 31 & S\\
+		Iscrizione Squadra & A & 32 & S\\
+		\hline
+		\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} (1S + 1L + 31S + 32S) → 129 alla settimana} \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection*{(7) Iscrizione di una Squadra ad un Torneo}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline		
+		Torneo & E & 1 & L\\
+		Iscrizione Squadra & A & 1 & S\\
+		\hline
+		\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} (1L + 1S) * 32 a settimana → 96 a settimana} \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection*{(8) Creazione di nuove Partite in un Torneo}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline		
+		Partita & E & 1 & S\\
+		Partita Prevista & A & 1 & S\\
+		Torneo & E & 1 & L\\
+		\hline
+		\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} (1L + 2S + 2S) * 31 a settimana → 155 a settimana} \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection*{(9) Acquisto di un nuovo Biglietto}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline		
+		cambiare & E & 1 & L\\
+		cambiare & A & 1 & S\\
+		\hline
+		\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} 1L + 2S → 450.000} \\
+		\hline
+	\end{tabular}
+\end{center}
 \section{Raffinamento dello schema}
 \subsection{Eliminazione Gerarchie}
 \subsection{Eliminazione attributi composti}
