@@ -1,0 +1,18 @@
+PLAYER
+-visualizzare i tornei
+-iscrivere la propria squadra al torneo (solo se la hai e sono in 5)
+-iscriversi ad una squadra
+-disiscriversi da una squadra
+-visualizzare tutte le squadre disponibili a cui iscriversi 
+-visualizzare le statistiche delle tue squadre (vittoria ad esempio)
+-visualizzare la prossima partita da disputare in un torneo
+
+ADMIN
+-creare un torneo (in base a stato, arena, videogioco)
+-visualizzare tutti i player
+-visualizzare tutte le squadre
+-visualizzare gli sponsor
+
+SPETTATORE
+-comprare biglietto
+-visualizzare tornei con relative partite

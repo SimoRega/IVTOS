@@ -5,11 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IVTOS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="130.667" Width="151.999">
     <Grid>
-        <DataGrid x:Name="dg" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="385"/>
-        <Button x:Name="btnGenTorneo" Content="Genera Torneo" HorizontalAlignment="Left" Margin="593,12,0,0" VerticalAlignment="Top" Width="91"/>
-        <ComboBox x:Name="cmbQuery" HorizontalAlignment="Left" Margin="400,10,0,0" VerticalAlignment="Top" Width="188"/>
-
+        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="23" Margin="10,14,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="120" GotFocus="txtUserName_GotFocus"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="10,42,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnLogin" Content="LOGIN" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="120" Click="btnLogin_Click"/>
     </Grid>
 </Window>

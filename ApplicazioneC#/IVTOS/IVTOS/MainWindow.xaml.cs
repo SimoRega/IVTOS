@@ -24,5 +24,35 @@ namespace IVTOS
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            String testo = txtUserName.Text.ToUpper();
+            if (testo == "PLAYER")
+            {
+                PlayerWindow pw = new PlayerWindow();
+                pw.Show();
+                this.Close();
+            }else if(testo == "ADMIN")
+            {
+                AdminWindow aw = new AdminWindow();
+                aw.Show();
+                this.Close();
+            }else if(testo == "SPETTATORE")
+            {
+                SpettatoreWindow sw = new SpettatoreWindow();
+                sw.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Utente non corretto");
+            }
+        }
+
+        private void txtUserName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtUserName.Text = "";
+        }
     }
 }
