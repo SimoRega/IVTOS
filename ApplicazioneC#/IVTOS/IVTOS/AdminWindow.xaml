@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IVTOS"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="450" Width="800">
+        Title="AdminWindow" Height="314.286" Width="622.428">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="100" Margin="39,81,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="312,123,0,0" VerticalAlignment="Top" Width="75"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="283" VerticalAlignment="Top" Width="404"/>
+        <Button x:Name="btn" Content="Esegui" HorizontalAlignment="Left" Margin="534,10,0,0" VerticalAlignment="Top" Width="70" Click="btn_Click"/>
+        <ComboBox x:Name="cmbSelect" HorizontalAlignment="Left" Margin="409,10,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

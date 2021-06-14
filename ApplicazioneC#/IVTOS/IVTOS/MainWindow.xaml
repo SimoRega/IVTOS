@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="130.667" Width="151.999">
     <Grid>
-        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="23" Margin="10,14,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="120" GotFocus="txtUserName_GotFocus"/>
+        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="23" Margin="10,14,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="120" GotFocus="txtUserName_GotFocus" KeyDown="txtUserName_KeyDown"/>
         <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="10,42,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnLogin" Content="LOGIN" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="120" Click="btnLogin_Click"/>
     </Grid>

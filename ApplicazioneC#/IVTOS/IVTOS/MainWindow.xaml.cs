@@ -25,34 +25,46 @@ namespace IVTOS
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private void chooseUser()
         {
             String testo = txtUserName.Text.ToUpper();
-            if (testo == "PLAYER")
+            switch (testo)
             {
-                PlayerWindow pw = new PlayerWindow();
-                pw.Show();
-                this.Close();
-            }else if(testo == "ADMIN")
-            {
-                AdminWindow aw = new AdminWindow();
-                aw.Show();
-                this.Close();
-            }else if(testo == "SPETTATORE")
-            {
-                SpettatoreWindow sw = new SpettatoreWindow();
-                sw.Show();
-                this.Close();
+                case "PLAYER":
+                    PlayerWindow pw = new PlayerWindow();
+                    pw.Show();
+                    this.Close();
+                    break;
+                case "ADMIN":
+                    AdminWindow aw = new AdminWindow();
+                    aw.Show();
+                    this.Close();
+                    break;
+                case "SPETTATORE":
+                    SpettatoreWindow sw = new SpettatoreWindow();
+                    sw.Show();
+                    this.Close();
+                    break;
+                default:
+                    MessageBox.Show("Utente non corretto");
+                    break;
             }
-            else
-            {
-                MessageBox.Show("Utente non corretto");
-            }
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            chooseUser();
         }
 
         private void txtUserName_GotFocus(object sender, RoutedEventArgs e)
         {
             txtUserName.Text = "";
+        }
+
+        private void txtUserName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                chooseUser();
         }
     }
 }
