@@ -6,6 +6,7 @@ PLAYER
 -visualizzare tutte le squadre disponibili a cui iscriversi 
 -visualizzare le statistiche delle tue squadre (vittoria ad esempio)
 -visualizzare la prossima partita da disputare in un torneo
+-creare una squadra
 
 ADMIN
 -creare un torneo (in base a stato, arena, videogioco)
