@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="SpettatoreWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="100" Margin="124,152,0,0" VerticalAlignment="Top" Width="557"/>
+        <DataGrid x:Name="FinestraDiVisualizzazione" HorizontalAlignment="Left" Height="100" Margin="24,110,0,0" VerticalAlignment="Top" Width="388" />
+        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="MostraTornei" Content="Visualizza Tornei" HorizontalAlignment="Left" VerticalAlignment="Top" Width="210" Margin="526,25,0,0" Height="96" Click="MostraTornei_Click"/>
 
     </Grid>
 </Window>

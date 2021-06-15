@@ -23,5 +23,12 @@ namespace IVTOS
         {
             InitializeComponent();
         }
+
+        private void MostraTornei_Click(object sender, RoutedEventArgs e)
+        {
+            FinestraDiVisualizzazione.ItemsSource = Queries.GetDataSet("SELECT * FROM Torneo WHERE IdSquadra = NULL").Tables[0].DefaultView;
+
+        }
+
     }
 }
