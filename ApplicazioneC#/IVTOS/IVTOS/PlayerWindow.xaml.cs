@@ -31,6 +31,7 @@ namespace IVTOS
 
         private string myCF;
         public Dictionary<string, string> queryList = new Dictionary<string, string>();
+        private int sqToExit;
 
         private void LoadCmbBox()
         {
@@ -46,7 +47,7 @@ namespace IVTOS
             queryList.Add("Select Videogame", "SELECT * FROM progettodatabase.videogame;");
             queryList.Add("Select State", "SELECT * FROM progettodatabase.state;");
 
-
+            queryList.Add("Exit from team", "UPDATE adesione_player_squadra SET DataFine = now() WHERE CF_Player = '" + myCF +"' AND IdSquadra = " + sqToExit + "; ");
         }
 
         private void btn_esegui_Click(object sender, RoutedEventArgs e)
@@ -78,7 +79,8 @@ namespace IVTOS
 
             if (System.Windows.Forms.MessageBox.Show(message, caption, MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                //do something
+                sqToExit = idSquadra;
+                Queries.ExecuteOnly(queryList["Exit from team"]);
             }
         }
     }

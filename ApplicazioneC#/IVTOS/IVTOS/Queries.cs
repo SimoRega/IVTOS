@@ -44,5 +44,10 @@ namespace IVTOS
             return Execute(query);
         }
 
+        static public void ExecuteOnly(string query)
+        {
+            Execute(query);
+        }
+
     }
 }
