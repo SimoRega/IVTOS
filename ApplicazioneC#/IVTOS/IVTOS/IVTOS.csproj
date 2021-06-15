@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Queries.cs" />
     <Compile Include="SpettatoreWindow.xaml.cs">
       <DependentUpon>SpettatoreWindow.xaml</DependentUpon>
     </Compile>
