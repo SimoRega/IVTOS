@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IVTOS"
         mc:Ignorable="d"
-        Title="PlayerWindow" Height="450" Width="800">
+        Title="PlayerWindow" Height="486.453" Width="852.793">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="347" Margin="19,20,0,0" VerticalAlignment="Top" Width="301"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="347" Margin="20,79,0,0" VerticalAlignment="Top" Width="301"/>
+        <ComboBox x:Name="cmb_Queries" HorizontalAlignment="Left" Margin="372,74,0,0" VerticalAlignment="Top" Width="150" Height="25"/>
+        <Button x:Name="btn_esegui" Content="Button" HorizontalAlignment="Left" Margin="546,79,0,0" VerticalAlignment="Top" Width="75" Click="btn_esegui_Click"/>
+        <Label x:Name="lbl_Welcome" Content="" HorizontalAlignment="Left" Margin="74,24,0,0" VerticalAlignment="Top" Width="208"/>
 
     </Grid>
 </Window>

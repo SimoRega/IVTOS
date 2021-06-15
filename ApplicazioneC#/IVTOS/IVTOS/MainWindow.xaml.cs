@@ -31,7 +31,7 @@ namespace IVTOS
             switch (testo)
             {
                 case "PLAYER":
-                    PlayerWindow pw = new PlayerWindow();
+                    PlayerWindow pw = new PlayerWindow("RGESMN00D01H294G");
                     pw.Show();
                     this.Close();
                     break;

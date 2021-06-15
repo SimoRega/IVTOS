@@ -48,6 +48,30 @@ namespace IVTOS {
         #line default
         #line hidden
         
+        
+        #line 11 "..\..\PlayerWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.ComboBox cmb_Queries;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 12 "..\..\PlayerWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btn_esegui;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 13 "..\..\PlayerWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label lbl_Welcome;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -80,6 +104,21 @@ namespace IVTOS {
             {
             case 1:
             this.dataGrid = ((System.Windows.Controls.DataGrid)(target));
+            return;
+            case 2:
+            this.cmb_Queries = ((System.Windows.Controls.ComboBox)(target));
+            return;
+            case 3:
+            this.btn_esegui = ((System.Windows.Controls.Button)(target));
+            
+            #line 12 "..\..\PlayerWindow.xaml"
+            this.btn_esegui.Click += new System.Windows.RoutedEventHandler(this.btn_esegui_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 4:
+            this.lbl_Welcome = ((System.Windows.Controls.Label)(target));
             return;
             }
             this._contentLoaded = true;
