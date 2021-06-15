@@ -23,7 +23,7 @@ namespace IVTOS
 
         private void LoadWelcome()
         {
-            lbl_Welcome.Content = Queries.GetOneField("SELECT Nickname FROM player where CF = " + myCF);
+            lbl_Welcome.Content ="Accesso eseguito come: "+ Queries.GetOneField("SELECT nickname FROM ivtos.player where CF = '"+myCF+"' ;");
         }
 
         private string myCF;

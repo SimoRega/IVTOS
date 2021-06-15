@@ -41,16 +41,16 @@ namespace IVTOS
 
         private void LoadQuery() //da cambiare, magari lettura da file
         {
-            queryList.Add("Select Player","SELECT * FROM progettodatabase.player;");
-            queryList.Add("Select Videogame", "SELECT * FROM progettodatabase.videogame;");
-            queryList.Add("Select State", "SELECT * FROM progettodatabase.state;");
+            queryList.Add("Visualizza tutti i Player","SELECT * FROM ivtos.player;");
+            queryList.Add("Visualizza tutti i Videogiochi", "SELECT * FROM ivtos.videogioco;");
+            queryList.Add("Visualizza tutti gli Stati", "SELECT * FROM ivtos.stato;");
         }
 
         private void btn_Click(object sender, RoutedEventArgs e)
         {
             string query = queryList[cmbSelect.SelectedItem.ToString()];
 
-            string connection = "Persist Security Info=False;database=progettodatabase;server=localhost;port=3306;user id=root;Password=password;";
+            string connection = "Persist Security Info=False;database=ivtos;server=localhost;port=3306;user id=root;Password=password;";
             DataSet ds = new DataSet();
             MySqlConnection conn = new MySqlConnection(connection);
             MySqlDataAdapter adapter = new MySqlDataAdapter();

@@ -24,7 +24,7 @@ namespace IVTOS
         static public string GetOneField(string query)
         {
             DataSet ds = Execute(query);
-            return ds.Tables[0].Rows[0].ToString();
+            return ds.Tables[0].Rows[0].ItemArray[0].ToString();
         }
 
         static public List<string> GetListOfField(string query)
