@@ -12,9 +12,9 @@
 -- Database Section
 -- ________________ 
 
-create database prova linda;
-use prova linda;
-
+drop database if exists IVTOS;
+create database IVTOS;
+use IVTOS;
 
 -- Tables Section
 -- _____________ 
@@ -108,8 +108,8 @@ create table PARTITA (
      IdSquadra2 int not null,
      IdSquadra1 int not null,
      DataOra date not null,
-     CF Speaker char(16) not null,
-     CF Arbitro char(16) not null,
+     CF_Speaker char(16) not null,
+     CF_Arbitro char(16) not null,
      IdTorneo int not null,
      constraint IDPARTITA primary key (IdSquadra1, IdSquadra2, DataOra));
 
@@ -121,7 +121,7 @@ create table PLAYER (
      genere varchar(1) not null,
      mail varchar(255) not null,
      data_di_nascita date not null,
-     Nome Stato varchar(255) not null,
+     NomeStato varchar(255) not null,
      constraint IDPERSONA primary key (CF));
 
 create table Riguarda (
@@ -187,7 +187,7 @@ create table VIDEOGIOCO (
      Nome varchar(255) not null,
      DataCreazione date not null,
      PartitaIVAAzienda char(11) not null,
-     Tipologia Gioco int not null,
+     TipologiaGioco int not null,
      constraint IDVIDEOGIOCO primary key (Nome));
 
 
@@ -198,7 +198,7 @@ alter table ACQUISTO_BIGLIETTO add constraint FKAcquistare
      foreign key (CF_Spettatore)
      references SPETTATORE (CF);
 
-alter table ACQUISTO_BIGLIETTO add constraint FKCopia di
+alter table ACQUISTO_BIGLIETTO add constraint FKCopiaDi
      foreign key (IdArena, IdSquadra1, IdSquadra2, DataOra)
      references BIGLIETTO (IdArena, IdSquadra1, IdSquadra2, DataOra);
 
@@ -256,11 +256,11 @@ alter table Iscrizione add constraint FKIsc_TOR
      references TORNEO (IdTorneo);
 
 alter table PARTITA add constraint FKCommentare
-     foreign key (CF Speaker)
+     foreign key (CF_Speaker)
      references SPEAKER (CF);
 
 alter table PARTITA add constraint FKControlla
-     foreign key (CF Arbitro)
+     foreign key (CF_Arbitro)
      references ARBITRO (CF);
 
 alter table PARTITA add constraint FKPrevedere
@@ -276,7 +276,7 @@ alter table PARTITA add constraint FKSquadra2
      references SQUADRA (IdSquadra);
 
 alter table PLAYER add constraint FKRisiede_Stato
-     foreign key (Nome Stato)
+     foreign key (NomeStato)
      references STATO (Nome);
 
 alter table Riguarda add constraint FKRig_VID
@@ -316,8 +316,8 @@ alter table VIDEOGIOCO add constraint FKCreare
      foreign key (PartitaIVAAzienda)
      references AZIENDA_VIDEOGIOCO (PartitaIVA);
 
-alter table VIDEOGIOCO add constraint FKTipo di
-     foreign key (Tipologia Gioco)
+alter table VIDEOGIOCO add constraint FKTipodi
+     foreign key (TipologiaGioco)
      references TIPOLOGIA_GIOCO (IdTipologia);
 
 
