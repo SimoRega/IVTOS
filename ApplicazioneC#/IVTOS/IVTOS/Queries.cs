@@ -12,7 +12,7 @@ namespace IVTOS
     {
         static DataSet Execute(string query)
         {
-            string connection = "Persist Security Info=False;database=progettodatabase;server=localhost;port=3306;user id=root;Password=password;";
+            string connection = "Persist Security Info=False;database=ivtos;server=localhost;port=3306;user id=root;Password=password;";
             DataSet ds = new DataSet();
             MySqlConnection conn = new MySqlConnection(connection);
             MySqlDataAdapter adapter = new MySqlDataAdapter();
@@ -37,6 +37,11 @@ namespace IVTOS
                 list.Add(x.ToString());
             }
             return list;
+        }
+
+        static public DataSet GetDataSet(string query)
+        {
+            return Execute(query);
         }
 
     }
