@@ -3,7 +3,7 @@
 -- *--------------------------------------------
 -- * DB-MAIN version: 11.0.1              
 -- * Generator date: Dec  4 2018              
--- * Generation date: Tue Jun 15 12:00:56 2021 
+-- * Generation date: Tue Jun 15 11:48:05 2021 
 -- * LUN file: D:\Documenti\università\2 ANNO\BASI DI DATI\progetto\IVTOS\ProgettazioneConcettuale\IVTOS.lun 
 -- * Schema: prova linda/1 
 -- ********************************************* 
@@ -24,22 +24,22 @@ create table ACQUISTO_BIGLIETTO (
      IdSquadra1 int not null,
      IdSquadra2 int not null,
      DataOra date not null,
-     CF_Spettatore char(16) not null,
-     constraint IDBIGLIETTO primary key (CF_Spettatore, IdArena, IdSquadra1, IdSquadra2, DataOra));
+     CF Spettatore char(16) not null,
+     constraint IDBIGLIETTO primary key (CF Spettatore, IdArena, IdSquadra1, IdSquadra2, DataOra));
 
 create table ADESIONE_COACH_SQUADRA (
      IdSquadra int not null,
-     CF_Coach char(16) not null,
+     CF Coach char(16) not null,
      DataInizio date not null,
      DataFine date,
-     constraint IDADESIONE_COACH_SQUADRA primary key (IdSquadra, CF_Coach, DataInizio));
+     constraint IDADESIONE_COACH_SQUADRA primary key (IdSquadra, CF Coach, DataInizio));
 
 create table ADESIONE_PLAYER_SQUADRA (
      IdSquadra int not null,
-     CF_Player char(16) not null,
+     CF Player char(16) not null,
      DataInizio date not null,
      DataFine date,
-     constraint IDADESIONE_PLAYER_SQUADRA primary key (IdSquadra, CF_Player, DataInizio));
+     constraint IDADESIONE_PLAYER_SQUADRA primary key (IdSquadra, CF Player, DataInizio));
 
 create table ARBITRO (
      PartiteArbitrate int not null,
@@ -48,7 +48,7 @@ create table ARBITRO (
      nome varchar(255) not null,
      cognome varchar(255) not null,
      mail varchar(255) not null,
-     data_di_nascita date not null,
+     data di nascita date not null,
      constraint IDPERSONA primary key (CF));
 
 create table ARENA (
@@ -85,7 +85,7 @@ create table COACH (
      cognome varchar(255) not null,
      genere char(1) not null,
      mail varchar(255) not null,
-     data_di_nascita date not null,
+     data di nascita date not null,
      constraint IDPERSONA primary key (CF));
 
 create table CONTINENTE (
@@ -94,10 +94,10 @@ create table CONTINENTE (
 
 create table GIOCA (
      NomeVideogioco varchar(255) not null,
-     CF_Player char(16) not null,
+     CF Player char(16) not null,
      PartiteVinte int not null,
      PartiteGiocate int not null,
-     constraint IDGIOCA primary key (CF_Player, NomeVideogioco));
+     constraint IDGIOCA primary key (CF Player, NomeVideogioco));
 
 create table Iscrizione (
      IdTorneo int not null,
@@ -120,7 +120,7 @@ create table PLAYER (
      cognome varchar(255) not null,
      genere varchar(1) not null,
      mail varchar(255) not null,
-     data_di_nascita date not null,
+     data di nascita date not null,
      Nome Stato varchar(255) not null,
      constraint IDPERSONA primary key (CF));
 
@@ -135,7 +135,7 @@ create table SPEAKER (
      cognome varchar(255) not null,
      genere char(1) not null,
      mail varchar(255) not null,
-     data_di_nascita date not null,
+     data di nascita date not null,
      Nickname varchar(255) not null,
      PartiteCommentate int not null,
      constraint IDPERSONA primary key (CF));
@@ -146,7 +146,7 @@ create table SPETTATORE (
      nome varchar(255) not null,
      cognome varchar(255) not null,
      mail varchar(255) not null,
-     data_di_nascita date not null,
+     data di nascita date not null,
      constraint IDPERSONA primary key (CF));
 
 create table SPONSOR (
@@ -157,14 +157,14 @@ create table SPONSOR (
 create table SQUADRA (
      Nome varchar(255) not null,
      IdSquadra int not null,
-     DataCreazione date not null,
+     data creazione date not null,
      constraint IDSQUADRA primary key (IdSquadra));
 
 create table STATO (
      Nome varchar(255) not null,
      Superficie int not null,
      NumAbitanti int not null,
-     NomeContinente varchar(255) not null,
+     Nome Continente varchar(255) not null,
      constraint IDSTATO_ID primary key (Nome));
 
 create table TIPOLOGIA_GIOCO (
@@ -195,7 +195,7 @@ create table VIDEOGIOCO (
 -- ___________________ 
 
 alter table ACQUISTO_BIGLIETTO add constraint FKAcquistare
-     foreign key (CF_Spettatore)
+     foreign key (CF Spettatore)
      references SPETTATORE (CF);
 
 alter table ACQUISTO_BIGLIETTO add constraint FKCopia di
@@ -203,7 +203,7 @@ alter table ACQUISTO_BIGLIETTO add constraint FKCopia di
      references BIGLIETTO (IdArena, IdSquadra1, IdSquadra2, DataOra);
 
 alter table ADESIONE_COACH_SQUADRA add constraint FKPartecipazioneCoach
-     foreign key (CF_Coach)
+     foreign key (CF Coach)
      references COACH (CF);
 
 alter table ADESIONE_COACH_SQUADRA add constraint FKAppartenenzaCoach
@@ -211,7 +211,7 @@ alter table ADESIONE_COACH_SQUADRA add constraint FKAppartenenzaCoach
      references SQUADRA (IdSquadra);
 
 alter table ADESIONE_PLAYER_SQUADRA add constraint FKPartecipazione
-     foreign key (CF_Player)
+     foreign key (CF Player)
      references PLAYER (CF);
 
 alter table ADESIONE_PLAYER_SQUADRA add constraint FKAppartenenza
@@ -237,10 +237,10 @@ alter table CITTÁ add constraint FKContenere
 -- Not implemented
 -- alter table CONTINENTE add constraint IDCONTINENTE_CHK
 --     check(exists(select * from STATO
---                  where STATO.NomeContinente = Nome)); 
+--                  where STATO.Nome Continente = Nome)); 
 
 alter table GIOCA add constraint FKGIO_PLA
-     foreign key (CF_Player)
+     foreign key (CF Player)
      references PLAYER (CF);
 
 alter table GIOCA add constraint FKGIO_VID
@@ -293,7 +293,7 @@ alter table Riguarda add constraint FKRig_SQU
 --                  where CITTÁ.NomeStato = Nome)); 
 
 alter table STATO add constraint FKAppartenere
-     foreign key (NomeContinente)
+     foreign key (Nome Continente)
      references CONTINENTE (Nome);
 
 alter table TORNEO add constraint FKFinanzia
