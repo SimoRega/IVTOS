@@ -52,7 +52,7 @@ create table ARBITRO (
      constraint IDPERSONA primary key (CF));
 
 create table ARENA (
-     IdArena int not null,
+     IdArena int not null AUTO_INCREMENT,
      NomeArena varchar(255) not null,
      Capienza int not null,
      NomeStato varchar(255) not null,
@@ -150,13 +150,13 @@ create table SPETTATORE (
      constraint IDPERSONA primary key (CF));
 
 create table SPONSOR (
-     IdSponsor int not null,
+     IdSponsor int not null AUTO_INCREMENT,
      Nome varchar(255) not null,
      constraint IDSPONSOR primary key (IdSponsor));
 
 create table SQUADRA (
      Nome varchar(255) not null,
-     IdSquadra int not null,
+     IdSquadra int not null AUTO_INCREMENT,
      DataCreazione date not null,
      constraint IDSQUADRA primary key (IdSquadra));
 
@@ -168,12 +168,12 @@ create table STATO (
      constraint IDSTATO_ID primary key (Nome));
 
 create table TIPOLOGIA_GIOCO (
-     IdTipologia int not null,
+     IdTipologia int not null AUTO_INCREMENT,
      Tipo varchar(255) not null,
      constraint IDTIPOLOGIA_GIOCO primary key (IdTipologia));
 
 create table TORNEO (
-     IdTorneo int not null,
+     IdTorneo int not null AUTO_INCREMENT,
      DataInizio date not null,
      DataFine date,
      NmaxIscrizioni int not null,
