@@ -34,7 +34,7 @@ namespace IVTOS
         private void LoadComboBox()
         {
             dataGrid.IsReadOnly = true;
-
+            btnElimina.IsEnabled = false;
             foreach (var p in queryList)
             {
                 cmbSelect.Items.Add(p.Key);
@@ -68,7 +68,25 @@ namespace IVTOS
 
         private void btnTorneo_Click(object sender, RoutedEventArgs e)
         {
-            string q = "INSERT INTO torneo VALUES (IdTorneo,'2021-06-20',NULL,999,1,'Overwatch',NULL);";
+            string q = "INSERT INTO torneo VALUES (IdTorneo,'2021-06-20',NULL,999,1,1,'Overwatch',NULL);";
+            Queries.ExecuteOnly(q);
+            dataGrid.ItemsSource = Queries.GetDataSet("SELECT * FROM torneo").Tables[0].DefaultView;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
+            DataRow DR = (DataRow)DRV.Row;
+            int idTorneo = (int)DR.ItemArray[0];
+            string q = "DELETE FROM torneo WHERE IdTorneo="+idTorneo;
+            Queries.ExecuteOnly(q);
+            dataGrid.ItemsSource = Queries.GetDataSet("SELECT * FROM torneo").Tables[0].DefaultView;
+            btnElimina.IsEnabled = false;
+        }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnElimina.IsEnabled = true;
         }
     }
 }

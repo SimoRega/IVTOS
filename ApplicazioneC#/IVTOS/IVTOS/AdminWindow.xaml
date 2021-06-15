@@ -7,11 +7,13 @@
         mc:Ignorable="d"
         Title="AdminWindow" Height="509.286" Width="865.428">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="478" VerticalAlignment="Top" Width="510" SelectionMode="Single" ColumnWidth="*"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="478" VerticalAlignment="Top" Width="510" SelectionMode="Single" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged"/>
         <Button x:Name="btn" Content="Esegui" HorizontalAlignment="Left" Margin="758,34,0,0" VerticalAlignment="Top" Width="70" Click="btn_Click" Height="22"/>
         <ComboBox x:Name="cmbSelect" HorizontalAlignment="Left" Margin="524,34,0,0" VerticalAlignment="Top" Width="226" Height="22" />
         <GroupBox Header="Seleziona una richiesta" HorizontalAlignment="Left" Height="62" Margin="515,10,0,0" VerticalAlignment="Top" Width="323"/>
-        <Button x:Name="btnTorneo" Content="Crea un Torneo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="524,140,0,0" Click="btnTorneo_Click"/>
+        <Button x:Name="btnTorneo" Content="Crea un Torneo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="524,99,0,0" Click="btnTorneo_Click"/>
+        <Button x:Name="btnElimina" Content="Elimina Torneo" HorizontalAlignment="Left" Margin="635,99,0,0" VerticalAlignment="Top" Width="106" Click="Button_Click"/>
+        <GroupBox Header="Gestione Tornei" HorizontalAlignment="Left" Height="52" Margin="515,77,0,0" VerticalAlignment="Top" Width="323"/>
 
     </Grid>
 </Window>
