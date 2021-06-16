@@ -111,6 +111,7 @@ create table PARTITA (
      CF_Speaker char(16) not null,
      CF_Arbitro char(16) not null,
      IdTorneo int not null,
+     IdSquadraVincitrice int not null,
      constraint IDPARTITA primary key (IdSquadra1, IdSquadra2, DataOra));
 
 create table PLAYER (
@@ -273,6 +274,10 @@ alter table PARTITA add constraint FKSquadra1
 
 alter table PARTITA add constraint FKSquadra2
      foreign key (IdSquadra2)
+     references SQUADRA (IdSquadra);
+     
+alter table PARTITA add constraint FKSquadraV
+     foreign key (IdSquadraVincitrice)
      references SQUADRA (IdSquadra);
 
 alter table PLAYER add constraint FKRisiede_Stato
