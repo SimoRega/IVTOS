@@ -40,5 +40,39 @@ namespace IVTOS
 ;
         }
 
+        public static string VisualizzaPlayer()
+        {
+            return "SELECT * FROM ivtos.player;";
+        }
+        public static string VisualizzaVideogiochi()
+        {
+            return "SELECT videogioco.nome AS Nome, videogioco.DataCreazione, azienda_videogioco.Nome AS Azienda, tipologia_gioco.Tipo AS Tipologia " +
+                "from(videogioco JOIN azienda_videogioco ON videogioco.partitaivaazienda = azienda_videogioco.partitaiva) join tipologia_gioco on videogioco.tipologiagioco = tipologia_gioco.idtipologia; ";
+        }
+        public static string VisualizzaAziendeGiochi()
+        {
+            return "SELECT * FROM ivtos.azienda_videogioco;";
+        }
+        public static string VisualizzaStati()
+        {
+            return "SELECT * FROM ivtos.stato;";
+        }
+        public static string VisualizzaCitta()
+        {
+            return "SELECT * FROM ivtos.cittá;";
+        }
+        public static string VisualizzaArena()
+        {
+            return "SELECT * FROM ivtos.arena;";
+        }
+        public static string VisualizzaTornei()
+        {
+            return "SELECT idTorneo AS Torneo, nomevideogioco AS Videogioco, nomearena AS Arena, sponsor.Nome, DataInizio, nmaxiscrizioni AS Capienza " +
+                        "FROM(torneo JOIN Arena ON torneo.IdArena = arena.IdArena)JOIN Sponsor on torneo.Sponsor = sponsor.idsponsor ; ";
+        }
+        public static string VisualizzaSponsor()
+        {
+            return "SELECT * FROM ivtos.sponsor;";
+        }
     }
 }

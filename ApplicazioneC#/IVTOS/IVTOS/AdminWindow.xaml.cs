@@ -28,6 +28,7 @@ namespace IVTOS
         private string capienzaTorneo="";
         private string videogameTorneo="";
         private string arenaTorneo="";
+        private string sponsorTorneo = "";
 
         public AdminWindow()
         {
@@ -51,15 +52,13 @@ namespace IVTOS
 
         private void LoadQuery() //da cambiare, magari lettura da file
         {
-            queryList.Add("Visualizza tutti i Player","SELECT * FROM ivtos.player;");
-            queryList.Add("Visualizza info principali dei Player", "SELECT Nickname, Nome, Cognome, Genere FROM ivtos.player;");
-            queryList.Add("Visualizza tutti i Videogiochi", "SELECT * FROM ivtos.videogioco;");
-            queryList.Add("Visualizza tutte le Aziende di Videogiochi", "SELECT * FROM ivtos.videogioco;");
-            queryList.Add("Visualizza tutti gli Stati", "SELECT * FROM ivtos.stato;");
-            queryList.Add("Visualizza tutte le Arene", "SELECT * FROM ivtos.arena;");
-            queryList.Add("Visualizza tutte le Città", "SELECT * FROM ivtos.cittá;");
-            queryList.Add("Visualizza tutti i Tornei", "SELECT idTorneo AS Torneo, nomevideogioco AS Videogioco, nomearena AS Arena, sponsor.Nome, DataInizio, nmaxiscrizioni AS Capienza " +
-                        "FROM(torneo JOIN Arena ON torneo.IdArena = arena.IdArena)JOIN Sponsor on torneo.Sponsor = sponsor.idsponsor ; ");
+            queryList.Add("Visualizza tutti i Player", QueryList.VisualizzaPlayer());
+            queryList.Add("Visualizza tutti i Videogiochi", QueryList.VisualizzaVideogiochi());
+            queryList.Add("Visualizza tutte le Aziende di Videogiochi", QueryList.VisualizzaAziendeGiochi());
+            queryList.Add("Visualizza tutti gli Stati", QueryList.VisualizzaStati());
+            queryList.Add("Visualizza tutte le Arene", QueryList.VisualizzaArena());
+            queryList.Add("Visualizza tutte le Città", QueryList.VisualizzaCitta());
+            queryList.Add("Visualizza tutti i Tornei", QueryList.VisualizzaTornei());
         }
 
         private void btn_Click(object sender, RoutedEventArgs e)
@@ -118,7 +117,7 @@ namespace IVTOS
                     DRV = (DataRowView)dataGrid.SelectedItem;
                     capienzaTorneo =  DRV.Row.ItemArray[2].ToString() ;
                     arenaTorneo = DRV.Row.ItemArray[0].ToString();
-                    dataGrid.ItemsSource = Queries.GetDataSet("SELECT * FROM videogioco").Tables[0].DefaultView;
+                    dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaVideogiochi()).Tables[0].DefaultView;
                     steps++;
                     lblStep.Content = "<3° Step: Scegli Gioco>";
                     break;
@@ -126,7 +125,13 @@ namespace IVTOS
                     DRV = (DataRowView)dataGrid.SelectedItem;
                     videogameTorneo = DRV.Row.ItemArray[0].ToString();
                     steps++;
-                    newTorneo = String.Format("INSERT INTO torneo VALUES (IdTorneo,'{0}',NULL,{1},1,{2},'{3}',NULL);", dataTorneo, capienzaTorneo, arenaTorneo, videogameTorneo);
+                    dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaSponsor()).Tables[0].DefaultView;
+                    lblStep.Content = "<4° Step: Scegli Sponsor>";
+                    break;
+                case 2:
+                    DRV = (DataRowView)dataGrid.SelectedItem;
+                    sponsorTorneo = DRV.Row.ItemArray[0].ToString();
+                    newTorneo = String.Format("INSERT INTO torneo VALUES (IdTorneo,'{0}',NULL,{1},{2},{3},'{4}',NULL);", dataTorneo, capienzaTorneo,sponsorTorneo, arenaTorneo, videogameTorneo);
                     Queries.ExecuteOnly(newTorneo);
                     dataGrid.ItemsSource = Queries.GetDataSet(queryList["Visualizza tutti i Tornei"]).Tables[0].DefaultView;
                     steps = -1;
