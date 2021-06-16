@@ -12,8 +12,13 @@ DEBUG;TRACE
 A:\Documenti\Università\DB\ProgettoDatabase\IVTOS\ApplicazioneC#\IVTOS\IVTOS\App.xaml
 4-1156413721
 
+<<<<<<< HEAD
+116776241
+17254651613
+=======
 10-1341659304
 17-213168302
+>>>>>>> ae99ca980dbd88c04f0cfb0c18c6ab8dda741909
 AdminWindow.xaml;MainWindow.xaml;PlayerWindow.xaml;SpettatoreWindow.xaml;
 
 True

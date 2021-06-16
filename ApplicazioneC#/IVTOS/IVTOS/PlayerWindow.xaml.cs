@@ -17,21 +17,19 @@ namespace IVTOS
             myCF = CF;
             InitializeComponent();
             LoadWelcome();
-            LoadQuery();
             //LoadCmbBox();
             dataGrid.IsReadOnly = true;
-            btnAbbandonaSq.IsEnabled = false;
-            btnAbbandonaSq.Visibility = Visibility.Hidden;
+            disableAllButton();
         }
 
         private void LoadWelcome()
         {
-            lbl_Welcome.Content ="Accesso eseguito come: "+ Queries.GetOneField("SELECT nickname FROM ivtos.player where CF = '"+myCF+"' ;");
+            lbl_Welcome.Content = "Accesso eseguito come: " + Queries.GetOneField("SELECT nickname FROM ivtos.player where CF = '" + myCF + "' ;");
         }
 
         private string myCF;
         public Dictionary<string, string> queryList = new Dictionary<string, string>();
-        private int sqToExit;
+
 
         private void LoadCmbBox()
         {
@@ -41,14 +39,6 @@ namespace IVTOS
             }
         }
 
-        private void LoadQuery() //da cambiare, magari lettura da file
-        {
-            queryList.Add("Show my Teams", "select squadra.Nome, squadra.IdSquadra from squadra  join adesione_player_squadra on adesione_player_squadra.IdSquadra = squadra.IdSquadra where CF_Player = '" + myCF +"'; ");
-            queryList.Add("Select Videogame", "SELECT * FROM progettodatabase.videogame;");
-            queryList.Add("Select State", "SELECT * FROM progettodatabase.state;");
-
-            queryList.Add("Exit from team", "UPDATE adesione_player_squadra SET DataFine = now() WHERE CF_Player = '" + myCF +"' AND IdSquadra = " + sqToExit + "; ");
-        }
 
         private void btn_esegui_Click(object sender, RoutedEventArgs e)
         {
@@ -57,30 +47,114 @@ namespace IVTOS
 
         private void btnMostraMieSquadre_Click(object sender, RoutedEventArgs e)
         {
-            dataGrid.ItemsSource = Queries.GetDataSet(queryList["Show my Teams"]).Tables[0].DefaultView;
-
-        }
-
-        private void dataGrid_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
+            disableAllButton();
+            dataGrid.ItemsSource = Queries.GetDataSet(QueryList.MostraMieSquadre(myCF)).Tables[0].DefaultView;
             btnAbbandonaSq.IsEnabled = true;
             btnAbbandonaSq.Visibility = Visibility.Visible;
 
+            btnIscriviSqTorneo.IsEnabled = true;
+            btnIscriviSqTorneo.Visibility = Visibility.Visible;
         }
+        private void btnMostraSquadre_Click(object sender, RoutedEventArgs e)
+        {
+            disableAllButton();
+            dataGrid.ItemsSource = Queries.GetDataSet(QueryList.MostraSqNonComplete(myCF)).Tables[0].DefaultView;
+            btnEntraSq.IsEnabled = true;
+            btnEntraSq.Visibility = Visibility.Visible;
+        }
+
+        private void disableAllButton()
+        {
+            btnAbbandonaSq.IsEnabled = false;
+            btnAbbandonaSq.Visibility = Visibility.Hidden;
+
+            btnEntraSq.IsEnabled = false;
+            btnEntraSq.Visibility = Visibility.Hidden;
+
+            btnIscriviSqTorneo.IsEnabled = false;
+            btnIscriviSqTorneo.Visibility = Visibility.Hidden;
+
+        }
+
 
         private void btnAbbandonaSq_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
-            DataRow DR = (DataRow)DRV.Row;
-            int idSquadra =(int)DR.ItemArray[1];
-            string nomeSquadra = DR.ItemArray[0].ToString();
+            int idSquadra;
+            string nomeSquadra;
+
+            try
+            {
+
+                DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
+                DataRow DR = (DataRow)DRV.Row;
+                idSquadra = (int)DR.ItemArray[1];
+                nomeSquadra = DR.ItemArray[0].ToString();
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("Seleziona una squadra da abbandonare");
+                return;
+            }
             string message = "Sei sicuro di voler lasciare la squadra: " + nomeSquadra;
             string caption = "Abbandona squadra";
 
             if (System.Windows.Forms.MessageBox.Show(message, caption, MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                sqToExit = idSquadra;
-                Queries.ExecuteOnly(queryList["Exit from team"]);
+                Queries.ExecuteOnly(QueryList.LasciaSquadra(myCF,idSquadra));
+                System.Windows.Forms.MessageBox.Show("Sei uscito dalla squadra '" + nomeSquadra + "'");
+            }
+        }
+
+
+        private void btnEntraSq_Click(object sender, RoutedEventArgs e)
+        {
+            int idSquadra;
+            string nomeSquadra;
+
+            try
+            {
+                DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
+                DataRow DR = (DataRow)DRV.Row;
+                nomeSquadra = DR.ItemArray[0].ToString();
+                idSquadra =int.Parse( Queries.GetOneField("SELECT IdSquadra FROM squadra WHERE nome = '" + nomeSquadra + "';"));
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("Seleziona una squadra da abbandonare");
+                return;
+            }
+
+            try
+            {
+                Queries.ExecuteOnly(QueryList.EntraSquadra(myCF,idSquadra));
+            }
+            catch (Exception err)
+            {
+                if (err.Message.Contains("Duplicate entry"))
+                {
+                    System.Windows.Forms.MessageBox.Show("Devi aspettare un giorno per rientrare in una squadra");
+                }
+            }
+
+
+        }
+
+        private void btnIscriviSqTorneo_Click(object sender, RoutedEventArgs e)
+        {
+            int idSquadra;
+            string nomeSquadra;
+            try
+            {
+
+                DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
+                DataRow DR = (DataRow)DRV.Row;
+                idSquadra = (int)DR.ItemArray[1];
+                nomeSquadra = DR.ItemArray[0].ToString();
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("Seleziona una squadra da abbandonare");
+                return;
             }
         }
     }
