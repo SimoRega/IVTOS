@@ -18,6 +18,7 @@ namespace IVTOS
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             adapter.SelectCommand = new MySqlCommand(query, conn);
             adapter.Fill(ds);
+            conn.Close();
             return ds;
         }
 

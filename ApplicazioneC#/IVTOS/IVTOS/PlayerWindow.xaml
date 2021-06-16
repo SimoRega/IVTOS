@@ -7,12 +7,15 @@
         mc:Ignorable="d"
         Title="PlayerWindow" Height="486.453" Width="852.793">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="347" Margin="10,41,0,0" VerticalAlignment="Top" Width="301" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="347" Margin="10,41,0,0" VerticalAlignment="Top" Width="301" ColumnWidth="*"/>
         <ComboBox x:Name="cmb_Queries" HorizontalAlignment="Left" Margin="316,41,0,0" VerticalAlignment="Top" Width="150" Height="25" RenderTransformOrigin="0.5,2"/>
         <Button x:Name="btn_esegui" Content="Button" HorizontalAlignment="Left" Margin="482,41,0,0" VerticalAlignment="Top" Width="80" Click="btn_esegui_Click" Height="25"/>
         <Label x:Name="lbl_Welcome" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="301" FontWeight="Bold"/>
         <Button x:Name="btnMostraMieSquadre" Content="Mostra le mie squadre" HorizontalAlignment="Left" Margin="316,157,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnMostraMieSquadre_Click"/>
         <Button x:Name="btnAbbandonaSq" Content="Abbandona Squadra" HorizontalAlignment="Left" Margin="316,223,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnAbbandonaSq_Click"/>
+        <Button x:Name="btnMostraSquadre" Content="Mostra le squadre &#xD;&#xA;non complete&#xD;&#xA;" HorizontalAlignment="Left" Margin="457,157,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnMostraSquadre_Click"/>
+        <Button x:Name="btnEntraSq" Content="Entra nella squadra" HorizontalAlignment="Left" Margin="457,223,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnEntraSq_Click"/>
+        <Button x:Name="btnIscriviSqTorneo" Content="Iscrivi squadra &#xD;&#xA;ad un tornero" HorizontalAlignment="Left" Margin="316,289,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnIscriviSqTorneo_Click"/>
 
     </Grid>
 </Window>
