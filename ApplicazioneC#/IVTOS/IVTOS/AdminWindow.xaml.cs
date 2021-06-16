@@ -21,7 +21,13 @@ namespace IVTOS
     /// </summary>
     public partial class AdminWindow : Window
     {
-        public Dictionary<string, string> queryList = new Dictionary<string, string>();
+        private Dictionary<string, string> queryList = new Dictionary<string, string>();
+        private int steps = 0;
+        private string newTorneo="";
+        private string dataTorneo="";
+        private string capienzaTorneo="";
+        private string videogameTorneo="";
+        private string arenaTorneo="";
 
         public AdminWindow()
         {
@@ -35,6 +41,8 @@ namespace IVTOS
         {
             dataGrid.IsReadOnly = true;
             btnElimina.IsEnabled = false;
+            btnAvanti.IsEnabled = false;
+
             foreach (var p in queryList)
             {
                 cmbSelect.Items.Add(p.Key);
@@ -50,6 +58,8 @@ namespace IVTOS
             queryList.Add("Visualizza tutti gli Stati", "SELECT * FROM ivtos.stato;");
             queryList.Add("Visualizza tutte le Arene", "SELECT * FROM ivtos.arena;");
             queryList.Add("Visualizza tutte le Città", "SELECT * FROM ivtos.cittá;");
+            queryList.Add("Visualizza tutti i Tornei", "SELECT idTorneo AS Torneo, nomevideogioco AS Videogioco, nomearena AS Arena, sponsor.Nome, DataInizio, nmaxiscrizioni AS Capienza " +
+                        "FROM(torneo JOIN Arena ON torneo.IdArena = arena.IdArena)JOIN Sponsor on torneo.Sponsor = sponsor.idsponsor ; ");
         }
 
         private void btn_Click(object sender, RoutedEventArgs e)
@@ -67,10 +77,11 @@ namespace IVTOS
         }
 
         private void btnTorneo_Click(object sender, RoutedEventArgs e)
-        {
-            string q = "INSERT INTO torneo VALUES (IdTorneo,'2021-06-20',NULL,999,1,1,'Overwatch',NULL);";
-            Queries.ExecuteOnly(q);
-            dataGrid.ItemsSource = Queries.GetDataSet("SELECT * FROM torneo").Tables[0].DefaultView;
+        {          
+           dataTorneo = DateTime.Now.ToString("yyyy-MM-dd");
+           dataGrid.ItemsSource = Queries.GetDataSet("SELECT * From ivtos.arena").Tables[0].DefaultView;
+           lblStep.Content = "<2° Step: Scegli Arena>";
+            steps = 0;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -80,13 +91,57 @@ namespace IVTOS
             int idTorneo = (int)DR.ItemArray[0];
             string q = "DELETE FROM torneo WHERE IdTorneo="+idTorneo;
             Queries.ExecuteOnly(q);
-            dataGrid.ItemsSource = Queries.GetDataSet("SELECT * FROM torneo").Tables[0].DefaultView;
+            dataGrid.ItemsSource = Queries.GetDataSet(queryList["Visualizza tutti i Tornei"]).Tables[0].DefaultView;
             btnElimina.IsEnabled = false;
         }
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             btnElimina.IsEnabled = true;
+
+            if(steps>=0)
+                btnAvanti.IsEnabled = true;
+        }
+
+        private void btnAvanti_Click(object sender, RoutedEventArgs e)
+        {
+            
+            DataRowView DRV;
+            if (dataGrid.SelectedItem == null)
+            {
+                MessageBox.Show("Prima di andare avanti selezionare una riga dalla tabella");
+                return;
+            }
+            switch (steps)
+            {
+                case 0:
+                    DRV = (DataRowView)dataGrid.SelectedItem;
+                    capienzaTorneo =  DRV.Row.ItemArray[2].ToString() ;
+                    arenaTorneo = DRV.Row.ItemArray[0].ToString();
+                    dataGrid.ItemsSource = Queries.GetDataSet("SELECT * FROM videogioco").Tables[0].DefaultView;
+                    steps++;
+                    lblStep.Content = "<3° Step: Scegli Gioco>";
+                    break;
+                case 1:
+                    DRV = (DataRowView)dataGrid.SelectedItem;
+                    videogameTorneo = DRV.Row.ItemArray[0].ToString();
+                    steps++;
+                    newTorneo = String.Format("INSERT INTO torneo VALUES (IdTorneo,'{0}',NULL,{1},1,{2},'{3}',NULL);", dataTorneo, capienzaTorneo, arenaTorneo, videogameTorneo);
+                    Queries.ExecuteOnly(newTorneo);
+                    dataGrid.ItemsSource = Queries.GetDataSet(queryList["Visualizza tutti i Tornei"]).Tables[0].DefaultView;
+                    steps = -1;
+                    lblStep.Content = "<1° Step: Crea Torneo>";
+                    btnAvanti.IsEnabled = false;
+                    break;
+                default:
+                    steps = -1;
+                    break;
+            }
+        }
+
+        private void btnIndietro_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
