@@ -7,15 +7,24 @@
         mc:Ignorable="d"
         Title="AdminWindow" Height="612.286" Width="1073.428">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="581" VerticalAlignment="Top" Width="725" SelectionMode="Single" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="581" VerticalAlignment="Top" Width="725" SelectionMode="Single" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged" Background="#FFF0F0F0" BorderBrush="Black"/>
         <Button x:Name="btn" Content="Esegui" HorizontalAlignment="Left" Margin="971,35,0,0" VerticalAlignment="Top" Width="70" Click="btn_Click" Height="22"/>
         <ComboBox x:Name="cmbSelect" HorizontalAlignment="Left" Margin="737,35,0,0" VerticalAlignment="Top" Width="226" Height="22" />
-        <GroupBox Header="Seleziona una richiesta" HorizontalAlignment="Left" Height="62" Margin="730,10,0,0" VerticalAlignment="Top" Width="323"/>
-        <Button x:Name="btnTorneo" Content="Crea un Torneo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="737,98,0,0" Click="btnTorneo_Click"/>
+        <GroupBox Header="Informazioni Generali" HorizontalAlignment="Left" Height="62" Margin="730,10,0,0" VerticalAlignment="Top" Width="323"/>
+        <Button x:Name="btnTorneo" Content="Crea un Torneo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="737,98,0,0" Click="btnTorneo_Click" Height="45"/>
         <Button x:Name="btnElimina" Content="Elimina Torneo" HorizontalAlignment="Left" Margin="899,98,0,0" VerticalAlignment="Top" Width="142" Click="Button_Click"/>
-        <GroupBox Header="Gestione Tornei" HorizontalAlignment="Left" Height="82" Margin="728,76,0,0" VerticalAlignment="Top" Width="323"/>
-        <Button x:Name="btnAvanti" Content="Avanti --&gt;" HorizontalAlignment="Left" Margin="899,123,0,0" VerticalAlignment="Top" Width="142" Click="btnAvanti_Click"/>
-        <Label x:Name="lblStep" Content="&lt; 1° Step: Crea Torneo &gt;" HorizontalAlignment="Left" Margin="737,118,0,0" VerticalAlignment="Top" Width="148" Height="28"/>
+        <GroupBox Header="Gestione Tornei" HorizontalAlignment="Left" Height="105" Margin="728,77,0,0" VerticalAlignment="Top" Width="323"/>
+        <Button x:Name="btnAvanti" Content="Avanti --&gt;" HorizontalAlignment="Left" Margin="899,151,0,0" VerticalAlignment="Top" Width="142" Click="btnAvanti_Click"/>
+        <Label x:Name="lblStep" Content="&lt; 1° Step: Crea Torneo &gt;" HorizontalAlignment="Left" Margin="737,148,0,0" VerticalAlignment="Top" Width="148" Height="28"/>
+        <Button x:Name="btnIscrizioniTorneo" Content="Iscrizioni ad un Torneo" HorizontalAlignment="Left" Margin="737,219,0,0" VerticalAlignment="Top" Width="148" Click="btnIscrizioniTorneo_Click"/>
+        <Button x:Name="btnSelezioneTorneo" Content="Seleziona Torneo" HorizontalAlignment="Left" Margin="899,219,0,0" VerticalAlignment="Top" Width="142" Click="btnSelezioneTorneo_Click"/>
+        <GroupBox Header="Gestione Iscrizioni Torneo" HorizontalAlignment="Left" Height="80" Margin="730,193,0,0" VerticalAlignment="Top" Width="321"/>
+        <Button x:Name="btnIscrizioniSquadra" Content="Iscrizioni di una Squadra" HorizontalAlignment="Left" Margin="737,244,0,0" VerticalAlignment="Top" Width="148" Click="btnIscrizioniSquadra_Click"/>
+        <Button x:Name="btnSelezioneSquadra" Content="Seleziona Squadra" HorizontalAlignment="Left" Margin="899,244,0,0" VerticalAlignment="Top" Width="142" Click="btnSelezioneSquadra_Click"/>
+        <Button x:Name="btnTerminaTorneo" Content="Termina Torneo" HorizontalAlignment="Left" Margin="899,123,0,0" VerticalAlignment="Top" Width="142" Click="btnTerminaTorneo_Click"/>
+        <ComboBox x:Name="cmbStatistiche" HorizontalAlignment="Left" Margin="737,298,0,0" VerticalAlignment="Top" Width="226"/>
+        <Button x:Name="btnEseguiStatistiche" Content="Esegui" HorizontalAlignment="Left" Margin="971,298,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="btnEseguiStatistiche_Click"/>
+        <GroupBox Header="Statistiche Generali Tornei" HorizontalAlignment="Left" Height="55" Margin="730,278,0,0" VerticalAlignment="Top" Width="323"/>
 
     </Grid>
 </Window>
