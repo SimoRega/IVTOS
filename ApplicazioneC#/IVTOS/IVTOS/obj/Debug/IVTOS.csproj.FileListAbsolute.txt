@@ -95,3 +95,5 @@ C:\Users\feder\Desktop\Unibo\Progetto Database\IVTOS\ApplicazioneC#\IVTOS\IVTOS\
 C:\Users\feder\Desktop\Unibo\Progetto Database\IVTOS\ApplicazioneC#\IVTOS\IVTOS\obj\Debug\IVTOS.exe
 C:\Users\feder\Desktop\Unibo\Progetto Database\IVTOS\ApplicazioneC#\IVTOS\IVTOS\obj\Debug\IVTOS.pdb
 A:\Documenti\Università\DB\ProgettoDatabase\IVTOS\ApplicazioneC#\IVTOS\IVTOS\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\feder\Desktop\Unibo\Progetto Database\IVTOS\ApplicazioneC#\IVTOS\IVTOS\obj\Debug\IscrizioneSquadraTorneo.g.cs
+C:\Users\feder\Desktop\Unibo\Progetto Database\IVTOS\ApplicazioneC#\IVTOS\IVTOS\obj\Debug\IscrizioneSquadraTorneo.baml

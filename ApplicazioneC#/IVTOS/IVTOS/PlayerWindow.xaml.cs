@@ -132,7 +132,7 @@ namespace IVTOS
             {
                 if (err.Message.Contains("Duplicate entry"))
                 {
-                    System.Windows.Forms.MessageBox.Show("Devi aspettare un giorno per rientrare in una squadra");
+                    System.Windows.Forms.MessageBox.Show("Devi aspettare un giorno per rientrare in questa squadra");
                 }
             }
 
@@ -153,9 +153,13 @@ namespace IVTOS
             }
             catch
             {
-                System.Windows.Forms.MessageBox.Show("Seleziona una squadra da abbandonare");
+                System.Windows.Forms.MessageBox.Show("Seleziona una squadra da iscrivere ad un torneo");
                 return;
             }
+
+            IscrizioneSquadraTorneo iscrizione = new IscrizioneSquadraTorneo(idSquadra);
+            iscrizione.Show();
+            this.IsEnabled = false;
         }
     }
 }
