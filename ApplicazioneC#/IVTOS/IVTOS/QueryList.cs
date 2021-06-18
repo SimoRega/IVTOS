@@ -50,6 +50,16 @@ namespace IVTOS
                 "from(videogioco JOIN azienda_videogioco ON videogioco.partitaivaazienda = azienda_videogioco.partitaiva) join tipologia_gioco on videogioco.tipologiagioco = tipologia_gioco.idtipologia; ";
         }
 
+        internal static string VisualizzaArbitri()
+        {
+            return "SELECT * FROM ivtos.Arbitro;";
+        }
+
+        internal static string VisualizzaCoach()
+        {
+            return "SELECT * FROM ivtos.coach;";
+        }
+
         internal static string VisualizzaTorneiAttivi()
         {
             return "SELECT idTorneo AS Torneo, nomevideogioco AS Videogioco, nomearena AS Arena, sponsor.Nome, DataInizio, nmaxiscrizioni AS Capienza " +
