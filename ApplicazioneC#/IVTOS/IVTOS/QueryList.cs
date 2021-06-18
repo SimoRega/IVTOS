@@ -59,7 +59,7 @@ namespace IVTOS
 
         internal static string VisualizzaVideogiochiTornei()
         {
-            return "SELECT videogioco.Nome, count(*)" +
+            return "SELECT videogioco.Nome, count(*) " +
                 "from videogioco join torneo on videogioco.nome = torneo.NomeVideogioco " +
                 "group by videogioco.Nome Order by count(*) desc " +
                 "Limit 3; ";
@@ -67,27 +67,55 @@ namespace IVTOS
 
         internal static string VisualizzaSquadraTornei()
         {
-            return null;
+            return "select squadra.idSquadra, squadra.Nome, count(*) NumTorneiGiocati " +
+                "from squadra join iscrizione on squadra.idsquadra = iscrizione.idsquadra " +
+                "group by iscrizione.idsquadra " +
+                "order by count(*) desc " +
+                "limit 1; ";
         }
 
         internal static string VisualizzaPlayerTornei()
         {
-            return null;
+            return "select player.nickname,player.genere, squadra.Nome AS NomeSquadra, count(*) NumTorneiGiocati " +
+                "from squadra " +
+                "join iscrizione on squadra.idsquadra = iscrizione.idsquadra " +
+                "join adesione_player_squadra on adesione_player_squadra.idSquadra = squadra.idsquadra " +
+                "join player on adesione_player_squadra.cf_player = player.cf " +
+                "group by adesione_player_squadra.CF_player " +
+                "order by count(*) desc " +
+                "limit 1; ";
         }
 
         internal static string VisualizzaTorneiBiglietti()
         {
-            return null;
+            return "select partita.idtorneo, count(*) AS NumBigliettiVenduti, torneo.DataInizio, torneo.NomeVideogioco " +
+                "from partita " +
+                "join torneo " +
+                "join biglietto on partita.idsquadra1 = biglietto.idsquadra1 AND partita.idsquadra2 = biglietto.idsquadra2 AND partita.dataora = biglietto.dataora " +
+                "join acquisto_biglietto on acquisto_biglietto.idsquadra1 = biglietto.idsquadra1 AND acquisto_biglietto.idsquadra2 = biglietto.idsquadra2 " +
+                "AND acquisto_biglietto.dataora = biglietto.dataora AND biglietto.idarena = acquisto_biglietto.idarena " +
+                "group by partita.idtorneo " +
+                "order by count(*) desc " +
+                "limit 20; ";
         }
 
         internal static string VisualizzaTorneiConMenoSquadre()
         {
-            return null;
+            return "Select torneo.idTorneo, count(*) AS NumeroSquadre, torneo.DataInizio,torneo.NomeVideogioco,sponsor.Nome " +
+                "from(torneo join iscrizione on torneo.idtorneo = iscrizione.idtorneo) join sponsor on torneo.idsponsor = sponsor.idsponsor " +
+                "group by torneo.idtorneo " +
+                "order by count(*) asc " +
+                "limit 20; ";
         }
 
         internal static string VisualizzaTorneiConPiuSquadre()
         {
-            return null;
+            return "Select torneo.idTorneo, count(*) AS NumeroSquadre, torneo.DataInizio,torneo.NomeVideogioco,sponsor.Nome " +
+                "from torneo join iscrizione on torneo.idtorneo = iscrizione.idtorneo " +
+                "join sponsor on torneo.idsponsor = sponsor.idsponsor " +
+                "group by torneo.idtorneo " +
+                "order by count(*) desc " +
+                "limit 20; ";
         }
 
         public static string VisualizzaAziendeGiochi()

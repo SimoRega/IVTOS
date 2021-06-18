@@ -71,12 +71,12 @@ namespace IVTOS
             queryList.Add("Visualizza tutti i Tornei", QueryList.VisualizzaTornei());
             queryList.Add("Visualizza tutti i Tornei non conclusi", QueryList.VisualizzaTorneiAttivi());
 
-            stats.Add("I Tornei con più Squadre Iscritte", QueryList.VisualizzaTorneiConPiuSquadre());
-            stats.Add("I Tornei con meno Squadre Iscritte", QueryList.VisualizzaTorneiConMenoSquadre());
-            stats.Add("I Tornei con più Biglietti Venduti", QueryList.VisualizzaTorneiBiglietti());
+            stats.Add("I 20 Tornei con più Squadre Iscritte", QueryList.VisualizzaTorneiConPiuSquadre());
+            stats.Add("I 20 Tornei con meno Squadre Iscritte", QueryList.VisualizzaTorneiConMenoSquadre());
+            stats.Add("I 20 Tornei con più Biglietti Venduti", QueryList.VisualizzaTorneiBiglietti());
             stats.Add("I 3 Videogiochi più giocati ai Tornei", QueryList.VisualizzaVideogiochiTornei());
-            stats.Add("La Squadra che hanno partecipato a più Tornei", QueryList.VisualizzaSquadraTornei());
-            stats.Add("Il Player che hanno partecipato a più Tornei", QueryList.VisualizzaPlayerTornei());
+            stats.Add("La Squadra che ha partecipato a più Tornei", QueryList.VisualizzaSquadraTornei());
+            stats.Add("Il Player che ha partecipato a più Tornei", QueryList.VisualizzaPlayerTornei());
         }
 
         private void btn_Click(object sender, RoutedEventArgs e)
