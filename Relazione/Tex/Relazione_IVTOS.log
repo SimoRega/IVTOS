@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.15)  31 MAY 2021 13:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.15)  17 JUN 2021 15:15
 entering extended mode
 **./Relazione_IVTOS.tex
 (Relazione_IVTOS.tex
@@ -391,7 +391,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ...izione dell'architettura}{19}{section.6.2}
+l.29 ...ne {6.3.2}Giocatore}{22}{subsection.6.3.2}
                                                   % [1
 
 ])
@@ -426,14 +426,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-[6]
+[6] [7]
 Capitolo 3.
-<img/ER_Persona.png, id=189, 699.36281pt x 510.40688pt>
+<img/ER_Persona.png, id=178, 699.36281pt x 510.40688pt>
 File: img/ER_Persona.png Graphic file (type png)
 <use img/ER_Persona.png>
 Package pdftex.def Info: img/ER_Persona.png  used on input line 117.
 (pdftex.def)             Requested size: 489.55063pt x 357.28238pt.
-<img/ER_Videogiochi.png, id=190, 694.84593pt x 451.6875pt>
+<img/ER_Videogiochi.png, id=179, 694.84593pt x 451.6875pt>
 File: img/ER_Videogiochi.png Graphic file (type png)
 <use img/ER_Videogiochi.png>
 Package pdftex.def Info: img/ER_Videogiochi.png  used on input line 124.
@@ -444,25 +444,25 @@ Underfull \hbox (badness 1688) in paragraph at lines 125--125
 e-ri-sti-che dei
  []
 
-<img/ER_Partite.png, id=191, 846.16125pt x 575.90157pt>
+<img/ER_Partite.png, id=180, 846.16125pt x 575.90157pt>
 File: img/ER_Partite.png Graphic file (type png)
 <use img/ER_Partite.png>
 Package pdftex.def Info: img/ER_Partite.png  used on input line 131.
 (pdftex.def)             Requested size: 507.70067pt x 345.54361pt.
-<img/ER_Tornei.png, id=192, 662.475pt x 447.92343pt>
+<img/ER_Tornei.png, id=181, 662.475pt x 447.92343pt>
 File: img/ER_Tornei.png Graphic file (type png)
 <use img/ER_Tornei.png>
 Package pdftex.def Info: img/ER_Tornei.png  used on input line 138.
 (pdftex.def)             Requested size: 463.72934pt x 313.54427pt.
-<img/ER_Generale.png, id=193, 1002.74625pt x 682.80093pt>
+<img/ER_Generale.png, id=182, 1002.74625pt x 682.80093pt>
 File: img/ER_Generale.png Graphic file (type png)
 <use img/ER_Generale.png>
 Package pdftex.def Info: img/ER_Generale.png  used on input line 145.
 (pdftex.def)             Requested size: 601.65239pt x 409.68372pt.
-[7
+[8
 
-] [8 <./img/ER_Persona.png>] [9 <./img/ER_Videogiochi.png>] [10 <./img/ER_Parti
-te.png>] [11 <./img/ER_Tornei.png>] [12 <./img/ER_Generale.png>]
+] [9 <./img/ER_Persona.png>] [10 <./img/ER_Videogiochi.png>] [11 <./img/ER_Part
+ite.png>] [12 <./img/ER_Tornei.png>] [13 <./img/ER_Generale.png>]
 Capitolo 4.
 
 Overfull \hbox (2.81888pt too wide) in paragraph at lines 164--164
@@ -470,109 +470,134 @@ Overfull \hbox (2.81888pt too wide) in paragraph at lines 164--164
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--168
+Underfull \hbox (badness 10000) in paragraph at lines 166--166
+[]|\OT1/cmr/m/n/12 Tipologia
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--170
 []|\OT1/cmr/m/n/12 Azienda
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
+[]|\OT1/cmr/m/n/12 Squadra
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
+\OT1/cmr/m/n/12 Ri-guar-da
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Adesione
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--180
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 Player
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--183
 []|\OT1/cmr/m/n/12 Adesione
  []
 
 
-Overfull \hbox (2.49666pt too wide) in paragraph at lines 193--194
+Underfull \hbox (badness 10000) in paragraph at lines 183--183
+\OT1/cmr/m/n/12 Coach
+ []
+
+
+Overfull \hbox (2.49666pt too wide) in paragraph at lines 196--197
 []|\OT1/cmr/m/n/12 200.000.000| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--195
+Underfull \hbox (badness 10000) in paragraph at lines 198--198
 []|\OT1/cmr/m/n/12 Acquisto
  []
 
 
-Overfull \hbox (2.49666pt too wide) in paragraph at lines 195--196
+Overfull \hbox (2.49666pt too wide) in paragraph at lines 198--199
 []|\OT1/cmr/m/n/12 200.000.000| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--207
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
 []|\OT1/cmr/m/n/12 Iscrizioni
  []
 
 
-Overfull \hbox (23.18298pt too wide) in paragraph at lines 157--212
+Overfull \hbox (23.18298pt too wide) in paragraph at lines 157--226
 []  [] 
  []
 
-
-Overfull \hbox (34.91116pt too wide) in paragraph at lines 216--239
- [] 
- []
-
-[13
+[14
 
 ]
-Overfull \hbox (19.08235pt too wide) in paragraph at lines 276--286
- [] 
- []
+Overfull \vbox (3.31296pt too high) has occurred while \output is active []
 
-[14]
-Overfull \hbox (40.00159pt too wide) in paragraph at lines 303--315
- [] 
- []
-
-
-Overfull \hbox (15.91434pt too wide) in paragraph at lines 318--332
- [] 
- []
-
-
-Overfull \hbox (16.63239pt too wide) in paragraph at lines 335--347
- [] 
- []
 
 [15]
-Overfull \hbox (51.88202pt too wide) in paragraph at lines 350--363
+Overfull \hbox (34.91116pt too wide) in paragraph at lines 230--253
  [] 
  []
 
-[16] [17]
+[16]
+Overfull \hbox (19.08235pt too wide) in paragraph at lines 290--300
+ [] 
+ []
+
+
+Overfull \hbox (40.00159pt too wide) in paragraph at lines 320--332
+ [] 
+ []
+
+[17] [18]
+Overfull \hbox (42.67795pt too wide) in paragraph at lines 408--422
+ [] 
+ []
+
+
+Overfull \hbox (3.68202pt too wide) in paragraph at lines 439--452
+\OT1/cmr/m/n/12 squadra(nome, $[]$, da-ta crea-zio-ne) ade-sio-ne coach squadra
+($[]$:
+ []
+
+[19] [20]
 Capitolo 5.
-[18
+[21
 
 ]
 Capitolo 6.
-[19
+[22
 
 ] (Relazione_IVTOS.aux
 Package cleveref Info: loaded `italian' language definitions on input line 21.
 Package cleveref Info: loaded `italian' language definitions on input line 22.
 )
 Package rerunfilecheck Info: File `Relazione_IVTOS.out' has not changed.
-(rerunfilecheck)             Checksum: EEF16303F08F09DC102EEB3DF5F410EB;6080.
+(rerunfilecheck)             Checksum: CB9ED92836A27903082167C026B43B26;5519.
  ) 
 Here is how much of TeX's memory you used:
- 11691 strings out of 479334
- 186007 string characters out of 2857084
+ 11692 strings out of 479334
+ 186005 string characters out of 2857084
  565126 words of memory out of 3000000
- 28944 multiletter control sequences out of 15000+200000
+ 28941 multiletter control sequences out of 15000+200000
  409888 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,10n,74p,504b,753s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 71i,10n,74p,589b,755s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Simon\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmr12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Relazione_IVTOS.pdf (20 pages, 298569 bytes).
+Output written on Relazione_IVTOS.pdf (23 pages, 299177 bytes).
 PDF statistics:
- 303 PDF objects out of 1000 (max. 8388607)
- 65 named destinations out of 1000 (max. 500000)
- 266 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 305 PDF objects out of 1000 (max. 8388607)
+ 69 named destinations out of 1000 (max. 500000)
+ 242 words of extra memory for PDF output out of 10000 (max. 10000000)
 

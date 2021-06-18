@@ -20,6 +20,7 @@ namespace IVTOS
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string connString;
         public MainWindow()
         {
             InitializeComponent();
@@ -54,6 +55,8 @@ namespace IVTOS
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             chooseUser();
+            connString = "Persist Security Info=False;database=ivtos;server=localhost;port="+txtPorta.Text+";user id="+txtUserDB.Text+";Password="+txtPasswordDB.Text+";";
+            Queries.Connection = connString;
         }
 
         private void txtUserName_GotFocus(object sender, RoutedEventArgs e)

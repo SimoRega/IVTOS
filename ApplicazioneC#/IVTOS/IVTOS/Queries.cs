@@ -10,9 +10,13 @@ namespace IVTOS
 {
     class Queries
     {
+        private static string connection;
+
+        public static string Connection { get => connection; set => connection = value; }
+
         static DataSet Execute(string query)
         {
-            string connection = "Persist Security Info=False;database=ivtos;server=localhost;port=3306;user id=root;Password=password;";
+            connection = "Persist Security Info=False;database=ivtos;server=localhost;port=3306;user id=root;Password=password;";
             DataSet ds = new DataSet();
             MySqlConnection conn = new MySqlConnection(connection);
             MySqlDataAdapter adapter = new MySqlDataAdapter();

@@ -87,7 +87,7 @@ Per ogni \textbf{Videogame} si memorizzano: nome, data di creazione.
 
 Per ogni \textbf{Squadra} si memorizzano: IdSquadra, nome e data di creazione. Una specifica squadra può giocare a più videogiochi.La \textbf{Squadra} è composta da 5 \textbf{Player} ed \textit{eventualmente} 1 \textbf{Coach}. La \textbf{Squadra} può iscriversi a più \textbf{Tornei} contemporaneamente.
 
-Per ogni \textbf{Torneo} si memorizzano : la data di inizio, la data di fine e il numero massimo di iscrizioni. Il \textbf{Torneo} si svolge interamente in una singola \textbf{Arena} e può essere finanziato da uno \textbf{Sponsor}. Il \textbf{Torneo} inoltre riguarda un singolo \textbf{Videogioco} e prevede diverse \textbf{Partite}. In ogni \textbf{Torneo} partecipano 32 squadre che si sfidano ad eliminazione diretta \textit{(chi perde è fuori)}.
+Per ogni \textbf{Torneo} si memorizzano : la data di inizio, la data di fine e il numero massimo di iscrizioni. Il \textbf{Torneo} si svolge interamente in una singola \textbf{Arena} e può essere finanziato da uno \textbf{Sponsor}. Il \textbf{Torneo} inoltre riguarda un singolo \textbf{Videogioco} e prevede diverse \textbf{Partite}. Ad ogni \textbf{Torneo} possono partecipano un numero variabile di squadre (che non superano mai le 15 squadre) che si sfidano tutti contro tutti e la squadra con più partite vinte vincerà il torneo.
 
 Per ogni \textbf{Partita} si memorizzano: le due squadre che si sfidano e la data dell'incontro.
 
@@ -152,7 +152,7 @@ bla bla bla
 \renewcommand{\arraystretch}{1.5} %stretch scale delle celle
 \setlength{\arrayrulewidth}{0.5mm}%grandezza bordi
 \setlength{\tabcolsep}{10pt}%padding testo nelle celle
-\setlength\doublerulesep{0.31cm}%spazio tra due linee
+\setlength\doublerulesep{0.15cm}%spazio tra due linee
 
 \begin{tabular}{|m{2cm}|c|m{2cm}|}
 	\hline\rowcolor{pink}
@@ -163,10 +163,13 @@ bla bla bla
 	\hline
 	Videogiochi & E & 10\\
 	\hline
+	Tipologia Videogioco & E & 5\\
+	\hline
 	Gioca & A & 1.000.000\\
 	\hline
 	Azienda Videogioco & E & 5\\
-	
+	\hline
+	 Squadra Riguarda Videogioco & A & 250.000\\
 	
 	\hline
 	\hline
@@ -175,13 +178,13 @@ bla bla bla
 	\hline
 	Coach & E & 50.000\\
 	\hline
-	Adesione Player & E & 150.000\\ 
+	Adesione Player Squadra& E & 150.000\\ 
 	\hline
-	Adesione Coach & E & 75.000\\ 
+	Adesione Coach Squadra& E & 75.000\\ 
 	
 	\hline
 \end{tabular}
-\setlength\doublerulesep{0.18cm} %spazio tra due linee
+\setlength\doublerulesep{0.28cm} %spazio tra due linee
 \begin{tabular}{|m{2cm}|c|m{2cm}|}
 	\hline\rowcolor{pink}
 	Soggetto & Tipo & Volume\\
@@ -194,17 +197,28 @@ bla bla bla
 	\hline
 	Acquisto Biglietto & E & 200.000.000\\ 
 	\hline
-	Sponsor & E & 100\\
+	Sponsor & E & 35\\
 	
 	\hline\hline
 	
 	Tornei & E & 10.000\\
 	\hline
-	Partite & E & 310.000\\
+	Partite & E & 450.000\\
 	\hline
-	Previste & A & 310.000\\ 
+	Previste & A & 450.000\\ 
 	\hline
-	Iscrizioni Torneo & A & 320.000\\ 
+	Iscrizioni Torneo & A & 100.000\\ 
+	\hline
+	
+	\hline\hline
+	
+	Continente & E & 6\\
+	\hline
+	Stati & E & 30\\
+	\hline
+	Città & E & 60\\ 
+	\hline
+	Arene & E & 70\\ 
 	\hline
 	
 	
@@ -229,9 +243,9 @@ riportante la loro descrizione e relativa frequenza:
 		\hline
 		6 & Creazione di un Torneo & 1 a settimana\\ 
 		\hline
-		7 & Iscrizione di una Squadra ad un Torneo & 32 a settimana\\ 
+		7 & Iscrizione di una Squadra ad un Torneo & 10 a settimana\\ 
 		\hline
-		8 & Creazione di nuove Partite in un Torneo & 31 a settimana\\ 
+		8 & Creazione di nuove Partite in un Torneo & 45 a settimana\\ 
 		\hline
 		9 & Acquisto di un nuovo Biglietto & 30.000 a settimana\\ 
 		\hline
@@ -285,15 +299,18 @@ costi, si considerano di peso doppio gli accessi in scrittura rispetto a quelli 
 	\end{tabular}
 \end{center}
 \subsection*{(4) Creazione di una Squadra}
+Chi crea la squadra di solito è un player quindi quando crea una squadra automaticamente si iscrive ad essa
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline
 		Squadra & E & 1 & S\\
+		\hline
+		Adesione Player & A & 1 & S\\
 		\hline\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} 1S * 100 al mese  → 200 al mese} \\
+			\textbf{Totale:} (1S + 1S) * 100 al mese  → 400 al mese} \\
 		\hline\hline
 	\end{tabular}
 \end{center}
@@ -320,13 +337,12 @@ controllo la squadra se gia piena e ce lo caccio dentro
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline\hline		
 		Torneo & E & 1 & S\\
-		Arena & E & 1 & L\\
-		Partite Previste & A & 31 & S\\
-		Iscrizione Squadra & A & 32 & S\\
+		Partite Previste & A & 45 & S\\
+		Iscrizione Squadra & A & 10 & S\\
 		\hline
 		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} (1S + 1L + 31S + 32S) → 129 alla settimana} \\
+			\textbf{Totale:} (1S + 45S + 10S) → 72 alla settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -336,12 +352,11 @@ controllo la squadra se gia piena e ce lo caccio dentro
 		\hline\rowcolor{pink}
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline\hline		
-		Torneo & E & 1 & L\\
 		Iscrizione Squadra & A & 1 & S\\
 		\hline
 		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} (1L + 1S) * 32 a settimana → 96 a settimana} \\
+			\textbf{Totale:}  1S * 8 a settimana → 16 a settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -351,37 +366,92 @@ controllo la squadra se gia piena e ce lo caccio dentro
 		\hline\rowcolor{pink}
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline\hline		
-		Partita & E & 1 & S\\
-		Partita Prevista & A & 1 & S\\
-		Torneo & E & 1 & L\\
+		Partita & E & 45 & S\\
+		Partita Prevista & A & 45 & S\\
 		\hline
 		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} (1L + 2S + 2S) * 31 a settimana → 155 a settimana} \\
+			\textbf{Totale:} (45S + 45S)  → 180 a settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
 \subsection*{(9) Acquisto di un nuovo Biglietto}
+devo leggere il costo
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline\hline		
-		cambiare & E & 1 & L\\
-		cambiare & A & 1 & S\\
+		Acquistare & A & 1 & S\\
+		Biglietto & E & 1 & L\\
 		\hline
 		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} 1L + 2S → 450.000} \\
+			\textbf{Totale:} 1L + 2S → 150.000} \\
 		\hline
 	\end{tabular}
 \end{center}
 \section{Raffinamento dello schema}
-\subsection{Eliminazione Gerarchie}
-\subsection{Eliminazione attributi composti}
-\subsection{Scelta delle Chiavi}
+\subsection*{Eliminazione Gerarchie}
+Eliminazione delle gerarchie
+Per l’eliminazione della gerarchia persona si è scelto di adottare l’approccio del collasso verso
+il basso, replicando così gli attributi della Persona nelle seguenti entità: Player, Coach, Arbitro, Spettatore. 
+Si è adottata questa strategia in
+quanto si deve interagire con i clienti molto più spesso che con gli istruttori, e non si ha la
+necessità che l’identificatore per tali entità sia globalmente univoco.
+\subsection*{Scelta delle Chiavi}
+Sin dall'inizio abbiamo scelto accuratamente tutte le chiavi per ogni entità; queste sono evidenziate senza ambiguità nello schema E-R.
 \section{Analisi delle ridondanze}
+\subsection*{Senza Ridondanza}
+senza la ridondanza sul numero di biglietti venduti, leggo il costo del biglietto; in media ho 500 letture su acquisto-biglietto per vedere quanti sono stati venduti; ho una lettura su arena per verificarne la capienza.
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline		
+		Acquistare & A & 1 & S\\
+		Biglietto & E & 1 & L\\
+		AcquistoBiglietto & E & 500 & L\\
+		Arena & E & 1 & L\\
+		\hline
+		\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} (502L + 2S) * 30.000 → 15.180.000 ogni settimana} \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection*{Con la Ridondanza}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline		
+		Acquistare & A & 1 & S\\
+		Biglietto & E & 1 & L\\		
+		\hline
+		\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} 1L + 2S → 150.000 ogni settimana} \\
+		\hline
+	\end{tabular}
+\end{center}
 \section{Traduzione di entità e associazioni in relazioni}
+player(\underline{CF}, nome, cognome, genere, mail, data di nascita, Nickname, Nome Stato: stato) \\
+coach(\underline{CF}, nome, cognome, genere, mail, data di nascita) \\
+azienda videogioco(nome, \underline{partitaIVA}) \\
+tipologia gioco(\underline{IdTipologia}, Tipo) \\
+squadra(nome, \underline{idSquadra}, data creazione)
+adesione coach squadra(\underline{IdSquadra}: squadra, \underline{CF coach} : coach, \underline{DataInizio}, DataFine*) \\
+videogioco(\underline{Nome}, DataCreazione, TipologiaGioco : tipologia gioco, PartitaIVAAzienda : azienda videogioco) \\
+riguarda(\underline{IdSquadra} : squadra, \underline{NomeVideogioco} : videogioco) \\
+sponsor(\underline{IdSponsor}, Nome) \\
+continente(\underline{Nome}) \\
+stato(\underline{Nome}, Superficie, NumAbitanti, NomeContinente : continente) \\
+città(\underline{NomeStato}: stato, \underline{Nome}, Superficie, NumAbitanti)
+arena()
+
+
+
 \section{Schema relazionale finale}
 
 
