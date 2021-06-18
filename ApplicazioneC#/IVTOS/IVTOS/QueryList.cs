@@ -159,6 +159,11 @@ namespace IVTOS
                 "from(iscrizione join torneo on iscrizione.Idtorneo = torneo.idtorneo) join sponsor on torneo.IdSponsor = sponsor.idsponsor " +
                 "where IdSquadra = "+torneo+""; 
         }
+        public static string VisualizzaPartiteTorneo(string torneo)
+        {
+            return "SELECT IdSquadra1 as \"SQUADRA OSPITE\", IdSquadra2 as \"SQUADRA CASA\"," +
+                " DataOra as \"DATA E ORA\" FROM ivtos.partita WHERE partita.IdTorneo = "+ torneo + "; ";
+        }
         public static string TerminaTorneo(string torneo)
         {
             return "UPDATE torneo " +

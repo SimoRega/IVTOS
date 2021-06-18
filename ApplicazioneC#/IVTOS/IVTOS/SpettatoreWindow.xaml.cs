@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,13 +23,31 @@ namespace IVTOS
         public SpettatoreWindow()
         {
             InitializeComponent();
+            btn_partite_torneo.IsEnabled = false;
+            dataGrid.IsReadOnly = true;
         }
 
         private void MostraTornei_Click(object sender, RoutedEventArgs e)
         {
-            FinestraDiVisualizzazione.ItemsSource = Queries.GetDataSet("SELECT * FROM ivtos.torneo WHERE IdSquadra is NULL;").Tables[0].DefaultView;
+            
 
+            dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaTorneiAttivi()).Tables[0].DefaultView;
+            btn_partite_torneo.IsEnabled = true;
+            
         }
 
+        private void btn_partite_torneo_Click(object sender, RoutedEventArgs e)
+        {
+            if(dataGrid.SelectedItem == null)
+            {
+                MessageBox.Show("Selezionare un torneo");
+                return;
+            }
+            DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
+            DRV = (DataRowView)dataGrid.SelectedItem;
+            var torneo = DRV.Row.ItemArray[0].ToString();
+            dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaPartiteTorneo(torneo)).Tables[0].DefaultView;
+
+        }
     }
 }
