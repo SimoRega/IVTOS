@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.15)  18 JUN 2021 15:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.15)  19 JUN 2021 11:26
 entering extended mode
 **./Relazione_IVTOS.tex
 (Relazione_IVTOS.tex
@@ -446,92 +446,97 @@ e-ri-sti-che dei
 
 [7
 
-]
-<img/ER_Partite.png, id=175, 910.90312pt x 589.4522pt>
+] [8 <./img/ER_Persona.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+
+ []
+
+<img/ER_Partite.png, id=181, 910.90312pt x 589.4522pt>
 File: img/ER_Partite.png Graphic file (type png)
 <use img/ER_Partite.png>
-Package pdftex.def Info: img/ER_Partite.png  used on input line 146.
+Package pdftex.def Info: img/ER_Partite.png  used on input line 153.
 (pdftex.def)             Requested size: 546.54608pt x 353.67404pt.
-<img/ER_Tornei.png, id=176, 925.20656pt x 613.54219pt>
+[9 <./img/ER_Videogiochi.png>]
+<img/ER_Tornei.png, id=188, 925.20656pt x 613.54219pt>
 File: img/ER_Tornei.png Graphic file (type png)
 <use img/ER_Tornei.png>
-Package pdftex.def Info: img/ER_Tornei.png  used on input line 153.
+Package pdftex.def Info: img/ER_Tornei.png  used on input line 168.
 (pdftex.def)             Requested size: 555.12822pt x 368.12816pt.
-<img/ER_Generale.png, id=177, 1029.8475pt x 648.17157pt>
+<img/ER_Generale.png, id=189, 1029.8475pt x 648.17157pt>
 File: img/ER_Generale.png Graphic file (type png)
 <use img/ER_Generale.png>
-Package pdftex.def Info: img/ER_Generale.png  used on input line 160.
+Package pdftex.def Info: img/ER_Generale.png  used on input line 175.
 (pdftex.def)             Requested size: 566.4179pt x 356.49547pt.
- [8 <./img/ER_Persona.png>] [9 <./img/ER_Videogiochi.png>] [10 <./img/ER_Partit
-e.png>] [11 <./img/ER_Tornei.png>] [12 <./img/ER_Generale.png>]
+ [10 <./img/ER_Partite.png>] [11 <./img/ER_Tornei.png>] [12 <./img/ER_Generale.
+png>]
 Capitolo 4.
 
-Overfull \hbox (2.81888pt too wide) in paragraph at lines 179--179
+Overfull \hbox (2.81888pt too wide) in paragraph at lines 194--194
 []|\OT1/cmr/m/n/12 Videogiochi| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--181
+Underfull \hbox (badness 10000) in paragraph at lines 196--196
 []|\OT1/cmr/m/n/12 Tipologia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--185
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
 []|\OT1/cmr/m/n/12 Azienda
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--187
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
 []|\OT1/cmr/m/n/12 Squadra
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--187
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
 \OT1/cmr/m/n/12 Ri-guar-da
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--196
+Underfull \hbox (badness 10000) in paragraph at lines 211--211
 []|\OT1/cmr/m/n/12 Adesione
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--196
+Underfull \hbox (badness 10000) in paragraph at lines 211--211
 \OT1/cmr/m/n/12 Player
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--198
+Underfull \hbox (badness 10000) in paragraph at lines 213--213
 []|\OT1/cmr/m/n/12 Adesione
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--198
+Underfull \hbox (badness 10000) in paragraph at lines 213--213
 \OT1/cmr/m/n/12 Coach
  []
 
 
-Overfull \hbox (2.49666pt too wide) in paragraph at lines 211--212
+Overfull \hbox (2.49666pt too wide) in paragraph at lines 226--227
 []|\OT1/cmr/m/n/12 200.000.000| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--213
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
 []|\OT1/cmr/m/n/12 Acquisto
  []
 
 
-Overfull \hbox (2.49666pt too wide) in paragraph at lines 213--214
+Overfull \hbox (2.49666pt too wide) in paragraph at lines 228--229
 []|\OT1/cmr/m/n/12 200.000.000| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--225
+Underfull \hbox (badness 10000) in paragraph at lines 240--240
 []|\OT1/cmr/m/n/12 Iscrizioni
  []
 
 
-Overfull \hbox (23.18298pt too wide) in paragraph at lines 172--241
+Overfull \hbox (23.18298pt too wide) in paragraph at lines 187--256
 []  [] 
  []
 
@@ -542,27 +547,27 @@ Overfull \vbox (3.31296pt too high) has occurred while \output is active []
 
 
 [14]
-Overfull \hbox (34.91116pt too wide) in paragraph at lines 245--268
+Overfull \hbox (34.91116pt too wide) in paragraph at lines 260--283
  [] 
  []
 
 [15]
-Overfull \hbox (19.08235pt too wide) in paragraph at lines 305--315
+Overfull \hbox (19.08235pt too wide) in paragraph at lines 320--330
  [] 
  []
 
 
-Overfull \hbox (40.00159pt too wide) in paragraph at lines 335--347
+Overfull \hbox (40.00159pt too wide) in paragraph at lines 350--362
  [] 
  []
 
 [16] [17]
-Overfull \hbox (42.67795pt too wide) in paragraph at lines 423--437
+Overfull \hbox (42.67795pt too wide) in paragraph at lines 438--452
  [] 
  []
 
 
-Overfull \hbox (3.68202pt too wide) in paragraph at lines 454--467
+Overfull \hbox (3.68202pt too wide) in paragraph at lines 469--482
 \OT1/cmr/m/n/12 squadra(nome, $[]$, da-ta crea-zio-ne) ade-sio-ne coach squadra
 ($[]$:
  []
@@ -596,7 +601,7 @@ ts/cm/cmbx12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmr12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Relazione_IVTOS.pdf (22 pages, 325602 bytes).
+Output written on Relazione_IVTOS.pdf (22 pages, 332861 bytes).
 PDF statistics:
  295 PDF objects out of 1000 (max. 8388607)
  67 named destinations out of 1000 (max. 500000)
