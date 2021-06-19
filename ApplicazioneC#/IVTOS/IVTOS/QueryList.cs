@@ -67,7 +67,7 @@ namespace IVTOS
 
         internal static string VisualizzaTorneiAttivi()
         {
-            return "SELECT idTorneo AS Torneo, nomevideogioco AS Videogioco, nomearena AS Arena, sponsor.Nome, DataInizio, nmaxiscrizioni AS Capienza " +
+            return "SELECT idTorneo AS Torneo, nomevideogioco AS Videogioco, nomearena AS Arena, sponsor.Nome, DataInizio, nmaxiscrizioni AS NumeroSquadre " +
                         "FROM(torneo JOIN Arena ON torneo.IdArena = arena.IdArena)JOIN Sponsor on torneo.IdSponsor = sponsor.idsponsor " +
                         "WHERE torneo.datafine is null; ";
         }
@@ -160,7 +160,7 @@ namespace IVTOS
         }
         public static string VisualizzaTornei()
         {
-            return "SELECT idTorneo AS Torneo, nomevideogioco AS Videogioco, nomearena AS Arena, sponsor.Nome, DataInizio, DataFine, nmaxiscrizioni AS Capienza " +
+            return "SELECT idTorneo AS Torneo, nomevideogioco AS Videogioco, nomearena AS Arena, sponsor.Nome, DataInizio, DataFine, nmaxiscrizioni AS NumeroSquadre " +
                         "FROM(torneo JOIN Arena ON torneo.IdArena = arena.IdArena) JOIN Sponsor on torneo.IdSponsor = sponsor.idsponsor ; ";
         }
         public static string VisualizzaSponsor()
@@ -198,6 +198,44 @@ namespace IVTOS
         public static string IscriviSqATorneo(int idSquadra, int idTorneo)
         {
             return "INSERT INTO iscrizione VALUES (" + idTorneo + "," + idSquadra + "); ";
+        }
+
+        public static string NomeArenaInCuiSiSvolgePartita(string idSquadra1, string idSquadra2, string data)
+        {
+            return "SELECT A.NomeArena FROM(partita P join torneo T on P.IdTorneo = T.IdTorneo) join Arena A on T.IdArena = A.IdArena " +
+                "WHERE P.IdSquadra1 = " + idSquadra1 +
+                " AND P.IdSquadra2 = " + idSquadra2 +
+                " AND P.DataOra = '" + data + "';";
+        }
+        public static string CittaArenaInCuiSiSvolgePartita(string idSquadra1, string idSquadra2, string data)
+        {
+            return "SELECT A.NomeCitta FROM(partita P join torneo T on P.IdTorneo = T.IdTorneo) join Arena A on T.IdArena = A.IdArena " +
+                "WHERE P.IdSquadra1 = " + idSquadra1 +
+                " AND P.IdSquadra2 = " + idSquadra2 +
+                " AND P.DataOra = '" + data + "';";
+        }
+        public static string StatoArenaInCuiSiSvolgePartita(string idSquadra1, string idSquadra2, string data)
+        {
+            return "SELECT A.NomeStato FROM(partita P join torneo T on P.IdTorneo = T.IdTorneo) join Arena A on T.IdArena = A.IdArena " +
+                "WHERE P.IdSquadra1 = " + idSquadra1 +
+                " AND P.IdSquadra2 = " + idSquadra2 +
+                " AND P.DataOra = '" + data + "';";
+        }
+        public static string IdArenaInCuiSiSvolgePartita(string idSquadra1, string idSquadra2, string data)
+        {
+            return "SELECT A.IdArena FROM(partita P join torneo T on P.IdTorneo = T.IdTorneo) join Arena A on T.IdArena = A.IdArena " +
+                "WHERE P.IdSquadra1 = " + idSquadra1 +
+                " AND P.IdSquadra2 = " + idSquadra2 +
+                " AND P.DataOra = '" + data + "';";
+        }
+
+        public static string PrezzoBiglietto(string idArena)
+        {
+            return "SELECT B.Costo FROM Arena A join biglietto B on A.IdArena = B.IdArena WHERE a.IdArena =  " + idArena;
+        }
+        public static string CompraBiglietto(string idSquadra1, string idSquadra2, string data, string idArena, string cf)
+        {
+            return "INSERT INTO acquisto_biglietto VALUES (" + idArena + "," + idSquadra1 + "," + idSquadra2 + ",'" + data + "','" + cf + "');";
         }
     }
 }

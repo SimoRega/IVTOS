@@ -43,7 +43,7 @@ namespace IVTOS
                     this.Close();
                     break;
                 case "SPETTATORE":
-                    SpettatoreWindow sw = new SpettatoreWindow();
+                    SpettatoreWindow sw = new SpettatoreWindow("QDWXEUGISFIJBUNG");
                     sw.Show();
                     this.Close();
                     break;

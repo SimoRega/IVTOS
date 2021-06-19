@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -20,10 +21,13 @@ namespace IVTOS
     /// </summary>
     public partial class SpettatoreWindow : Window
     {
-        public SpettatoreWindow()
+        private string cf;
+        public SpettatoreWindow(string codice_fiscale)
         {
+            cf = codice_fiscale;
             InitializeComponent();
             btn_partite_torneo.IsEnabled = false;
+            btnCompraBiglietto.IsEnabled = false;
             dataGrid.IsReadOnly = true;
         }
 
@@ -40,13 +44,48 @@ namespace IVTOS
         {
             if(dataGrid.SelectedItem == null)
             {
-                MessageBox.Show("Selezionare un torneo");
+                System.Windows.MessageBox.Show("Selezionare un torneo");
                 return;
             }
             DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
             DRV = (DataRowView)dataGrid.SelectedItem;
             var torneo = DRV.Row.ItemArray[0].ToString();
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaPartiteTorneo(torneo)).Tables[0].DefaultView;
+            btnCompraBiglietto.IsEnabled = true;
+
+        }
+
+        private void btnCompraBiglietto_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataGrid.SelectedItem == null)
+            {
+                System.Windows.MessageBox.Show("Selezionare una partita");
+                return;
+            }
+
+            DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
+            DRV = (DataRowView)dataGrid.SelectedItem;
+            var squadra1 = DRV.Row.ItemArray[0].ToString();
+            var squadra2 = DRV.Row.ItemArray[1].ToString();
+            var giorno = DRV.Row.ItemArray[2].ToString();
+            string[] data= giorno.Split(' ');
+            string[] cacca = data[0].Split('/');
+            string bella = cacca[2] + "-" + cacca[1] + "-" + cacca[0];
+            var arena = Queries.GetOneField(QueryList.IdArenaInCuiSiSvolgePartita(squadra1, squadra2, bella));
+            string message = "Sei sicuro di voler comprare il biglietto per la partita del giorno " + bella + " fra la squadra " + squadra1 + " e " + squadra2
+                + " nell'arena " + Queries.GetDataSet(QueryList.NomeArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + ", che si trova nello Stato di " +
+                Queries.GetDataSet(QueryList.StatoArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + ", nella città di " +
+                Queries.GetDataSet(QueryList.CittaArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + " al prezzo di " +
+                Queries.GetDataSet(QueryList.PrezzoBiglietto(arena))
+                ;
+            string caption = "Compra Biglietto";
+
+            if (System.Windows.Forms.MessageBox.Show(message, caption, MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Queries.ExecuteOnly(QueryList.CompraBiglietto(squadra1, squadra2, bella, arena, cf));
+                System.Windows.Forms.MessageBox.Show("Hai comprato il biglietto");
+
+            }
 
         }
     }
