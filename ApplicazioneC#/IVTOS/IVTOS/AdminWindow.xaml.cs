@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace IVTOS
 {
@@ -30,7 +31,6 @@ namespace IVTOS
         private string videogameTorneo = "";
         private string arenaTorneo = "";
         private string sponsorTorneo = "";
-
         private string lastQuery = "";
 
         public AdminWindow()
@@ -64,6 +64,8 @@ namespace IVTOS
         {
             queryList.Add("Visualizza tutti i Player", QueryList.VisualizzaPlayer());
             queryList.Add("Visualizza tutti i Videogiochi", QueryList.VisualizzaVideogiochi());
+            queryList.Add("Visualizza tutti i Coach", QueryList.VisualizzaCoach());
+            queryList.Add("Visualizza tutti gli Arbitri", QueryList.VisualizzaArbitri());
             queryList.Add("Visualizza tutte le Aziende di Videogiochi", QueryList.VisualizzaAziendeGiochi());
             queryList.Add("Visualizza tutti gli Stati", QueryList.VisualizzaStati());
             queryList.Add("Visualizza tutte le Arene", QueryList.VisualizzaArena());
@@ -71,12 +73,12 @@ namespace IVTOS
             queryList.Add("Visualizza tutti i Tornei", QueryList.VisualizzaTornei());
             queryList.Add("Visualizza tutti i Tornei non conclusi", QueryList.VisualizzaTorneiAttivi());
 
-            stats.Add("I Tornei con più Squadre Iscritte", QueryList.VisualizzaTorneiConPiuSquadre());
-            stats.Add("I Tornei con meno Squadre Iscritte", QueryList.VisualizzaTorneiConMenoSquadre());
-            stats.Add("I Tornei con più Biglietti Venduti", QueryList.VisualizzaTorneiBiglietti());
+            stats.Add("I 20 Tornei con più Squadre Iscritte", QueryList.VisualizzaTorneiConPiuSquadre());
+            stats.Add("I 20 Tornei con meno Squadre Iscritte", QueryList.VisualizzaTorneiConMenoSquadre());
+            stats.Add("I 20 Tornei con più Biglietti Venduti", QueryList.VisualizzaTorneiBiglietti());
             stats.Add("I 3 Videogiochi più giocati ai Tornei", QueryList.VisualizzaVideogiochiTornei());
-            stats.Add("La Squadra che hanno partecipato a più Tornei", QueryList.VisualizzaSquadraTornei());
-            stats.Add("Il Player che hanno partecipato a più Tornei", QueryList.VisualizzaPlayerTornei());
+            stats.Add("La Squadra che ha partecipato a più Tornei", QueryList.VisualizzaSquadraTornei());
+            stats.Add("Il Player che ha partecipato a più Tornei", QueryList.VisualizzaPlayerTornei());
         }
 
         private void btn_Click(object sender, RoutedEventArgs e)
@@ -92,6 +94,7 @@ namespace IVTOS
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaArena()).Tables[0].DefaultView;
             lastQuery = QueryList.VisualizzaArena();
             lblStep.Content = "<2° Step: Scegli Arena>";
+            MessageBox.Show("Selezionare un Arena");
             steps = 0;
         }
 
@@ -158,6 +161,7 @@ namespace IVTOS
                     lastQuery = QueryList.VisualizzaVideogiochi();
                     steps++;
                     lblStep.Content = "<3° Step: Scegli Gioco>";
+                    MessageBox.Show("Selezionare un Videogioco");
                     break;
                 case 1:
                     DRV = (DataRowView)dataGrid.SelectedItem;
@@ -166,14 +170,15 @@ namespace IVTOS
                     dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaSponsor()).Tables[0].DefaultView;
                     lastQuery = QueryList.VisualizzaSponsor();
                     lblStep.Content = "<4° Step: Scegli Sponsor>";
+                    MessageBox.Show("Selezionare uno Sponsor");
                     break;
                 case 2:
                     DRV = (DataRowView)dataGrid.SelectedItem;
                     sponsorTorneo = DRV.Row.ItemArray[0].ToString();
                     newTorneo = String.Format("INSERT INTO torneo VALUES (IdTorneo,'{0}',NULL,{1},{2},'{3}',{4},NULL);", dataTorneo, capienzaTorneo, sponsorTorneo, videogameTorneo, arenaTorneo);
                     Queries.ExecuteOnly(newTorneo);
-                    dataGrid.ItemsSource = Queries.GetDataSet(queryList["Visualizza tutti i Tornei"]).Tables[0].DefaultView;
-                    lastQuery = queryList["Visualizza tutti i Tornei"];
+                    dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaTornei()).Tables[0].DefaultView;
+                    lastQuery = QueryList.VisualizzaTornei();
                     steps = -1;
                     lblStep.Content = "<1° Step: Crea Torneo>";
                     btnAvanti.IsEnabled = false;

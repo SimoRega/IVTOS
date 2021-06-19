@@ -97,6 +97,7 @@ Per ogni \textbf{Spettatore} si vuole memorizzare: Codice Fiscale, nome e cognom
 
 Segue un elenco delle principali azioni richieste:
 \begin{itemize}
+	\setlength\itemsep{0.1em}
 	\item Aggiunta di un nuovo Player
 	\item Aggiunta Videogioco giocato da un Player
 	\item Aggiunta di un nuovo Spettatore
@@ -110,18 +111,32 @@ Segue un elenco delle principali azioni richieste:
 
 \chapter{Progettazione Concettuale}
 
-\section{Anteprima Schema Scheletro}
 \section{Anteprima sviluppo delle "Persone"}
-bla bla bla
+In questa sezione verrà modellato l'aspetto di \textbf{Persona}. Si decide di dividere i vari aspetti delle varie Persone che saranno presenti nel Database in più entità : \textbf{Player}, \textbf{Coach}, \textbf{Spettatore}, \textbf{Arbitro} e \textbf{Speaker}.
+
+Ognuno di queste entità citate sopra sarà figlia della classe padre \textbf{Persona}, che contiene gli attributi comuni a tutte le entità figlie.
+
+Si è deciso di rendere la gerarchia \textit{totale} e \textit{sovrapposta} poiché le persone fisiche di cui abbiamo la necessità di salvarci i dati sono esattamente e solamente le classi figlie di \textbf{Persona} citate prima; inoltre è possibile che una classe figlia di \textbf{Persona} possa ricoprire più ruoli, ad esempio un \textbf{Player} potrebbe essere uno \textbf{Spettatore} come potrebbe essere un \textbf{Coach}.
+
+Di \textbf{Persona} si vogliono conoscere le caratteristiche base utili alla gestione delle entità figlie, quindi: Codice Fiscale (il quale identifica la persona), Nome, Cognome, Mail, Data di nascita e Genere.
+Se necessario ogni entità figlia potrà aggiungere agli attributi del padre i propri, ad esempio \textbf{Player} avrà un Nickname, \textbf{Arbitro} un counter di PartiteArbitrate e lo \textbf{Speaker} un Nickname e un counter di PartiteCommentate.
+
 \begin{figure}[!htb]
-	\centerline{\includegraphics[scale=0.7]{img/ER_Persona.png}}
+	\centerline{\includegraphics[scale=0.5]{img/ER_Persona.png}}
 	\caption{Schema ER che espone le principali caratteristiche delle Persone}
 	\label{img:ER_Persona}
 \end{figure}
+
 \section{Anteprima sviluppo dei "Videogiochi"}
-bla bla bla
+In questa sezione verrà modellato l'aspetto di Videogioco. 
+Il Videogioco ha un Nome, dal quale viene identificato, e una data di creazione.
+ Esiste una relazione con una Azienda di Videogiochi la quale può creare più videogiochi.
+ 
+ Ogni Videogioco ha la propria tipologia , ad esempio Sparatutto o Giochi di Carte. 
+ 
+ Abbiamo la necessità di salvarci ogni Player a quale e quanti Videogiochi gioca, memorizzando nel frattempo le sue Partite Vinte e le Partite Giocate (Nota Bene : questi due attributi si riferisco a statistiche personali relative all'avanzamento nel gioco, non sono collegate in nessun modo all'entità dell'E-R chiamata "Partita", quest'ultima si riferisce esclusivamente ad un match all'interno di un Torneo).
 \begin{figure}[!htb]
-	\centerline{\includegraphics[scale=0.7]{img/ER_Videogiochi.png}}
+	\centerline{\includegraphics[scale=0.55]{img/ER_Videogiochi.png}}
 	\caption{Schema ER che espone le principali caratteristiche dei Videogiochi}
 	\label{img:ER_Videogiochi}
 \end{figure}
@@ -135,14 +150,14 @@ bla bla bla
 \section{Anteprima sviluppo dei "Tornei"}
 bla bla bla
 \begin{figure}[!htb]
-	\centerline{\includegraphics[scale=0.7]{img/ER_Tornei.png}}
+	\centerline{\includegraphics[scale=0.6]{img/ER_Tornei.png}}
 	\caption{Schema ER che espone le principali caratteristiche dei Tornei}
 	\label{img:ER_Tornei}
 \end{figure}
 \section{Schema Generale}
 bla bla bla
 \begin{figure}[!htb]
-	\centerline{\includegraphics[scale=0.6]{img/ER_Generale.png}}
+	\centerline{\includegraphics[scale=0.55]{img/ER_Generale.png}}
 	\caption{Schema ER che espone lo schema concettuale finale}
 	\label{img:ER_Generale}
 \end{figure}
