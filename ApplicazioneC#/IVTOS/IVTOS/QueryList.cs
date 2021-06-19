@@ -199,5 +199,12 @@ namespace IVTOS
         {
             return "INSERT INTO iscrizione VALUES (" + idTorneo + "," + idSquadra + "); ";
         }
+
+        public static string MostraMembriSquadra(int idSquadra)
+        {
+            return "SELECT  player.cognome, player.nome, player.Nickname " +
+                "from(adesione_player_squadra join squadra on adesione_player_squadra.IdSquadra = squadra.IdSquadra) join player on adesione_player_squadra.CF_Player = player.CF " +
+                "where adesione_player_squadra.DataFine is null and squadra.IdSquadra = " + idSquadra;
+        }
     }
 }
