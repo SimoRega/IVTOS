@@ -50,6 +50,21 @@ namespace IVTOS
                 "from(videogioco JOIN azienda_videogioco ON videogioco.partitaivaazienda = azienda_videogioco.partitaiva) join tipologia_gioco on videogioco.tipologiagioco = tipologia_gioco.idtipologia; ";
         }
 
+        internal static string VisualizzaArbitri()
+        {
+            return "SELECT * FROM ivtos.Arbitro;";
+        }
+
+        internal static string VisualizzaSpeaker()
+        {
+            return "SELECT * FROM ivtos.speaker;";
+        }
+
+        internal static string VisualizzaCoach()
+        {
+            return "SELECT * FROM ivtos.coach;";
+        }
+
         internal static string VisualizzaTorneiAttivi()
         {
             return "SELECT idTorneo AS Torneo, nomevideogioco AS Videogioco, nomearena AS Arena, sponsor.Nome, DataInizio, nmaxiscrizioni AS Capienza " +
@@ -59,7 +74,7 @@ namespace IVTOS
 
         internal static string VisualizzaVideogiochiTornei()
         {
-            return "SELECT videogioco.Nome, count(*) " +
+            return "SELECT videogioco.Nome, count(*) AS NumTorneiGiocati" +
                 "from videogioco join torneo on videogioco.nome = torneo.NomeVideogioco " +
                 "group by videogioco.Nome Order by count(*) desc " +
                 "Limit 3; ";
@@ -151,13 +166,13 @@ namespace IVTOS
         {
             return "SELECT squadra.idsquadra as IdSquadra, squadra.nome AS NomeSquadra" +
                 " from iscrizione join squadra on iscrizione.IdSquadra = squadra.IdSquadra " +
-                "where idTorneo = "+ torneo +"; ";
+                "where idTorneo = " + torneo + "; ";
         }
         public static string VisualizzaIscrizioniSquadra(string torneo)
         {
             return "SELECT torneo.idtorneo as IdTorneo, torneo.datainizio AS DataDiInizio, torneo.NomeVideogioco, sponsor.Nome AS Sponsor " +
                 "from(iscrizione join torneo on iscrizione.Idtorneo = torneo.idtorneo) join sponsor on torneo.IdSponsor = sponsor.idsponsor " +
-                "where IdSquadra = "+torneo+""; 
+                "where IdSquadra = " + torneo + "";
         }
         public static string VisualizzaPartiteTorneo(string torneo)
         {
@@ -172,7 +187,12 @@ namespace IVTOS
         }
         public static string EliminaTorneo(string torneo)
         {
-            return "DELETE FROM torneo WHERE IdTorneo=" + torneo +";";
+            return "DELETE FROM torneo WHERE IdTorneo=" + torneo + ";";
+        }
+
+        public static string IscriviSqATorneo(int idSquadra, int idTorneo)
+        {
+            return "INSERT INTO iscrizione VALUES (" + idTorneo + "," + idSquadra + "); ";
         }
     }
 }

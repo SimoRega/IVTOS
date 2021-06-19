@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AdminWindow" Height="612.286" Width="1073.428">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="581" VerticalAlignment="Top" Width="725" SelectionMode="Single" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged" Background="#FFF0F0F0" BorderBrush="Black"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="581" VerticalAlignment="Top" Width="725" SelectionMode="Single" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged" BorderBrush="Black" Background="{x:Null}"/>
         <Button x:Name="btn" Content="Esegui" HorizontalAlignment="Left" Margin="971,35,0,0" VerticalAlignment="Top" Width="70" Click="btn_Click" Height="22"/>
         <ComboBox x:Name="cmbSelect" HorizontalAlignment="Left" Margin="737,35,0,0" VerticalAlignment="Top" Width="226" Height="22" />
         <GroupBox Header="Informazioni Generali" HorizontalAlignment="Left" Height="62" Margin="730,10,0,0" VerticalAlignment="Top" Width="323"/>
@@ -22,9 +22,9 @@
         <Button x:Name="btnIscrizioniSquadra" Content="Iscrizioni di una Squadra" HorizontalAlignment="Left" Margin="737,244,0,0" VerticalAlignment="Top" Width="148" Click="btnIscrizioniSquadra_Click"/>
         <Button x:Name="btnSelezioneSquadra" Content="Seleziona Squadra" HorizontalAlignment="Left" Margin="899,244,0,0" VerticalAlignment="Top" Width="142" Click="btnSelezioneSquadra_Click"/>
         <Button x:Name="btnTerminaTorneo" Content="Termina Torneo" HorizontalAlignment="Left" Margin="899,123,0,0" VerticalAlignment="Top" Width="142" Click="btnTerminaTorneo_Click"/>
-        <ComboBox x:Name="cmbStatistiche" HorizontalAlignment="Left" Margin="737,298,0,0" VerticalAlignment="Top" Width="226"/>
-        <Button x:Name="btnEseguiStatistiche" Content="Esegui" HorizontalAlignment="Left" Margin="971,298,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="btnEseguiStatistiche_Click"/>
-        <GroupBox Header="Statistiche Generali Tornei" HorizontalAlignment="Left" Height="55" Margin="730,278,0,0" VerticalAlignment="Top" Width="323"/>
+        <ComboBox x:Name="cmbStatistiche" HorizontalAlignment="Left" Margin="737,307,0,0" VerticalAlignment="Top" Width="226"/>
+        <Button x:Name="btnEseguiStatistiche" Content="Esegui" HorizontalAlignment="Left" Margin="971,307,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="btnEseguiStatistiche_Click"/>
+        <GroupBox Header="Statistiche Generali Tornei" HorizontalAlignment="Left" Height="55" Margin="730,287,0,0" VerticalAlignment="Top" Width="323"/>
 
     </Grid>
 </Window>

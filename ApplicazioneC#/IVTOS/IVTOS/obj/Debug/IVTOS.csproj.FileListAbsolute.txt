@@ -97,6 +97,7 @@ C:\Users\feder\Desktop\Unibo\Progetto Database\IVTOS\ApplicazioneC#\IVTOS\IVTOS\
 A:\Documenti\Università\DB\ProgettoDatabase\IVTOS\ApplicazioneC#\IVTOS\IVTOS\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\feder\Desktop\Unibo\Progetto Database\IVTOS\ApplicazioneC#\IVTOS\IVTOS\obj\Debug\IscrizioneSquadraTorneo.g.cs
 C:\Users\feder\Desktop\Unibo\Progetto Database\IVTOS\ApplicazioneC#\IVTOS\IVTOS\obj\Debug\IscrizioneSquadraTorneo.baml
+<<<<<<< HEAD
 D:\Documenti\università\2 ANNO\BASI DI DATI\progetto\IVTOS\ApplicazioneC#\IVTOS\IVTOS\bin\Debug\IVTOS.exe.config
 D:\Documenti\università\2 ANNO\BASI DI DATI\progetto\IVTOS\ApplicazioneC#\IVTOS\IVTOS\bin\Debug\IVTOS.exe
 D:\Documenti\università\2 ANNO\BASI DI DATI\progetto\IVTOS\ApplicazioneC#\IVTOS\IVTOS\bin\Debug\IVTOS.pdb
@@ -136,3 +137,7 @@ D:\Documenti\università\2 ANNO\BASI DI DATI\progetto\IVTOS\ApplicazioneC#\IVTOS
 D:\Documenti\università\2 ANNO\BASI DI DATI\progetto\IVTOS\ApplicazioneC#\IVTOS\IVTOS\obj\Debug\IVTOS.csproj.CopyComplete
 D:\Documenti\università\2 ANNO\BASI DI DATI\progetto\IVTOS\ApplicazioneC#\IVTOS\IVTOS\obj\Debug\IVTOS.exe
 D:\Documenti\università\2 ANNO\BASI DI DATI\progetto\IVTOS\ApplicazioneC#\IVTOS\IVTOS\obj\Debug\IVTOS.pdb
+=======
+A:\Documenti\Università\DB\ProgettoDatabase\IVTOS\ApplicazioneC#\IVTOS\IVTOS\obj\Debug\IscrizioneSquadraTorneo.g.cs
+A:\Documenti\Università\DB\ProgettoDatabase\IVTOS\ApplicazioneC#\IVTOS\IVTOS\obj\Debug\IscrizioneSquadraTorneo.baml
+>>>>>>> d9264ffc923b1584d106386ba693be6b3de45ee5
