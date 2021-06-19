@@ -161,13 +161,13 @@ namespace IVTOS
         {
             return "SELECT squadra.idsquadra as IdSquadra, squadra.nome AS NomeSquadra" +
                 " from iscrizione join squadra on iscrizione.IdSquadra = squadra.IdSquadra " +
-                "where idTorneo = "+ torneo +"; ";
+                "where idTorneo = " + torneo + "; ";
         }
         public static string VisualizzaIscrizioniSquadra(string torneo)
         {
             return "SELECT torneo.idtorneo as IdTorneo, torneo.datainizio AS DataDiInizio, torneo.NomeVideogioco, sponsor.Nome AS Sponsor " +
                 "from(iscrizione join torneo on iscrizione.Idtorneo = torneo.idtorneo) join sponsor on torneo.IdSponsor = sponsor.idsponsor " +
-                "where IdSquadra = "+torneo+""; 
+                "where IdSquadra = " + torneo + "";
         }
         public static string TerminaTorneo(string torneo)
         {
@@ -177,7 +177,12 @@ namespace IVTOS
         }
         public static string EliminaTorneo(string torneo)
         {
-            return "DELETE FROM torneo WHERE IdTorneo=" + torneo +";";
+            return "DELETE FROM torneo WHERE IdTorneo=" + torneo + ";";
+        }
+
+        public static string IscriviSqATorneo(int idSquadra, int idTorneo)
+        {
+            return "INSERT INTO iscrizione VALUES (" + idTorneo + "," + idSquadra + "); ";
         }
     }
 }

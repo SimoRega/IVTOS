@@ -102,6 +102,8 @@ namespace IVTOS
             {
                 Queries.ExecuteOnly(QueryList.LasciaSquadra(myCF,idSquadra));
                 System.Windows.Forms.MessageBox.Show("Sei uscito dalla squadra '" + nomeSquadra + "'");
+                dataGrid.ItemsSource = Queries.GetDataSet(QueryList.MostraMieSquadre(myCF)).Tables[0].DefaultView;
+
             }
         }
 
@@ -127,6 +129,9 @@ namespace IVTOS
             try
             {
                 Queries.ExecuteOnly(QueryList.EntraSquadra(myCF,idSquadra));
+                System.Windows.Forms.MessageBox.Show("Sei entrato nella Squadra " + nomeSquadra);
+                dataGrid.ItemsSource = Queries.GetDataSet(QueryList.MostraSqNonComplete(myCF)).Tables[0].DefaultView;
+
             }
             catch (Exception err)
             {
@@ -157,9 +162,15 @@ namespace IVTOS
                 return;
             }
 
-            IscrizioneSquadraTorneo iscrizione = new IscrizioneSquadraTorneo(idSquadra);
+            IscrizioneSquadraTorneo iscrizione = new IscrizioneSquadraTorneo(idSquadra,this);
             iscrizione.Show();
-            this.IsEnabled = false;
+            this.Visibility = Visibility.Hidden;
+            
+        }
+
+        private void btnCreaSquadra_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
