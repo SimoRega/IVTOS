@@ -133,6 +133,11 @@ namespace IVTOS
                 "limit 20; ";
         }
 
+        internal static string CreaSquadra(string nome)
+        {
+            return "INSERT INTO squadra VALUES('"+nome+"',IdSquadra,now())";
+        }
+
         public static string VisualizzaAziendeGiochi()
         {
             return "SELECT * FROM ivtos.azienda_videogioco;";
