@@ -55,6 +55,11 @@ namespace IVTOS
             return "SELECT * FROM ivtos.Arbitro;";
         }
 
+        internal static string VisualizzaSpeaker()
+        {
+            return "SELECT * FROM ivtos.speaker;";
+        }
+
         internal static string VisualizzaCoach()
         {
             return "SELECT * FROM ivtos.coach;";
@@ -69,7 +74,7 @@ namespace IVTOS
 
         internal static string VisualizzaVideogiochiTornei()
         {
-            return "SELECT videogioco.Nome, count(*) " +
+            return "SELECT videogioco.Nome, count(*) AS NumTorneiGiocati" +
                 "from videogioco join torneo on videogioco.nome = torneo.NomeVideogioco " +
                 "group by videogioco.Nome Order by count(*) desc " +
                 "Limit 3; ";
