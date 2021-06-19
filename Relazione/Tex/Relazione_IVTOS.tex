@@ -487,7 +487,41 @@ arena()
 
 \chapter{Progettazione Fisica}
 \section{Traduzione in SQL}
+\subsection*{(1) Aggiunta di un nuovo Player}
+\textcolor{blue}{INSERT INTO} player (CF, nome, cognomi, genere, mail, data\_di\_nascita, Nickname, Nome\_Stato)
+\textcolor{blue}{VALUES} (?,?,?,?,?,?,?,?);
 
+\subsection*{(2) Aggiunta di un videogioco giocato da un Player}
+\textcolor{blue}{INSERT INTO} gioca(NomeVideogioco, CF\_Player, PartiteVinte, PartiteGiocate)
+\textcolor{blue}{VALUES} (?,?,?,?);
+
+\subsection*{(3) Aggiunta di un nuovo Spettatore}
+\textcolor{blue}{INSERT INTO} spettatore(CF, nome, cognomi, genere, mail, data\_di\_nascita)
+\textcolor{blue}{VALUES} (?,?,?,?,?,?);
+
+\subsection*{(4) Creazione di una Squadra}
+\textcolor{blue}{INSERT INTO} squadra(Nome, IdSquadra, data\_creazione)
+\textcolor{blue}{VALUES} (?,IdSquadra,?);
+
+\subsection*{(5) Aggiunta di un Player ad una Squadra}
+\textcolor{blue}{INSERT INTO} adesione\_player\_squadra(IdSquadra, CF\_Player, DataInizio, DataFine)
+\textcolor{blue}{VALUES} (?,?,?,null);
+
+\subsection*{(6) Creazione di un Torneo}
+\textcolor{blue}{INSERT INTO} torneo(IdTorneo, DataInizio, DataFine, NmaxIscrizioni, IdSponsor, NomeVideogioco,IdArena,IdSquadraVincitrice)
+\textcolor{blue}{VALUES} (IdTorneo,?,?,?,?,?,?,?);
+
+\subsection*{(7) Iscrizione di una Squadra ad un Torneo}
+\textcolor{blue}{INSERT INTO} iscrizione(IdTorneo, IdSquadra)
+\textcolor{blue}{VALUES} (?,?);
+
+\subsection*{(8) Creazione di nuove Partite in un Torneo}
+\textcolor{blue}{INSERT INTO} partita(IdSquadra1, IdSquadra2, DataOra, CF\_Arbitro,CF\_Speaker, IdSquadraVincitrice, IdTorneo)
+\textcolor{blue}{VALUES} (?,?,?,?,?,?,?);
+
+\subsection*{(9) Acquisto di un nuovo Biglietto}
+\textcolor{blue}{INSERT INTO} acquisto\_biglietto(IdArena, IdSquadra1, IdSquadra2, DataOra, CF\_Spettatore)
+\textcolor{blue}{VALUES} (?,?,?,?,?);
 
 \chapter{Progettazione dell'Applicazione}
 \section{Descrizione della scelta del linguaggio e del DBMS}
