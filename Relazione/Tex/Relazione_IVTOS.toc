@@ -8,8 +8,8 @@
 \contentsline {section}{\numberline {3.1}Anteprima sviluppo delle "Persone"}{7}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Anteprima sviluppo dei "Videogiochi"}{7}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Anteprima sviluppo delle "Partite"}{8}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Anteprima sviluppo dei "Tornei"}{8}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Schema Generale}{9}{section.3.5}%
+\contentsline {section}{\numberline {3.4}Anteprima sviluppo dei "Tornei"}{10}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Schema Generale}{11}{section.3.5}%
 \contentsline {chapter}{\numberline {4}Progettazione Logica}{13}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Stima del volume dei dati}{14}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Descrizione delle operazioni principali e stima della loro frequenza}{15}{section.4.2}%

@@ -128,34 +128,49 @@ Se necessario ogni entità figlia potrà aggiungere agli attributi del padre i p
 \end{figure}
 
 \section{Anteprima sviluppo dei "Videogiochi"}
-In questa sezione verrà modellato l'aspetto di Videogioco. 
-Il Videogioco ha un Nome, dal quale viene identificato, e una data di creazione.
- Esiste una relazione con una Azienda di Videogiochi la quale può creare più videogiochi.
+In questa sezione verrà modellato l'aspetto di \textbf{Videogioco}. 
+Il \textbf{Videogioco} ha un Nome, dal quale viene identificato, e una data di creazione.
+ Esiste una relazione con una \textbf{Azienda di Videogiochi} la quale può creare più Videogiochi.
  
- Ogni Videogioco ha la propria tipologia , ad esempio Sparatutto o Giochi di Carte. 
+ Ogni Videogioco ha la propria \textbf{Tipologia} , ad esempio Sparatutto o Giochi di Carte. 
  
- Abbiamo la necessità di salvarci ogni Player a quale e quanti Videogiochi gioca, memorizzando nel frattempo le sue Partite Vinte e le Partite Giocate (Nota Bene : questi due attributi si riferisco a statistiche personali relative all'avanzamento nel gioco, non sono collegate in nessun modo all'entità dell'E-R chiamata "Partita", quest'ultima si riferisce esclusivamente ad un match all'interno di un Torneo).
+ Abbiamo la necessità di salvarci ogni \textbf{Player} a quale e quanti Videogiochi \textbf{Gioca}, memorizzando nel frattempo le sue Partite Vinte e le Partite Giocate \textit{(\underline{Nota Bene} : questi due attributi si riferisco a statistiche personali relative all'avanzamento nel gioco, non sono collegate in nessun modo all'entità dell'E-R chiamata "Partita", quest'ultima si riferisce esclusivamente ad un match all'interno di un Torneo).}
 \begin{figure}[!htb]
 	\centerline{\includegraphics[scale=0.55]{img/ER_Videogiochi.png}}
 	\caption{Schema ER che espone le principali caratteristiche dei Videogiochi}
 	\label{img:ER_Videogiochi}
 \end{figure}
 \section{Anteprima sviluppo delle "Partite"}
-bla bla bla
+In questa sezione verrà modellato l'aspetto di \textbf{Partita}.
+L'entità \textbf{Partita} è probabilmente uno degli elementi più importanti e centrali di tutto lo schema E-R. Ogni \textbf{Partita} è identificata univocamente dalle due \textbf{Squadre} che parteciperanno all'incontro e dalla Data e Ora in cui si svolgerà.
+
+Di ogni partita vogliamo memorizzarci ovviamente l'id delle due squadre che vi partecipano e anche l'id della \textbf{Squadra} che vincerà effettivamente lo scontro.
+
+Ad ogni Partita inoltre partecipano due figure professionali, figlie della classe \textbf{Persona}: l'\textbf{Arbitro} che regolamenterà l'incontro e uno \textbf{Speaker} che lo commenterà.\\
+
+Inoltre ogni \textbf{Partita} potrà avere degli Spettatori previo acquisto di un \textbf{Biglietto}. L'entità \textbf{Biglietto} è un template generale che associa ad una \textbf{Partita} un costo; lo \textbf{Spettatore} invece comprerà un biglietto effettivamente acquistabile, ovvero \textbf{AcquistoBiglietto}, che associa un \textbf{Biglietto} ad un unico \textbf{Spettatore}.
 \begin{figure}[!htb]
 	\centerline{\includegraphics[scale=0.6]{img/ER_Partite.png}}
 	\caption{Schema ER che espone le principali caratteristiche delle Partite}
 	\label{img:ER_Partite}
 \end{figure}
 \section{Anteprima sviluppo dei "Tornei"}
-bla bla bla
+In questa sezione verrà modellato l'aspetto di \textbf{Torneo}.
+L'entità \textbf{Torneo} è il fulcro di tutto il nostro sistema informativo. Tutte le altre entità si collegano al Torneo in modo diretto o indiretto. 
+
+Ogni \textbf{Torneo} è identificato da un numero progressivo e si vuole memorizzare: Data di inizio, Data di fine e il numero massimo di squadre che si possono iscrivere al torneo; vogliamo anche sapere su che \textbf{Videogioco} si baserà il Torneo (l'interno \textbf{Torneo} si baserà interamente su un unico Videogioco).
+
+Ogni \textbf{Torneo} si svolge in una \textbf{Arena} situata in una città e può prevedere il finanziamento da parte di una \textbf{Sponsor}.
+
+Ad ogni \textbf{Torneo} possono iscriversi più \textbf{Squadre} e si vuole memorizzare in particolare quale tra le due vincerà.
+
 \begin{figure}[!htb]
 	\centerline{\includegraphics[scale=0.6]{img/ER_Tornei.png}}
 	\caption{Schema ER che espone le principali caratteristiche dei Tornei}
 	\label{img:ER_Tornei}
 \end{figure}
 \section{Schema Generale}
-bla bla bla
+Di seguito verrà riportato lo schema concettuale generale, contenente tutte le entità e associazioni prima citate nelle varie sezioni superiori con l'aggiunta di entità secondarie di minor importanza.
 \begin{figure}[!htb]
 	\centerline{\includegraphics[scale=0.55]{img/ER_Generale.png}}
 	\caption{Schema ER che espone lo schema concettuale finale}
@@ -472,7 +487,41 @@ arena()
 
 \chapter{Progettazione Fisica}
 \section{Traduzione in SQL}
+\subsection*{(1) Aggiunta di un nuovo Player}
+\textcolor{blue}{INSERT INTO} player (CF, nome, cognomi, genere, mail, data\_di\_nascita, Nickname, Nome\_Stato)
+\textcolor{blue}{VALUES} (?,?,?,?,?,?,?,?);
 
+\subsection*{(2) Aggiunta di un videogioco giocato da un Player}
+\textcolor{blue}{INSERT INTO} gioca(NomeVideogioco, CF\_Player, PartiteVinte, PartiteGiocate)
+\textcolor{blue}{VALUES} (?,?,?,?);
+
+\subsection*{(3) Aggiunta di un nuovo Spettatore}
+\textcolor{blue}{INSERT INTO} spettatore(CF, nome, cognomi, genere, mail, data\_di\_nascita)
+\textcolor{blue}{VALUES} (?,?,?,?,?,?);
+
+\subsection*{(4) Creazione di una Squadra}
+\textcolor{blue}{INSERT INTO} squadra(Nome, IdSquadra, data\_creazione)
+\textcolor{blue}{VALUES} (?,IdSquadra,?);
+
+\subsection*{(5) Aggiunta di un Player ad una Squadra}
+\textcolor{blue}{INSERT INTO} adesione\_player\_squadra(IdSquadra, CF\_Player, DataInizio, DataFine)
+\textcolor{blue}{VALUES} (?,?,?,null);
+
+\subsection*{(6) Creazione di un Torneo}
+\textcolor{blue}{INSERT INTO} torneo(IdTorneo, DataInizio, DataFine, NmaxIscrizioni, IdSponsor, NomeVideogioco,IdArena,IdSquadraVincitrice)
+\textcolor{blue}{VALUES} (IdTorneo,?,?,?,?,?,?,?);
+
+\subsection*{(7) Iscrizione di una Squadra ad un Torneo}
+\textcolor{blue}{INSERT INTO} iscrizione(IdTorneo, IdSquadra)
+\textcolor{blue}{VALUES} (?,?);
+
+\subsection*{(8) Creazione di nuove Partite in un Torneo}
+\textcolor{blue}{INSERT INTO} partita(IdSquadra1, IdSquadra2, DataOra, CF\_Arbitro,CF\_Speaker, IdSquadraVincitrice, IdTorneo)
+\textcolor{blue}{VALUES} (?,?,?,?,?,?,?);
+
+\subsection*{(9) Acquisto di un nuovo Biglietto}
+\textcolor{blue}{INSERT INTO} acquisto\_biglietto(IdArena, IdSquadra1, IdSquadra2, DataOra, CF\_Spettatore)
+\textcolor{blue}{VALUES} (?,?,?,?,?);
 
 \chapter{Progettazione dell'Applicazione}
 \section{Descrizione della scelta del linguaggio e del DBMS}

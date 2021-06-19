@@ -200,6 +200,7 @@ namespace IVTOS
             return "INSERT INTO iscrizione VALUES (" + idTorneo + "," + idSquadra + "); ";
         }
 
+<<<<<<< HEAD
         public static string NomeArenaInCuiSiSvolgePartita(string idSquadra1, string idSquadra2, string data)
         {
             return "SELECT A.NomeArena FROM(partita P join torneo T on P.IdTorneo = T.IdTorneo) join Arena A on T.IdArena = A.IdArena " +
@@ -236,6 +237,13 @@ namespace IVTOS
         public static string CompraBiglietto(string idSquadra1, string idSquadra2, string data, string idArena, string cf)
         {
             return "INSERT INTO acquisto_biglietto VALUES (" + idArena + "," + idSquadra1 + "," + idSquadra2 + ",'" + data + "','" + cf + "');";
+=======
+        public static string MostraMembriSquadra(int idSquadra)
+        {
+            return "SELECT  player.cognome, player.nome, player.Nickname " +
+                "from(adesione_player_squadra join squadra on adesione_player_squadra.IdSquadra = squadra.IdSquadra) join player on adesione_player_squadra.CF_Player = player.CF " +
+                "where adesione_player_squadra.DataFine is null and squadra.IdSquadra = " + idSquadra;
+>>>>>>> 813ca944908a7ca57c719665a4bb91d5dd19862b
         }
     }
 }

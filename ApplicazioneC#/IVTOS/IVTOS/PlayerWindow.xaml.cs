@@ -48,6 +48,9 @@ namespace IVTOS
 
             btnIscriviSqTorneo.IsEnabled = true;
             btnIscriviSqTorneo.Visibility = Visibility.Visible;
+
+            btnMostraMembri.IsEnabled = true;
+            btnMostraMembri.Visibility = Visibility.Visible;
         }
         private void btnMostraSquadre_Click(object sender, RoutedEventArgs e)
         {
@@ -68,6 +71,8 @@ namespace IVTOS
             btnIscriviSqTorneo.IsEnabled = false;
             btnIscriviSqTorneo.Visibility = Visibility.Hidden;
 
+            btnMostraMembri.IsEnabled = false;
+            btnMostraMembri.Visibility = Visibility.Hidden;
         }
 
 
@@ -116,7 +121,7 @@ namespace IVTOS
             }
             catch
             {
-                System.Windows.Forms.MessageBox.Show("Seleziona una squadra da abbandonare");
+                System.Windows.Forms.MessageBox.Show("Seleziona una squadra");
                 return;
             }
 
@@ -183,6 +188,28 @@ namespace IVTOS
 
 
             }
+
+        }
+
+        private void btnMostraMembri_Click(object sender, RoutedEventArgs e)
+        {
+            int idSquadra;
+            string nomeSquadra;
+            try
+            {
+
+                DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
+                DataRow DR = (DataRow)DRV.Row;
+                idSquadra = (int)DR.ItemArray[1];
+                nomeSquadra = DR.ItemArray[0].ToString();
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("Seleziona una squadra");
+                return;
+            }
+
+            dataGrid.ItemsSource = Queries.GetDataSet(QueryList.MostraMembriSquadra(idSquadra)).Tables[0].DefaultView;
 
         }
     }
