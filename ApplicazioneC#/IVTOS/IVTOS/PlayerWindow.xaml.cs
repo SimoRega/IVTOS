@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace IVTOS
 {
@@ -31,13 +32,6 @@ namespace IVTOS
         public Dictionary<string, string> queryList = new Dictionary<string, string>();
 
 
-        private void LoadCmbBox()
-        {
-            foreach (var p in queryList)
-            {
-                cmb_Queries.Items.Add(p.Key);
-            }
-        }
 
 
         private void btn_esegui_Click(object sender, RoutedEventArgs e)
@@ -100,7 +94,7 @@ namespace IVTOS
 
             if (System.Windows.Forms.MessageBox.Show(message, caption, MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                Queries.ExecuteOnly(QueryList.LasciaSquadra(myCF,idSquadra));
+                Queries.ExecuteOnly(QueryList.LasciaSquadra(myCF, idSquadra));
                 System.Windows.Forms.MessageBox.Show("Sei uscito dalla squadra '" + nomeSquadra + "'");
                 dataGrid.ItemsSource = Queries.GetDataSet(QueryList.MostraMieSquadre(myCF)).Tables[0].DefaultView;
 
@@ -118,7 +112,7 @@ namespace IVTOS
                 DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
                 DataRow DR = (DataRow)DRV.Row;
                 nomeSquadra = DR.ItemArray[0].ToString();
-                idSquadra =int.Parse( Queries.GetOneField("SELECT IdSquadra FROM squadra WHERE nome = '" + nomeSquadra + "';"));
+                idSquadra = int.Parse(Queries.GetOneField("SELECT IdSquadra FROM squadra WHERE nome = '" + nomeSquadra + "';"));
             }
             catch
             {
@@ -128,7 +122,7 @@ namespace IVTOS
 
             try
             {
-                Queries.ExecuteOnly(QueryList.EntraSquadra(myCF,idSquadra));
+                Queries.ExecuteOnly(QueryList.EntraSquadra(myCF, idSquadra));
                 System.Windows.Forms.MessageBox.Show("Sei entrato nella Squadra " + nomeSquadra);
                 dataGrid.ItemsSource = Queries.GetDataSet(QueryList.MostraSqNonComplete(myCF)).Tables[0].DefaultView;
 
@@ -162,14 +156,33 @@ namespace IVTOS
                 return;
             }
 
-            IscrizioneSquadraTorneo iscrizione = new IscrizioneSquadraTorneo(idSquadra,this);
+            IscrizioneSquadraTorneo iscrizione = new IscrizioneSquadraTorneo(idSquadra, this);
             iscrizione.Show();
             this.Visibility = Visibility.Hidden;
-            
+
         }
 
         private void btnCreaSquadra_Click(object sender, RoutedEventArgs e)
         {
+            int idSquadra;
+            string res = Interaction.InputBox("Inserisci il nome della squadra che vuoi creare?", "Creazione squadra", "Default Text");
+            if (res != "")
+            {
+                try
+                {
+                    Queries.ExecuteOnly(QueryList.CreaSquadra(res));
+                    idSquadra = int.Parse(Queries.GetOneField("SELECT IdSquadra FROM squadra WHERE nome = '" + res + "';"));
+                    Queries.ExecuteOnly(QueryList.EntraSquadra(myCF, idSquadra));
+                    System.Windows.Forms.MessageBox.Show("Hai creato la squadra " + res);
+                }
+                catch
+                {
+
+                }
+
+
+
+            }
 
         }
     }

@@ -57,6 +57,7 @@ namespace IVTOS
             {
                 Queries.ExecuteOnly(QueryList.IscriviSqATorneo(idSquadra, idTorneo));
                 MessageBox.Show("Squadra iscritta con successo");
+                this.Close();
             }
             catch (Exception ex)
             {
