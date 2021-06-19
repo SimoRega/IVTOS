@@ -55,6 +55,11 @@ namespace IVTOS
             return "SELECT * FROM ivtos.Arbitro;";
         }
 
+        internal static string VisualizzaSpeaker()
+        {
+            return "SELECT * FROM ivtos.speaker;";
+        }
+
         internal static string VisualizzaCoach()
         {
             return "SELECT * FROM ivtos.coach;";
@@ -69,7 +74,7 @@ namespace IVTOS
 
         internal static string VisualizzaVideogiochiTornei()
         {
-            return "SELECT videogioco.Nome, count(*) " +
+            return "SELECT videogioco.Nome, count(*) AS NumTorneiGiocati" +
                 "from videogioco join torneo on videogioco.nome = torneo.NomeVideogioco " +
                 "group by videogioco.Nome Order by count(*) desc " +
                 "Limit 3; ";
@@ -173,6 +178,11 @@ namespace IVTOS
             return "SELECT torneo.idtorneo as IdTorneo, torneo.datainizio AS DataDiInizio, torneo.NomeVideogioco, sponsor.Nome AS Sponsor " +
                 "from(iscrizione join torneo on iscrizione.Idtorneo = torneo.idtorneo) join sponsor on torneo.IdSponsor = sponsor.idsponsor " +
                 "where IdSquadra = " + torneo + "";
+        }
+        public static string VisualizzaPartiteTorneo(string torneo)
+        {
+            return "SELECT IdSquadra1 as \"SQUADRA OSPITE\", IdSquadra2 as \"SQUADRA CASA\"," +
+                " DataOra as \"DATA E ORA\" FROM ivtos.partita WHERE partita.IdTorneo = "+ torneo + "; ";
         }
         public static string TerminaTorneo(string torneo)
         {

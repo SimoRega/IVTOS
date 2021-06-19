@@ -64,8 +64,10 @@ namespace IVTOS
         {
             queryList.Add("Visualizza tutti i Player", QueryList.VisualizzaPlayer());
             queryList.Add("Visualizza tutti i Videogiochi", QueryList.VisualizzaVideogiochi());
+            queryList.Add("Visualizza tutte le Squadre", QueryList.VisualizzaSquadre());
             queryList.Add("Visualizza tutti i Coach", QueryList.VisualizzaCoach());
             queryList.Add("Visualizza tutti gli Arbitri", QueryList.VisualizzaArbitri());
+            queryList.Add("Visualizza tutti gli Speaker", QueryList.VisualizzaSpeaker());
             queryList.Add("Visualizza tutte le Aziende di Videogiochi", QueryList.VisualizzaAziendeGiochi());
             queryList.Add("Visualizza tutti gli Stati", QueryList.VisualizzaStati());
             queryList.Add("Visualizza tutte le Arene", QueryList.VisualizzaArena());
