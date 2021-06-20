@@ -208,7 +208,7 @@ Di seguito verrà riportato lo schema concettuale generale, contenente tutte le 
 	\hline
 	Coach & E & 50.000\\
 	\hline
-	Adesione Player Squadra& E & 150.000\\ 
+	Adesione Player Squadra& E & 600.000\\ 
 	\hline
 	Adesione Coach Squadra& E & 75.000\\ 
 	
@@ -467,51 +467,51 @@ senza la ridondanza sul numero di biglietti venduti, leggo il costo del bigliett
 \end{center}
 \section{Traduzione di entità e associazioni in relazioni}
 
-acquisto\_biglietto((\underline{IdArena}, \underline{IdSquadra1}, \underline{IdSquadra2}, \underline{DataOra}) : Biglietto, \underline{CF\_Spettatore}) \\
+ACQUISTO\_BIGLIETTO((\underline{IdArena}, \underline{IdSquadra1}, \underline{IdSquadra2}, \underline{DataOra}) : BIGLIETTO, \underline{CF\_Spettatore}) \\
 
-adesione\_coach\_squadra(\underline{IdSquadra}: squadra, \underline{CF\_Coach} : coach, \underline{DataInizio}, DataFine*) \\
+\noindent ADESIONE\_COACH\_SQUADRA(\underline{IdSquadra}: SQUADRA, \underline{CF\_Coach} : COACH, \underline{DataInizio}, DataFine*) \\
 
-adesione\_player\_squadra(\underline{IdSquadra}: Squadra, \underline{CF\_Player}: Player, \underline{DataInizio}, DataFine*) \\
+\noindent ADESIONE\_PLAYER\_SQUADRA(\underline{IdSquadra}: SQUADRA, \underline{CF\_Player}: PLAYER, \underline{DataInizio}, DataFine*) \\
 
-arbitro(\underline{CF}, nome, cognome, genere, mail data\_di\_nascita, PartiteArbitrate) \\
+\noindent ARBITRO(\underline{CF}, nome, cognome, genere, mail data\_di\_nascita, PartiteArbitrate) \\
 
-arena(\underline{IdArena}, NomeArena, Capienza, (NomeStato, NomeCitta): Città) \\
+\noindent ARENA(\underline{IdArena}, NomeArena, Capienza, (NomeStato, NomeCitta): CITTÀ) \\
 
-azienda videogioco(nome, \underline{partitaIVA}) \\
+\noindent AZIENDA\_VIDEOGIOCO(nome, \underline{partitaIVA}) \\
 
-biglietto(\underline{IdArena}, \underline{IdSquadra1}, \underline{IdSquadra2}, \underline{DataOra}, Costo) \\
+\noindent BIGLIETTO(\underline{IdArena} : ARENA, (\underline{IdSquadra1}, \underline{IdSquadra2}, \underline{DataOra}) : PARTITA, Costo) \\
 
-città(\underline{NomeStato}: stato, \underline{Nome}, Superficie, NumAbitanti) \\
+\noindent CITTÀ(\underline{NomeStato}: STATO, \underline{Nome}, Superficie, NumAbitanti) \\
 
-coach(\underline{CF}, nome, cognome, genere, mail, data\_di\_nascita) \\
+\noindent COACH(\underline{CF}, nome, cognome, genere, mail, data\_di\_nascita) \\
 
-continente(\underline{Nome}) \\
+\noindent CONTINENTE(\underline{Nome}) \\
 
-gioca(\underline{NomeVideogioco} : Videogioco, \underline{CF\_Player} : Player, PartiteVinte, PartiteGiocate) \\
+\noindent GIOCA(\underline{NomeVideogioco} : VIDEOGIOCO, \underline{CF\_Player} : PLAYER, PartiteVinte, PartiteGiocate) \\
 
-iscrizione(\underline{IdTorneo} : Torneo, \underline{IdSquadra} : Squadra)
+\noindent ISCRIZIONE(\underline{IdTorneo} : TORNEO, \underline{IdSquadra} : SQUADRA) \\
 
-partita((\underline{IdSquadra2}, \underline{IdSquadra1}) : Squadra, \underline{DataOra}, CF\_Arbitro : Arbitro, CF\_Speaker : Speaker, IdSquadraVincitrice* : Squadra, IdTorneo : Torneo) \\
+\noindent PARTITA((\underline{IdSquadra2}, \underline{IdSquadra1}) : SQUADRA, \underline{DataOra}, CF\_Arbitro : ARBITRO, CF\_Speaker : SPEAKER, IdSquadraVincitrice* : SQUADRA, IdTorneo : TORNEO) \\
 
-player(\underline{CF}, nome, cognome, genere, mail, data\_di\_nascita, Nickname, Nome\_Stato: stato) \\
+\noindent PLAYER(\underline{CF}, nome, cognome, genere, mail, data\_di\_nascita, Nickname, Nome\_Stato: STATO) \\
 
-riguarda(\underline{IdSquadra} : squadra, \underline{NomeVideogioco} : videogioco) \\
+\noindent RIGUARDA(\underline{IdSquadra} : SQUADRA, \underline{NomeVideogioco} : VIDEOGIOCO) \\
 
-speaker(\underline{CF}, nome, cognome, genere, mail, data\_di\_nascita, Nickname, PartiteCommentate) \\
+\noindent SPEAKER(\underline{CF}, nome, cognome, genere, mail, data\_di\_nascita, Nickname, PartiteCommentate) \\
 
-spettatore(\underline{CF}, nome, cognome, genere, mail, data\_di\_nascita) \\
+\noindent SPETTATORE(\underline{CF}, nome, cognome, genere, mail, data\_di\_nascita) \\
 
-sponsor(\underline{IdSponsor}, Nome) \\
+\noindent SPONSOR(\underline{IdSponsor}, Nome) \\
 
-squadra(nome, \underline{IdSquadra}, data\_creazione) \\
+\noindent SQUADRA(nome, \underline{IdSquadra}, data\_creazione) \\
 
-stato(\underline{Nome}, Superficie, NumAbitanti, NomeContinente : continente) \\
+\noindent STATO(\underline{Nome}, Superficie, NumAbitanti, NomeContinente : CONTINENTE) \\
 
-tipologia\_gioco(\underline{IdTipologia}, Tipo) \\
+\noindent TIPOLOGIA\_GIOCO(\underline{IdTipologia}, Tipo) \\
 
-torneo(\underline{IdTorneo}, DataInizio, DataFine*, NMaxIscrizioni, IdSponsor* : Sponsor, NomeVideoGioco : Videogioco, IdArena : Arena, IdSquadraVincitrice* : Squadra) \\
+\noindent TORNEO(\underline{IdTorneo}, DataInizio, DataFine*, NMaxIscrizioni, IdSponsor* : SPONSOR, NomeVideoGioco : VIDEOGIOCO, IdArena : ARENA, IdSquadraVincitrice* : SQUADRA) \\
 
-videogioco(\underline{Nome}, DataCreazione, TipologiaGioco : tipologia\_gioco, PartitaIVAAzienda : azienda\_videogioco) \\
+\noindent VIDEOGIOCO(\underline{Nome}, DataCreazione, TipologiaGioco : TIPOLOGIA\_GIOCO, PartitaIVAAzienda : AZIENDA\_VIDEOGIOCO) \\
 
 
 
