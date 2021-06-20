@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="SpettatoreWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="371" Margin="10,10,0,0" VerticalAlignment="Top" Width="397" />
-        <Button x:Name="btn_partite_torneo" Content="Visualizza Partite" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="422,118,0,0" Height="59" Click="btn_partite_torneo_Click"/>
-        <Button x:Name="MostraTornei" Content="Visualizza Tornei" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="422,21,0,0" Height="57" Click="MostraTornei_Click"/>
-        <Button x:Name="btnCompraBiglietto" Content="Compra Biglietto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="422,215,0,0" Height="55" Click="btnCompraBiglietto_Click"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="501" />
+        <Button x:Name="btn_partite_torneo" Content="Visualizza Partite" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="532,108,0,0" Height="59" Click="btn_partite_torneo_Click"/>
+        <Button x:Name="MostraTornei" Content="Visualizza Tornei" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="532,26,0,0" Height="57" Click="MostraTornei_Click"/>
+        <Button x:Name="btnCompraBiglietto" Content="Compra Biglietto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="532,205,0,0" Height="61" Click="btnCompraBiglietto_Click"/>
+        <Button x:Name="btn_visualizzaBiglietti" Content="Visualizza Biglietti Acquistati" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="532,297,0,0" Height="58" Click="btn_visualizzaBiglietti_Click"/>
 
     </Grid>
 </Window>

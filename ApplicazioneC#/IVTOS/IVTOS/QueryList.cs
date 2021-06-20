@@ -233,8 +233,8 @@ namespace IVTOS
         }
         public static string IdArenaInCuiSiSvolgePartita(string idSquadra1, string idSquadra2, string data)
         {
-            return "SELECT A.IdArena FROM(partita P join torneo T on P.IdTorneo = T.IdTorneo) join Arena A on T.IdArena = A.IdArena " +
-                "WHERE P.IdSquadra1 = " + idSquadra1 +
+            return "SELECT T.IdArena FROM partita P, torneo T WHERE P.IdTorneo = T.IdTorneo "+
+                " AND P.IdSquadra1 = " + idSquadra1 +
                 " AND P.IdSquadra2 = " + idSquadra2 +
                 " AND P.DataOra = '" + data + "';";
         }
@@ -248,7 +248,7 @@ namespace IVTOS
 
         public static string PrezzoBiglietto(string idArena, string idSquadra1, string idSquadra2, string data)
         {
-            return "SELECT B.Costo FROM Arena A, biglietto B WHERE A.IdArena = B.IdArena AND A.IdArena =  " + idArena +
+            return "SELECT B.Costo FROM Arena A, biglietto B WHERE A.IdArena =  " + idArena + " AND A.IdArena = B.IdArena " +
                 " AND B.IdSquadra1 = " +  idSquadra1 + " AND B.IdSquadra2 = " + idSquadra2 + " AND B.DataOra = '" + data + "';";
         }
         public static string CompraBiglietto(string idSquadra1, string idSquadra2, string data, string idArena, string cf)
@@ -274,6 +274,11 @@ namespace IVTOS
         public static string VisualizzaBiglietti()
         {
             return "SELECT * FROM biglietto;";
+        }
+
+        public static string VisualizzaBigliettiAcquistati(string cf)
+        {
+            return "SELECT * FROM acquisto_biglietto WHERE CF_Spettatore = '" + cf + "';";
         }
     }
 }

@@ -37,6 +37,7 @@ namespace IVTOS
 
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaTorneiAttivi()).Tables[0].DefaultView;
             btn_partite_torneo.IsEnabled = true;
+            btnCompraBiglietto.IsEnabled = false;
             
         }
 
@@ -52,6 +53,7 @@ namespace IVTOS
             var torneo = DRV.Row.ItemArray[0].ToString();
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaPartiteTorneo(torneo)).Tables[0].DefaultView;
             btnCompraBiglietto.IsEnabled = true;
+            btn_partite_torneo.IsEnabled = false;
 
         }
 
@@ -63,8 +65,10 @@ namespace IVTOS
                 return;
             }
 
+            
             DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
             DRV = (DataRowView)dataGrid.SelectedItem;
+            
             var squadra1 = DRV.Row.ItemArray[0].ToString();
             var nomesquadra1 = DRV.Row.ItemArray[1].ToString();
             var squadra2 = DRV.Row.ItemArray[2].ToString();
@@ -73,21 +77,39 @@ namespace IVTOS
             string[] data= giorno.Split(' ');
             string[] cacca = data[0].Split('/');
             string bella = cacca[2] + "-" + cacca[1] + "-" + cacca[0];
+            var nomeArena = Queries.GetOneField(QueryList.NomeArenaInCuiSiSvolgePartita(squadra1, squadra2, bella));
+            var nomeStato = Queries.GetOneField(QueryList.StatoArenaInCuiSiSvolgePartita(squadra1, squadra2, bella));
+            var nomeCitta = Queries.GetOneField(QueryList.CittaArenaInCuiSiSvolgePartita(squadra1, squadra2, bella));
             var arena = Queries.GetOneField(QueryList.IdArenaInCuiSiSvolgePartita(squadra1, squadra2, bella));
+            var prezzo = Queries.GetOneField(QueryList.PrezzoBiglietto(arena, squadra1, squadra2, bella));
             string message = "Sei sicuro di voler comprare il biglietto per la partita del giorno " + bella + " fra la squadra " + nomesquadra1 + " e " + nomesquadra2
-                + " nell'arena " + Queries.GetOneField(QueryList.NomeArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + ", che si trova nello Stato di " +
-                Queries.GetOneField(QueryList.StatoArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + ", nella città di " +
-                Queries.GetOneField(QueryList.CittaArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + " al prezzo di " +
-                Queries.GetDataSet(QueryList.PrezzoBiglietto(arena, squadra1, squadra2, bella)).Tables[0].Rows[0].ItemArray[0];
+                + " nell'arena " + nomeArena + ", che si trova nello Stato di " + nomeStato +
+                ", nella città di " + nomeCitta + " al prezzo di " + prezzo;
+                
             string caption = "Compra Biglietto";
 
             if (System.Windows.Forms.MessageBox.Show(message, caption, MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                Queries.ExecuteOnly(QueryList.CompraBiglietto(squadra1, squadra2, bella, arena, cf));
-                System.Windows.Forms.MessageBox.Show("Hai comprato il biglietto");
+                try
+                {
+                    Queries.ExecuteOnly(QueryList.CompraBiglietto(squadra1, squadra2, bella, arena, cf));
+                    System.Windows.Forms.MessageBox.Show("Hai comprato il biglietto");
+                }catch(Exception ex)
+                {
+                    if(ex.Message.Contains("Duplicate entry"))
+                    {
+                        System.Windows.Forms.MessageBox.Show("Hai già comprato questo biglietto");
+
+                    }
+                }
 
             }
 
+        }
+
+        private void btn_visualizzaBiglietti_Click(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaBigliettiAcquistati(cf)).Tables[0].DefaultView;
         }
     }
 }
