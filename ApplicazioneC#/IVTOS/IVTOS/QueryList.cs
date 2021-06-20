@@ -40,6 +40,11 @@ namespace IVTOS
 ;
         }
 
+        internal static string InsertBiglietto(string id1,string id2,string data,string idarena,string costo)
+        {
+            return "INSERT INTO biglietto VALUES();";
+        }
+
         public static string VisualizzaPlayer()
         {
             return "SELECT * FROM ivtos.player;";
@@ -145,6 +150,10 @@ namespace IVTOS
         public static string VisualizzaSquadre()
         {
             return "SELECT * FROM ivtos.squadra;";
+        }
+        public static string VisualizzaChiavePartite()
+        {
+            return "SELECT idsquadra1, idsquadra2, dataora  FROM ivtos.squadra;";
         }
         public static string VisualizzaStati()
         {
