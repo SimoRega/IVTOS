@@ -39,12 +39,23 @@ namespace IVTOS
 
             LoadQuery();
             LoadComboBox();
+            CreaBiglietti();
+        }
+
+        private void CreaBiglietti()
+        {
+            Random rnd = new Random();
+            DataSet setPartite = Queries.GetDataSet(QueryList.VisualizzaChiavePartite());
+            foreach(DataRow elem in setPartite.Tables[0].Rows)
+            {
+                string idArena = Queries.GetOneField(QueryList.IdArenaInCuiSiSvolgePartita(elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), elem.ItemArray[2].ToString()));
+                Queries.ExecuteOnly(QueryList.InsertBiglietto(elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), elem.ItemArray[2].ToString(),idArena,rnd.Next(30,200).ToString()));
+            }
         }
 
         private void LoadComboBox()
         {
             dataGrid.IsReadOnly = true;
-            btnElimina.IsEnabled = false;
             btnAvanti.IsEnabled = false;
             btnSelezioneTorneo.IsEnabled = false;
             btnSelezioneSquadra.IsEnabled = false;
@@ -108,33 +119,28 @@ namespace IVTOS
             Queries.ExecuteOnly(QueryList.TerminaTorneo(idTorneo.ToString()));
             dataGrid.ItemsSource = Queries.GetDataSet(queryList["Visualizza tutti i Tornei"]).Tables[0].DefaultView;
             lastQuery = queryList["Visualizza tutti i Tornei"];
-            btnElimina.IsEnabled = false;
         }
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lastQuery == QueryList.VisualizzaTornei())
             {
-                btnElimina.IsEnabled = true;
                 btnTerminaTorneo.IsEnabled = true;
                 btnAvanti.IsEnabled = false;
             }
             else
             {
-                btnElimina.IsEnabled = false;
                 btnTerminaTorneo.IsEnabled = false;
                 btnAvanti.IsEnabled = false;
             }
 
             if (lastQuery == QueryList.VisualizzaTorneiAttivi())
             {
-                btnElimina.IsEnabled = true;
                 btnTerminaTorneo.IsEnabled = true;
                 btnAvanti.IsEnabled = false;
             }
             else
             {
-                btnElimina.IsEnabled = false;
                 btnTerminaTorneo.IsEnabled = false;
                 btnAvanti.IsEnabled = false;
             }
@@ -246,7 +252,6 @@ namespace IVTOS
             dataGrid.ItemsSource = Queries.GetDataSet(queryList["Visualizza tutti i Tornei"]).Tables[0].DefaultView;
             lastQuery = queryList["Visualizza tutti i Tornei"];
             btnTerminaTorneo.IsEnabled = false;
-            btnElimina.IsEnabled = false;
         }
 
         private void btnEseguiStatistiche_Click(object sender, RoutedEventArgs e)
