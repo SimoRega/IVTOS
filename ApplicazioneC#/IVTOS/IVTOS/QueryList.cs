@@ -190,11 +190,6 @@ namespace IVTOS
                 "SET DataFine = now() " +
                 "WHERE idtorneo = " + torneo + "; ";
         }
-        public static string EliminaTorneo(string torneo)
-        {
-            return "DELETE FROM torneo WHERE IdTorneo=" + torneo + ";";
-        }
-
         public static string IscriviSqATorneo(int idSquadra, int idTorneo)
         {
             return "INSERT INTO iscrizione VALUES (" + idTorneo + "," + idSquadra + "); ";
