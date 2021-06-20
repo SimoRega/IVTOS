@@ -233,10 +233,9 @@ namespace IVTOS
         }
         public static string IdArenaInCuiSiSvolgePartita(string idSquadra1, string idSquadra2, string data)
         {
-            return "SELECT T.IdArena FROM partita P, torneo T WHERE P.IdTorneo = T.IdTorneo "+
-                " AND P.IdSquadra1 = " + idSquadra1 +
-                " AND P.IdSquadra2 = " + idSquadra2 +
-                " AND P.DataOra = '" + data + "';";
+            return "select a.idarena " +
+                "from partita p join torneo t on p.idtorneo = t.idtorneo join arena a on t.idarena = a.idarena " +
+                "where idsquadra1 = "+idSquadra1+" and idsquadra2 = "+idSquadra2+ " and dataora = '" + data + "';";
         }
         public static string CapienzaInCuiSiSvolgePartita(string idSquadra1, string idSquadra2, string data)
         {
