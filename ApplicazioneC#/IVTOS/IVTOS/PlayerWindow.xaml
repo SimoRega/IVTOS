@@ -5,18 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IVTOS"
         mc:Ignorable="d"
-        Title="PlayerWindow" Height="486.453" Width="852.793">
+        Title="PlayerWindow" Height="699.453" Width="730.293">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="347" Margin="10,41,0,0" VerticalAlignment="Top" Width="301" ColumnWidth="*"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="617" Margin="10,41,0,0" VerticalAlignment="Top" Width="411" ColumnWidth="*"/>
         <Label x:Name="lbl_Welcome" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="301" FontWeight="Bold"/>
-        <Button x:Name="btnMostraMieSquadre" Content="Mostra le mie squadre" HorizontalAlignment="Left" Margin="316,41,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnMostraMieSquadre_Click"/>
-        <Button x:Name="btnAbbandonaSq" Content="Abbandona Squadra" HorizontalAlignment="Left" Margin="316,344,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnAbbandonaSq_Click"/>
-        <Button x:Name="btnMostraSquadre" Content="Mostra le squadre &#xD;&#xA;non complete&#xD;&#xA;" HorizontalAlignment="Left" Margin="457,41,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnMostraSquadre_Click"/>
-        <Button x:Name="btnEntraSq" Content="Entra nella squadra" HorizontalAlignment="Left" Margin="457,90,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnEntraSq_Click"/>
-        <Button x:Name="btnIscriviSqTorneo" Content="Iscrivi squadra &#xD;&#xA;ad un tornero" HorizontalAlignment="Left" Margin="316,90,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnIscriviSqTorneo_Click"/>
-        <Button x:Name="btnCreaSquadra" Content="Crea nuova squadra" HorizontalAlignment="Left" Margin="596,41,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnCreaSquadra_Click"/>
-        <Button x:Name="btnMostraMembri" Content="Mostra membri" HorizontalAlignment="Left" Margin="316,139,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnMostraMembri_Click"/>
-        <Button x:Name="btnMostraProssimaPartita" Content="Mostra prossima &#xD;&#xA;partita" HorizontalAlignment="Left" Margin="316,188,0,0" VerticalAlignment="Top" Width="125" Height="44" HorizontalContentAlignment="Center" Click="btnMostraProssimaPartita_Click"/>
+        <Button x:Name="btnMostraMieSquadre" Content="Mostra le mie squadre" HorizontalAlignment="Left" Margin="456,67,0,0" VerticalAlignment="Top" Width="200" Height="20" Click="btnMostraMieSquadre_Click"/>
+        <Button x:Name="btnAbbandonaSq" Content="Abbandona Squadra" HorizontalAlignment="Left" Margin="456,198,0,0" VerticalAlignment="Top" Width="200" Height="20" Click="btnAbbandonaSq_Click"/>
+        <Button x:Name="btnMostraSquadre" Content="Mostra le squadre non complete&#xA;" HorizontalAlignment="Left" Margin="456,287,0,0" VerticalAlignment="Top" Width="200" Height="21" Click="btnMostraSquadre_Click"/>
+        <Button x:Name="btnEntraSq" Content="Entra nella squadra" HorizontalAlignment="Left" Margin="456,313,0,0" VerticalAlignment="Top" Width="200" Height="21" Click="btnEntraSq_Click"/>
+        <Button x:Name="btnIscriviSqTorneo" Content="Iscrivi squadra ad un tornero" HorizontalAlignment="Left" Margin="456,93,0,0" VerticalAlignment="Top" Width="200" Height="20" Click="btnIscriviSqTorneo_Click"/>
+        <Button x:Name="btnCreaSquadra" Content="Crea nuova squadra" HorizontalAlignment="Left" Margin="456,387,0,0" VerticalAlignment="Top" Width="200" Height="21" Click="btnCreaSquadra_Click"/>
+        <Button x:Name="btnMostraMembri" Content="Mostra membri" HorizontalAlignment="Left" Margin="456,119,0,0" VerticalAlignment="Top" Width="200" Height="20" Click="btnMostraMembri_Click"/>
+        <Button x:Name="btnMostraProssimaPartita" Content="Mostra prossima partita" HorizontalAlignment="Left" Margin="456,145,0,0" VerticalAlignment="Top" Width="200" Height="20" HorizontalContentAlignment="Center" Click="btnMostraProssimaPartita_Click"/>
+        <GroupBox Header="Entra in una nuova squadra" HorizontalAlignment="Left" Height="91" Margin="426,262,0,0" VerticalAlignment="Top" Width="259"/>
+        <GroupBox Header="Le mie squadre" HorizontalAlignment="Left" Height="194" Margin="426,41,0,0" VerticalAlignment="Top" Width="259"/>
 
     </Grid>
 </Window>

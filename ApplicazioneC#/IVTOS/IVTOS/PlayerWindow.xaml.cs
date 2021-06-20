@@ -51,6 +51,9 @@ namespace IVTOS
 
             btnMostraMembri.IsEnabled = true;
             btnMostraMembri.Visibility = Visibility.Visible;
+
+            btnMostraProssimaPartita.IsEnabled = true;
+            btnMostraProssimaPartita.Visibility = Visibility.Visible;
         }
         private void btnMostraSquadre_Click(object sender, RoutedEventArgs e)
         {
@@ -73,6 +76,9 @@ namespace IVTOS
 
             btnMostraMembri.IsEnabled = false;
             btnMostraMembri.Visibility = Visibility.Hidden;
+
+            btnMostraProssimaPartita.IsEnabled = false;
+            btnMostraProssimaPartita.Visibility = Visibility.Hidden;
         }
 
 
