@@ -78,8 +78,7 @@ namespace IVTOS
                 + " nell'arena " + Queries.GetOneField(QueryList.NomeArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + ", che si trova nello Stato di " +
                 Queries.GetOneField(QueryList.StatoArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + ", nella città di " +
                 Queries.GetOneField(QueryList.CittaArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + " al prezzo di " +
-                Queries.GetOneField(QueryList.PrezzoBiglietto(arena))
-                ;
+                Queries.GetDataSet(QueryList.PrezzoBiglietto(arena, squadra1, squadra2, bella)).Tables[0].Rows[0].ItemArray[0];
             string caption = "Compra Biglietto";
 
             if (System.Windows.Forms.MessageBox.Show(message, caption, MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)

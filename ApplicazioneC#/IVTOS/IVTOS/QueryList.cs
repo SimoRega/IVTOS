@@ -190,7 +190,7 @@ namespace IVTOS
         }
         public static string VisualizzaPartiteTorneo(string torneo)
         {
-            return "SELECT S1.IdSquadra as 'N', S1.nome as \"prima squadra\",S2.IdSquadra as 'N', S2.nome as \"seconda squadra\"," +
+            return "SELECT S1.IdSquadra as 'N1', S1.nome as \"prima squadra\",S2.IdSquadra as 'N2', S2.nome as \"seconda squadra\"," +
                 " P.DataOra as \"DATA E ORA\" FROM ivtos.squadra S1, ivtos.squadra S2, ivtos.partita P WHERE P.IdTorneo = "+ torneo +
                 " AND P.IdSquadra1 = S1.IdSquadra AND P.IdSquadra2 = S2.IdSquadra;";
         }
@@ -241,9 +241,10 @@ namespace IVTOS
                 " AND P.DataOra = '" + data + "';";
         }
 
-        public static string PrezzoBiglietto(string idArena)
+        public static string PrezzoBiglietto(string idArena, string idSquadra1, string idSquadra2, string data)
         {
-            return "SELECT B.Costo FROM Arena A join biglietto B on A.IdArena = B.IdArena WHERE a.IdArena =  " + idArena;
+            return "SELECT B.Costo FROM Arena A, biglietto B WHERE A.IdArena = B.IdArena AND A.IdArena =  " + idArena +
+                " AND B.IdSquadra1 = " +  idSquadra1 + " AND B.IdSquadra2 = " + idSquadra2 + " AND B.DataOra = '" + data + "';";
         }
         public static string CompraBiglietto(string idSquadra1, string idSquadra2, string data, string idArena, string cf)
         {
