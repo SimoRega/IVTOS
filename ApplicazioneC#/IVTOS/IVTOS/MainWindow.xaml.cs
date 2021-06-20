@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,12 +26,27 @@ namespace IVTOS
         private string connString;
         public MainWindow()
         {
-            InitializeComponent();
-
+            InitializeComponent();          
         }
 
         private void chooseUser()
         {
+            string connExecute = "Persist Security Info=False;server=localhost;port=" + txtPorta.Text + ";user id=" + txtUserDB.Text + ";Password=" + txtPasswordDB.Text + ";";
+            Queries.Connection = connString;
+            try
+            {
+                Queries.ExecuteOnly("Select * from ivtos.player;");
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Prima installazione in corso. \n Creazione Database in corso. \n Attendere Prego");
+                string createDB= System.IO.File.ReadAllText("./IVTOS_v3.ddl");
+                Queries.ExecuteFile(createDB, connExecute);
+                string allInsert = System.IO.File.ReadAllText("./allinsert.txt");
+                Queries.ExecuteFile(allInsert, connExecute);
+                connString = "Persist Security Info=False;database=ivtos;server=localhost;port=" + txtPorta.Text + ";user id=" + txtUserDB.Text + ";Password=" + txtPasswordDB.Text + ";";
+                Queries.Connection = connString;
+            }
             String testo = txtUserName.Text.ToUpper();
             switch (testo)
             {
@@ -57,8 +74,6 @@ namespace IVTOS
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             chooseUser();
-            connString = "Persist Security Info=False;database=ivtos;server=localhost;port="+txtPorta.Text+";user id="+txtUserDB.Text+";Password="+txtPasswordDB.Text+";";
-            Queries.Connection = connString;
         }
 
         private void txtUserName_GotFocus(object sender, RoutedEventArgs e)
@@ -68,7 +83,7 @@ namespace IVTOS
 
         private void txtUserName_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter)
+            if (e.Key == Key.Enter)              
                 chooseUser();
         }
     }

@@ -457,4 +457,3 @@ INSERT INTO arena VALUES (IdArena,"Atletico di Madrid",200000,'Spagna','Madrid')
 INSERT INTO arena VALUES (IdArena,"Sakamoto Stadium",200000,'Giappone','Tokyo');
 INSERT INTO arena VALUES (IdArena,"Savouir Fair",200000,'Francia','Parigi');
 INSERT INTO arena VALUES (IdArena,"Golden Dream Staidum",200000,'USA','New York');
-
