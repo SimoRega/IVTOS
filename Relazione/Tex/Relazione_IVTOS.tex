@@ -279,6 +279,8 @@ riportante la loro descrizione e relativa frequenza:
 		\hline
 		9 & Acquisto di un nuovo Biglietto & 30.000 a settimana\\ 
 		\hline
+		10 & Mostrare le squadre a cui partecipa un player & 30 a settimana\\
+		\hline
 	\end{tabular}
 \end{center}
 \section{Schemi di navigazione e tabelle degli accessi}
@@ -290,6 +292,7 @@ costi, si considerano di peso doppio gli accessi in scrittura rispetto a quelli 
 \setlength{\tabcolsep}{10pt}%padding testo nelle celle
 \setlength\doublerulesep{0.1cm}%spazio tra due linee
 \subsection*{(1) Aggiunta di un nuovo Player}
+Nell'entità Player viene aggiunta una tupla.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
@@ -303,12 +306,13 @@ costi, si considerano di peso doppio gli accessi in scrittura rispetto a quelli 
 	\end{tabular}
 \end{center}
 \subsection*{(2) Aggiunta di un videogioco giocato da un Player}
+Presupponendo che sia Videogioco, sia Player siano già stati inseriti, è necessario semplicemente aggiungere una tupla alla tabella relativa all'associazione Gioca.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline\hline
-		Gioca & R & 1 & S\\
+		Gioca & A & 1 & S\\
 		\hline\hline
 		\multicolumn{2}{l}{%
 			\textbf{Totale:} 1S * 400 a settimana → 800 a settimana} \\
@@ -316,6 +320,7 @@ costi, si considerano di peso doppio gli accessi in scrittura rispetto a quelli 
 	\end{tabular}
 \end{center}
 \subsection*{(3) Aggiunta di un nuovo Spettatore}
+Nell'entità spettatore viene aggiunta una tupla.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
@@ -329,7 +334,7 @@ costi, si considerano di peso doppio gli accessi in scrittura rispetto a quelli 
 	\end{tabular}
 \end{center}
 \subsection*{(4) Creazione di una Squadra}
-Chi crea la squadra di solito è un player quindi quando crea una squadra automaticamente si iscrive ad essa
+Viene aggiunta una tupla all'entità Squadra, inoltre automaticamente, il player che ha creato la squadra viene iscritto, dunque viene scritta una tupla anche nell'associazione Adesione\_Player\_Squadra.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
@@ -337,7 +342,7 @@ Chi crea la squadra di solito è un player quindi quando crea una squadra automa
 		\hline
 		Squadra & E & 1 & S\\
 		\hline
-		Adesione Player & A & 1 & S\\
+		Adesione\_Player\_Squadra & A & 1 & S\\
 		\hline\hline
 		\multicolumn{2}{l}{%
 			\textbf{Totale:} (1S + 1S) * 100 al mese  → 400 al mese} \\
@@ -345,34 +350,33 @@ Chi crea la squadra di solito è un player quindi quando crea una squadra automa
 	\end{tabular}
 \end{center}
 \subsection*{(5) Aggiunta di un Player ad una Squadra}
-controllo la squadra se gia piena e ce lo caccio dentro
+Inizialmente devo controllare che la squadra non sia completa, avendo una squadra da 1 a 5 membri, in media verranno fatte 3 letture, successivamente, se la squadra non è piena, viene aggiunta una tupla all'associazione Adesione\_Plyer\_Squadra.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline\hline		
-		Squadra & E & 1 & L\\
-		Adesione Player & A & 1 & S\\
+		Adesione\_Plyer\_Squadra & E & 3 & L\\
+		Adesione\_Player\_Squadra & A & 1 & S\\
 		\hline
 		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} (1L + 2S) * 150.000 al giorno → 450.000 al giorno} \\
+			\textbf{Totale:} (3L + 2S) * 150.000 al giorno → 1.050.000 al giorno} \\
 		\hline
 	\end{tabular}
 \end{center}
 \subsection*{(6) Creazione di un Torneo}
+Viene aggiunta una tupla all'entità Torneo.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline\hline		
 		Torneo & E & 1 & S\\
-		Partite Previste & A & 45 & S\\
-		Iscrizione Squadra & A & 10 & S\\
 		\hline
 		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} (1S + 45S + 10S) → 72 alla settimana} \\
+			\textbf{Totale:} (1S) → 2 alla settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -418,6 +422,21 @@ devo leggere il costo
 		\hline
 		\multicolumn{2}{l}{%
 			\textbf{Totale:} 1L + 2S → 150.000} \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection*{(10) Mostrare le squadre a cui partecipa un player}
+Avendo nella tabella dei volumi 500.000 player totali e 600.000 adesione\_player\_squadra, ogni player partecipa in media a 1,2 squadre
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline		
+		Adesione\_Player\_Squadra & E & 1,2 & L\\
+		\hline
+		\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} 1,2L → 36/settimana} \\
 		\hline
 	\end{tabular}
 \end{center}

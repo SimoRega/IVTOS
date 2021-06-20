@@ -70,6 +70,7 @@ create table BIGLIETTO (
      IdSquadra2 int not null,
      DataOra date not null,
      Costo float(4) not null,
+	 BigliettiVenduti int not null auto_increment,
      constraint IDBIGLIETTO_TEMPLATE primary key (IdArena, IdSquadra1, IdSquadra2, DataOra));
 
 create table CITTÁ (

@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 A:\Documenti\Università\DB\ProgettoDatabase\IVTOS\ApplicazioneC#\IVTOS\IVTOS\obj\Debug\
+=======
+C:\Users\feder\Desktop\Unibo\Progetto Database\IVTOS\ApplicazioneC#\IVTOS\IVTOS\obj\Debug\
+>>>>>>> 28140c92f1408f5549bc6791b7f018f6834a2698
 IVTOS
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 A:\Documenti\Università\DB\ProgettoDatabase\IVTOS\ApplicazioneC#\IVTOS\IVTOS\App.xaml
 5940440710
 
 11-1088591002
 12266889008
+=======
+C:\Users\feder\Desktop\Unibo\Progetto Database\IVTOS\ApplicazioneC#\IVTOS\IVTOS\App.xaml
+5940440710
+
+11-1088591002
+122534708923
+>>>>>>> 28140c92f1408f5549bc6791b7f018f6834a2698
 AdminWindow.xaml;IscrizioneSquadraTorneo.xaml;MainWindow.xaml;PlayerWindow.xaml;SpettatoreWindow.xaml;
 
 False
