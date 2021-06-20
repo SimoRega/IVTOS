@@ -3,7 +3,7 @@
 -- *--------------------------------------------
 -- * DB-MAIN version: 11.0.1              
 -- * Generator date: Dec  4 2018              
--- * Generation date: Sun Jun 20 18:29:49 2021 
+-- * Generation date: Sun Jun 20 18:39:42 2021 
 -- * LUN file: D:\Documenti\università\2 ANNO\BASI DI DATI\progetto\IVTOS\ProgettazioneConcettuale\IVTOS.lun 
 -- * Schema: MODELLO RELAZIONALE/1 
 -- ********************************************* 
@@ -70,7 +70,7 @@ create table BIGLIETTO (
      IdSquadra2 int not null,
      DataOra date not null,
      Costo float(4) not null,
-     BigliettiVenduti int not null auto_increment,
+     BigliettiVenduti int not null,
      constraint IDBIGLIETTO_TEMPLATE primary key (IdArena, IdSquadra1, IdSquadra2, DataOra));
 
 create table CITTÁ (
