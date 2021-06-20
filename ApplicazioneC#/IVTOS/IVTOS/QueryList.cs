@@ -190,8 +190,9 @@ namespace IVTOS
         }
         public static string VisualizzaPartiteTorneo(string torneo)
         {
-            return "SELECT IdSquadra1 as \"SQUADRA OSPITE\", IdSquadra2 as \"SQUADRA CASA\"," +
-                " DataOra as \"DATA E ORA\" FROM ivtos.partita WHERE partita.IdTorneo = "+ torneo + "; ";
+            return "SELECT S1.IdSquadra as 'N', S1.nome as \"prima squadra\",S2.IdSquadra as 'N', S2.nome as \"seconda squadra\"," +
+                " P.DataOra as \"DATA E ORA\" FROM ivtos.squadra S1, ivtos.squadra S2, ivtos.partita P WHERE P.IdTorneo = "+ torneo +
+                " AND P.IdSquadra1 = S1.IdSquadra AND P.IdSquadra2 = S2.IdSquadra;";
         }
         public static string TerminaTorneo(string torneo)
         {
