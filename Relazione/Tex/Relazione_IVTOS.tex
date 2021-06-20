@@ -466,19 +466,56 @@ senza la ridondanza sul numero di biglietti venduti, leggo il costo del bigliett
 	\end{tabular}
 \end{center}
 \section{Traduzione di entità e associazioni in relazioni}
-player(\underline{CF}, nome, cognome, genere, mail, data di nascita, Nickname, Nome Stato: stato) \\
-coach(\underline{CF}, nome, cognome, genere, mail, data di nascita) \\
+
+acquisto\_biglietto((\underline{IdArena}, \underline{IdSquadra1}, \underline{IdSquadra2}, \underline{DataOra}) : Biglietto, \underline{CF\_Spettatore}) \\
+
+adesione\_coach\_squadra(\underline{IdSquadra}: squadra, \underline{CF\_Coach} : coach, \underline{DataInizio}, DataFine*) \\
+
+adesione\_player\_squadra(\underline{IdSquadra}: Squadra, \underline{CF\_Player}: Player, \underline{DataInizio}, DataFine*) \\
+
+arbitro(\underline{CF}, nome, cognome, genere, mail data\_di\_nascita, PartiteArbitrate) \\
+
+arena(\underline{IdArena}, NomeArena, Capienza, (NomeStato, NomeCitta): Città) \\
+
 azienda videogioco(nome, \underline{partitaIVA}) \\
-tipologia gioco(\underline{IdTipologia}, Tipo) \\
-squadra(nome, \underline{idSquadra}, data creazione)
-adesione coach squadra(\underline{IdSquadra}: squadra, \underline{CF coach} : coach, \underline{DataInizio}, DataFine*) \\
-videogioco(\underline{Nome}, DataCreazione, TipologiaGioco : tipologia gioco, PartitaIVAAzienda : azienda videogioco) \\
-riguarda(\underline{IdSquadra} : squadra, \underline{NomeVideogioco} : videogioco) \\
-sponsor(\underline{IdSponsor}, Nome) \\
+
+biglietto(\underline{IdArena}, \underline{IdSquadra1}, \underline{IdSquadra2}, \underline{DataOra}, Costo) \\
+
+città(\underline{NomeStato}: stato, \underline{Nome}, Superficie, NumAbitanti) \\
+
+coach(\underline{CF}, nome, cognome, genere, mail, data\_di\_nascita) \\
+
 continente(\underline{Nome}) \\
+
+gioca(\underline{NomeVideogioco} : Videogioco, \underline{CF\_Player} : Player, PartiteVinte, PartiteGiocate) \\
+
+iscrizione(\underline{IdTorneo} : Torneo, \underline{IdSquadra} : Squadra)
+
+partita((\underline{IdSquadra2}, \underline{IdSquadra1}) : Squadra, \underline{DataOra}, CF\_Arbitro : Arbitro, CF\_Speaker : Speaker, IdSquadraVincitrice* : Squadra, IdTorneo : Torneo) \\
+
+player(\underline{CF}, nome, cognome, genere, mail, data\_di\_nascita, Nickname, Nome\_Stato: stato) \\
+
+riguarda(\underline{IdSquadra} : squadra, \underline{NomeVideogioco} : videogioco) \\
+
+speaker(\underline{CF}, nome, cognome, genere, mail, data\_di\_nascita, Nickname, PartiteCommentate) \\
+
+spettatore(\underline{CF}, nome, cognome, genere, mail, data\_di\_nascita) \\
+
+sponsor(\underline{IdSponsor}, Nome) \\
+
+squadra(nome, \underline{IdSquadra}, data\_creazione) \\
+
 stato(\underline{Nome}, Superficie, NumAbitanti, NomeContinente : continente) \\
-città(\underline{NomeStato}: stato, \underline{Nome}, Superficie, NumAbitanti)
-arena()
+
+tipologia\_gioco(\underline{IdTipologia}, Tipo) \\
+
+torneo(\underline{IdTorneo}, DataInizio, DataFine*, NMaxIscrizioni, IdSponsor* : Sponsor, NomeVideoGioco : Videogioco, IdArena : Arena, IdSquadraVincitrice* : Squadra) \\
+
+videogioco(\underline{Nome}, DataCreazione, TipologiaGioco : tipologia\_gioco, PartitaIVAAzienda : azienda\_videogioco) \\
+
+
+
+
 
 
 
@@ -487,7 +524,41 @@ arena()
 
 \chapter{Progettazione Fisica}
 \section{Traduzione in SQL}
+\subsection*{(1) Aggiunta di un nuovo Player}
+\textcolor{blue}{INSERT INTO} player (CF, nome, cognomi, genere, mail, data\_di\_nascita, Nickname, Nome\_Stato)
+\textcolor{blue}{VALUES} (?,?,?,?,?,?,?,?);
 
+\subsection*{(2) Aggiunta di un videogioco giocato da un Player}
+\textcolor{blue}{INSERT INTO} gioca(NomeVideogioco, CF\_Player, PartiteVinte, PartiteGiocate)
+\textcolor{blue}{VALUES} (?,?,?,?);
+
+\subsection*{(3) Aggiunta di un nuovo Spettatore}
+\textcolor{blue}{INSERT INTO} spettatore(CF, nome, cognomi, genere, mail, data\_di\_nascita)
+\textcolor{blue}{VALUES} (?,?,?,?,?,?);
+
+\subsection*{(4) Creazione di una Squadra}
+\textcolor{blue}{INSERT INTO} squadra(Nome, IdSquadra, data\_creazione)
+\textcolor{blue}{VALUES} (?,IdSquadra,?);
+
+\subsection*{(5) Aggiunta di un Player ad una Squadra}
+\textcolor{blue}{INSERT INTO} adesione\_player\_squadra(IdSquadra, CF\_Player, DataInizio, DataFine)
+\textcolor{blue}{VALUES} (?,?,?,null);
+
+\subsection*{(6) Creazione di un Torneo}
+\textcolor{blue}{INSERT INTO} torneo(IdTorneo, DataInizio, DataFine, NmaxIscrizioni, IdSponsor, NomeVideogioco,IdArena,IdSquadraVincitrice)
+\textcolor{blue}{VALUES} (IdTorneo,?,?,?,?,?,?,?);
+
+\subsection*{(7) Iscrizione di una Squadra ad un Torneo}
+\textcolor{blue}{INSERT INTO} iscrizione(IdTorneo, IdSquadra)
+\textcolor{blue}{VALUES} (?,?);
+
+\subsection*{(8) Creazione di nuove Partite in un Torneo}
+\textcolor{blue}{INSERT INTO} partita(IdSquadra1, IdSquadra2, DataOra, CF\_Arbitro,CF\_Speaker, IdSquadraVincitrice, IdTorneo)
+\textcolor{blue}{VALUES} (?,?,?,?,?,?,?);
+
+\subsection*{(9) Acquisto di un nuovo Biglietto}
+\textcolor{blue}{INSERT INTO} acquisto\_biglietto(IdArena, IdSquadra1, IdSquadra2, DataOra, CF\_Spettatore)
+\textcolor{blue}{VALUES} (?,?,?,?,?);
 
 \chapter{Progettazione dell'Applicazione}
 \section{Descrizione della scelta del linguaggio e del DBMS}
