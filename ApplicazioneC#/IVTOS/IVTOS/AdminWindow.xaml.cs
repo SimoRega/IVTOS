@@ -46,6 +46,7 @@ namespace IVTOS
         {
             Random rnd = new Random();
             DataSet setPartite = Queries.GetDataSet(QueryList.VisualizzaChiavePartite());
+            Queries.ExecuteOnly("DELETE FROM biglietto;");
             foreach(DataRow elem in setPartite.Tables[0].Rows)
             {
                 string giornoGrezzo = elem.ItemArray[2].ToString();

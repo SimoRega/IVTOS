@@ -25,6 +25,7 @@ namespace IVTOS
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void chooseUser()
