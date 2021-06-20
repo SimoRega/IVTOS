@@ -48,8 +48,13 @@ namespace IVTOS
             DataSet setPartite = Queries.GetDataSet(QueryList.VisualizzaChiavePartite());
             foreach(DataRow elem in setPartite.Tables[0].Rows)
             {
-                string idArena = Queries.GetOneField(QueryList.IdArenaInCuiSiSvolgePartita(elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), elem.ItemArray[2].ToString()));
-                Queries.ExecuteOnly(QueryList.InsertBiglietto(elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), elem.ItemArray[2].ToString(),idArena,rnd.Next(30,200).ToString()));
+                string giornoGrezzo = elem.ItemArray[2].ToString();
+                string[] giornoSplittato = giornoGrezzo.Split(' ');
+                string[] dataFull = giornoSplittato[0].Split('/');
+                string data = dataFull[2] + "-" + dataFull[1] + "-" + dataFull[0];
+                string idArena = Queries.GetOneField(QueryList.IdArenaInCuiSiSvolgePartita(elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data));
+                string capienza= Queries.GetOneField(QueryList.CapienzaInCuiSiSvolgePartita(elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data));
+                Queries.ExecuteOnly(QueryList.InsertBiglietto(idArena, elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data,rnd.Next(30,200).ToString(),capienza));
             }
         }
 
@@ -85,6 +90,8 @@ namespace IVTOS
             queryList.Add("Visualizza tutte le Città", QueryList.VisualizzaCitta());
             queryList.Add("Visualizza tutti i Tornei", QueryList.VisualizzaTornei());
             queryList.Add("Visualizza tutti i Tornei non conclusi", QueryList.VisualizzaTorneiAttivi());
+            queryList.Add("Visualizza tutti Biglietti", QueryList.VisualizzaBiglietti());
+            queryList.Add("Visualizza tutte le Partite", QueryList.VisualizzaChiavePartite());
 
             stats.Add("I 20 Tornei con più Squadre Iscritte", QueryList.VisualizzaTorneiConPiuSquadre());
             stats.Add("I 20 Tornei con meno Squadre Iscritte", QueryList.VisualizzaTorneiConMenoSquadre());

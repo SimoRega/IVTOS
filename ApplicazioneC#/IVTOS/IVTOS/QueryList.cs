@@ -40,9 +40,9 @@ namespace IVTOS
 ;
         }
 
-        internal static string InsertBiglietto(string id1,string id2,string data,string idarena,string costo)
+        internal static string InsertBiglietto(string idarena, string id1,string id2,string data,string costo, string capienza)
         {
-            return "INSERT INTO biglietto VALUES();";
+            return "INSERT INTO biglietto VALUES ("+ idarena +","+ id1 +"," +id2 +",'" +data +"',"+ idarena+"," +costo +"," + capienza+");";
         }
 
         public static string VisualizzaPlayer()
@@ -153,7 +153,7 @@ namespace IVTOS
         }
         public static string VisualizzaChiavePartite()
         {
-            return "SELECT idsquadra1, idsquadra2, dataora  FROM ivtos.squadra;";
+            return "SELECT idsquadra1, idsquadra2, dataora  FROM ivtos.partita;";
         }
         public static string VisualizzaStati()
         {
@@ -232,6 +232,13 @@ namespace IVTOS
                 " AND P.IdSquadra2 = " + idSquadra2 +
                 " AND P.DataOra = '" + data + "';";
         }
+        public static string CapienzaInCuiSiSvolgePartita(string idSquadra1, string idSquadra2, string data)
+        {
+            return "SELECT A.capienza FROM(partita P join torneo T on P.IdTorneo = T.IdTorneo) join Arena A on T.IdArena = A.IdArena " +
+                "WHERE P.IdSquadra1 = " + idSquadra1 +
+                " AND P.IdSquadra2 = " + idSquadra2 +
+                " AND P.DataOra = '" + data + "';";
+        }
 
         public static string PrezzoBiglietto(string idArena)
         {
@@ -255,6 +262,11 @@ namespace IVTOS
                 "from partita join squadra s1 on partita.idsquadra1 = s1.idSquadra join squadra s2 on partita.idsquadra2 = s2.idSquadra join torneo on partita.idtorneo = torneo.idtorneo join arena on torneo.idarena = arena.idarena " +
                 "where idsquadra1 = "+idSquadra+ " or idsquadra2 = " + idSquadra +" " +
                 "order by dataora";
+        }
+
+        public static string VisualizzaBiglietti()
+        {
+            return "SELECT * FROM biglietto;";
         }
     }
 }
