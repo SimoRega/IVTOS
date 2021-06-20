@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.24)  20 JUN 2021 11:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.24)  20 JUN 2021 16:59
 entering extended mode
 **./Relazione_IVTOS.tex
 (Relazione_IVTOS.tex
@@ -576,8 +576,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 470--471
  []
 
 [18]
-Overfull \hbox (13.42609pt too wide) in paragraph at lines 472--473
-[]\OT1/cmr/m/n/12 adesione[]coach[]squadra($[]$: squa-dra, $[]$ : coach, $[]$,
+Overfull \hbox (23.41632pt too wide) in paragraph at lines 472--473
+\OT1/cmr/m/n/12 ADESIONE[]COACH[]SQUADRA($[]$: SQUA-DRA, $[]$ : COACH,
  []
 
 
@@ -586,9 +586,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 472--473
  []
 
 
-Overfull \hbox (20.21075pt too wide) in paragraph at lines 474--475
-[]\OT1/cmr/m/n/12 adesione[]player[]squadra($[]$: Squa-dra, $[]$: Player, $[]$,
-
+Overfull \hbox (32.69963pt too wide) in paragraph at lines 474--475
+\OT1/cmr/m/n/12 ADESIONE[]PLAYER[]SQUADRA($[]$: SQUA-DRA, $[]$: PLAYER,
  []
 
 
@@ -602,6 +601,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 476--477
  []
 
 
+Overfull \hbox (5.26814pt too wide) in paragraph at lines 478--479
+\OT1/cmr/m/n/12 ARENA($[]$, No-meA-re-na, Ca-pien-za, (No-me-Sta-to, No-me-Cit-
+ta): CITT[]A) 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 478--479
 
  []
@@ -609,6 +614,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 478--479
 
 Underfull \hbox (badness 10000) in paragraph at lines 480--481
 
+ []
+
+
+Overfull \hbox (5.79736pt too wide) in paragraph at lines 482--483
+\OT1/cmr/m/n/12 BIGLIETTO($[]$ : ARE-NA, ($[]$, $[]$, $[]$) : PAR-
  []
 
 
@@ -637,6 +647,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 490--491
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 494--495
 
  []
@@ -651,12 +666,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
-
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 500--501
 
  []
 
-[19]
+
 Underfull \hbox (badness 10000) in paragraph at lines 502--503
 
  []
@@ -684,6 +699,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 510--511
 
 Underfull \hbox (badness 10000) in paragraph at lines 512--513
 
+ []
+
+
+Overfull \hbox (16.64809pt too wide) in paragraph at lines 514--515
+\OT1/cmr/m/n/12 VIDEOGIOCO($[]$, Da-ta-Crea-zio-ne, Ti-po-lo-gia-Gio-co : TI-PO
+-LO-GIA[]GIOCO,
  []
 
 
@@ -719,10 +740,10 @@ Package rerunfilecheck Info: File `Relazione_IVTOS.out' has not changed.
 (rerunfilecheck)             Checksum: DFD5B3A6FF4138B27739D7879F57D9CC;5328.
  ) 
 Here is how much of TeX's memory you used:
- 11711 strings out of 479321
- 186554 string characters out of 2856583
+ 11712 strings out of 479321
+ 186562 string characters out of 2856583
  565206 words of memory out of 3000000
- 28957 multiletter control sequences out of 15000+600000
+ 28958 multiletter control sequences out of 15000+600000
  409888 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,10n,74p,589b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -732,7 +753,7 @@ ts/cm/cmbx12.pfb><C:/Users/Linda/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmr12.pfb><C:/Users/Linda/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/Linda/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Relazione_IVTOS.pdf (24 pages, 338691 bytes).
+Output written on Relazione_IVTOS.pdf (24 pages, 339565 bytes).
 PDF statistics:
  314 PDF objects out of 1000 (max. 8388607)
  78 named destinations out of 1000 (max. 500000)
