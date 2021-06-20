@@ -16,6 +16,7 @@
         <Button x:Name="btnIscriviSqTorneo" Content="Iscrivi squadra &#xD;&#xA;ad un tornero" HorizontalAlignment="Left" Margin="316,90,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnIscriviSqTorneo_Click"/>
         <Button x:Name="btnCreaSquadra" Content="Crea nuova squadra" HorizontalAlignment="Left" Margin="596,41,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnCreaSquadra_Click"/>
         <Button x:Name="btnMostraMembri" Content="Mostra membri" HorizontalAlignment="Left" Margin="316,139,0,0" VerticalAlignment="Top" Width="125" Height="44" Click="btnMostraMembri_Click"/>
+        <Button x:Name="btnMostraProssimaPartita" Content="Mostra prossima &#xD;&#xA;partita" HorizontalAlignment="Left" Margin="316,188,0,0" VerticalAlignment="Top" Width="125" Height="44" HorizontalContentAlignment="Center" Click="btnMostraProssimaPartita_Click"/>
 
     </Grid>
 </Window>

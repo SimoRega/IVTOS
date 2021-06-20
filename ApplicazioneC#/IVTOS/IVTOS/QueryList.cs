@@ -206,5 +206,13 @@ namespace IVTOS
                 "from(adesione_player_squadra join squadra on adesione_player_squadra.IdSquadra = squadra.IdSquadra) join player on adesione_player_squadra.CF_Player = player.CF " +
                 "where adesione_player_squadra.DataFine is null and squadra.IdSquadra = " + idSquadra;
         }
+
+        public static string MostraProssimePartita(int idSquadra)
+        {
+            return "select s1.nome, s2.nome,dataora, nomearena, nomecitta " +
+                "from partita join squadra s1 on partita.idsquadra1 = s1.idSquadra join squadra s2 on partita.idsquadra2 = s2.idSquadra join torneo on partita.idtorneo = torneo.idtorneo join arena on torneo.idarena = arena.idarena " +
+                "where idsquadra1 = "+idSquadra+ " or idsquadra2 = " + idSquadra +" " +
+                "order by dataora";
+        }
     }
 }

@@ -212,5 +212,26 @@ namespace IVTOS
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.MostraMembriSquadra(idSquadra)).Tables[0].DefaultView;
 
         }
+
+        private void btnMostraProssimaPartita_Click(object sender, RoutedEventArgs e)
+        {
+            int idSquadra;
+            string nomeSquadra;
+            try
+            {
+
+                DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
+                DataRow DR = (DataRow)DRV.Row;
+                idSquadra = (int)DR.ItemArray[1];
+                nomeSquadra = DR.ItemArray[0].ToString();
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("Seleziona una squadra");
+                return;
+            }
+            dataGrid.ItemsSource = Queries.GetDataSet(QueryList.MostraProssimePartita(idSquadra)).Tables[0].DefaultView;
+
+        }
     }
 }
