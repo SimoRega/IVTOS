@@ -15,8 +15,8 @@
 \contentsline {section}{\numberline {4.2}Descrizione delle operazioni principali e stima della loro frequenza}{15}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Schemi di navigazione e tabelle degli accessi}{15}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Raffinamento dello schema}{18}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Analisi delle ridondanze}{18}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Traduzione di entità e associazioni in relazioni}{19}{section.4.6}%
+\contentsline {section}{\numberline {4.5}Analisi delle ridondanze}{19}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Traduzione di entità e associazioni in relazioni}{20}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Schema relazionale finale}{21}{section.4.7}%
 \contentsline {chapter}{\numberline {5}Progettazione Fisica}{22}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Traduzione in SQL}{22}{section.5.1}%

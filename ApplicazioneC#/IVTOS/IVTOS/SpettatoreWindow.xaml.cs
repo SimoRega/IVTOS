@@ -66,18 +66,19 @@ namespace IVTOS
             DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
             DRV = (DataRowView)dataGrid.SelectedItem;
             var squadra1 = DRV.Row.ItemArray[0].ToString();
-            var squadra2 = DRV.Row.ItemArray[1].ToString();
-            var giorno = DRV.Row.ItemArray[2].ToString();
+            var nomesquadra1 = DRV.Row.ItemArray[1].ToString();
+            var squadra2 = DRV.Row.ItemArray[2].ToString();
+            var nomesquadra2 = DRV.Row.ItemArray[3].ToString();
+            var giorno = DRV.Row.ItemArray[4].ToString();
             string[] data= giorno.Split(' ');
             string[] cacca = data[0].Split('/');
             string bella = cacca[2] + "-" + cacca[1] + "-" + cacca[0];
             var arena = Queries.GetOneField(QueryList.IdArenaInCuiSiSvolgePartita(squadra1, squadra2, bella));
-            string message = "Sei sicuro di voler comprare il biglietto per la partita del giorno " + bella + " fra la squadra " + squadra1 + " e " + squadra2
-                + " nell'arena " + Queries.GetDataSet(QueryList.NomeArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + ", che si trova nello Stato di " +
-                Queries.GetDataSet(QueryList.StatoArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + ", nella città di " +
-                Queries.GetDataSet(QueryList.CittaArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + " al prezzo di " +
-                Queries.GetDataSet(QueryList.PrezzoBiglietto(arena))
-                ;
+            string message = "Sei sicuro di voler comprare il biglietto per la partita del giorno " + bella + " fra la squadra " + nomesquadra1 + " e " + nomesquadra2
+                + " nell'arena " + Queries.GetOneField(QueryList.NomeArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + ", che si trova nello Stato di " +
+                Queries.GetOneField(QueryList.StatoArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + ", nella città di " +
+                Queries.GetOneField(QueryList.CittaArenaInCuiSiSvolgePartita(squadra1, squadra2, bella)) + " al prezzo di " +
+                Queries.GetDataSet(QueryList.PrezzoBiglietto(arena, squadra1, squadra2, bella)).Tables[0].Rows[0].ItemArray[0];
             string caption = "Compra Biglietto";
 
             if (System.Windows.Forms.MessageBox.Show(message, caption, MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)

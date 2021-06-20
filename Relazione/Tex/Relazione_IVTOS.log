@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.24)  20 JUN 2021 18:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.24)  20 JUN 2021 19:56
 entering extended mode
 **./Relazione_IVTOS.tex
 (Relazione_IVTOS.tex
@@ -551,115 +551,49 @@ Overfull \vbox (3.31296pt too high) has occurred while \output is active []
 
 
 [14]
-Overfull \hbox (34.91116pt too wide) in paragraph at lines 260--285
+Overfull \hbox (34.91116pt too wide) in paragraph at lines 260--287
  [] 
  []
 
 [15]
-Overfull \hbox (19.08235pt too wide) in paragraph at lines 325--335
+Overfull \hbox (11.2491pt too wide) in paragraph at lines 327--337
  [] 
  []
 
 [16]
-Overfull \hbox (49.14038pt too wide) in paragraph at lines 355--367
+Overfull \hbox (38.04327pt too wide) in paragraph at lines 357--369
  [] 
  []
 
 [17]
-Overfull \hbox (50.3943pt too wide) in paragraph at lines 429--430
+Overfull \hbox (50.3943pt too wide) in paragraph at lines 432--433
 \OT1/cmr/m/n/12 Avendo nel-la ta-bel-la dei vo-lu-mi 500.000 player to-ta-li e 
 600.000 ade-sio-ne[]player[]squadra,
  []
 
-
-Overfull \hbox (42.67795pt too wide) in paragraph at lines 457--471
+[18]
+Overfull \hbox (42.67795pt too wide) in paragraph at lines 478--492
  [] 
  []
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 489--490
-
- []
-
-
-Overfull \hbox (23.41632pt too wide) in paragraph at lines 491--492
-\OT1/cmr/m/n/12 ADESIONE[]COACH[]SQUADRA($[]$: SQUA-DRA, $[]$ : COACH,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 491--492
-
- []
-
-
-Overfull \hbox (32.69963pt too wide) in paragraph at lines 493--494
-\OT1/cmr/m/n/12 ADESIONE[]PLAYER[]SQUADRA($[]$: SQUA-DRA, $[]$: PLAYER,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 493--494
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 495--496
-
- []
-
-
-Overfull \hbox (5.26814pt too wide) in paragraph at lines 497--498
-\OT1/cmr/m/n/12 ARENA($[]$, No-meA-re-na, Ca-pien-za, (No-me-Sta-to, No-me-Cit-
-ta): CITT[]A) 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 497--498
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 499--500
-
- []
-
-
-Overfull \hbox (5.79736pt too wide) in paragraph at lines 501--502
-\OT1/cmr/m/n/12 BIGLIETTO($[]$ : ARE-NA, ($[]$, $[]$, $[]$) : PAR-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 501--502
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 503--504
-
- []
-
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 505--506
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 507--508
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 509--510
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
 
 
+Overfull \hbox (23.41632pt too wide) in paragraph at lines 513--514
+\OT1/cmr/m/n/12 ADESIONE[]COACH[]SQUADRA($[]$: SQUA-DRA, $[]$ : COACH,
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 513--514
 
+ []
+
+
+Overfull \hbox (32.69963pt too wide) in paragraph at lines 515--516
+\OT1/cmr/m/n/12 ADESIONE[]PLAYER[]SQUADRA($[]$: SQUA-DRA, $[]$: PLAYER,
  []
 
 
@@ -673,6 +607,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 517--518
  []
 
 
+Overfull \hbox (5.26814pt too wide) in paragraph at lines 519--520
+\OT1/cmr/m/n/12 ARENA($[]$, No-meA-re-na, Ca-pien-za, (No-me-Sta-to, No-me-Cit-
+ta): CITT[]A) 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 519--520
 
  []
@@ -680,6 +620,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 519--520
 
 Underfull \hbox (badness 10000) in paragraph at lines 521--522
 
+ []
+
+
+Overfull \hbox (5.79736pt too wide) in paragraph at lines 523--524
+\OT1/cmr/m/n/12 BIGLIETTO($[]$ : ARE-NA, ($[]$, $[]$, $[]$) : PAR-
  []
 
 
@@ -708,20 +653,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 531--532
  []
 
 
-Overfull \hbox (16.64809pt too wide) in paragraph at lines 533--534
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 535--536
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 537--538
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 545--546
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 547--548
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--550
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 551--552
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
+
+ []
+
+
+Overfull \hbox (16.64809pt too wide) in paragraph at lines 555--556
 \OT1/cmr/m/n/12 VIDEOGIOCO($[]$, Da-ta-Crea-zio-ne, Ti-po-lo-gia-Gio-co : TI-PO
 -LO-GIA[]GIOCO,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 533--534
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
 
  []
 
-[20] [21]
+[21]
 Capitolo 5.
 
-Overfull \hbox (71.1356pt too wide) in paragraph at lines 567--569
+Overfull \hbox (71.1356pt too wide) in paragraph at lines 589--591
 \OT1/cmr/m/n/12 Spon-sor, No-me-Vi-deo-gio-co,IdArena,IdSquadraVincitrice) []VA
 -LUES[] (Id-Tor-neo,?,?,?,?,?,?,?); 
  []
@@ -729,7 +729,7 @@ Overfull \hbox (71.1356pt too wide) in paragraph at lines 567--569
 [22
 
 ]
-Overfull \hbox (35.83218pt too wide) in paragraph at lines 575--577
+Overfull \hbox (35.83218pt too wide) in paragraph at lines 597--599
 []\OT1/cmr/m/n/12 INSERT IN-TO[] par-ti-ta(IdSquadra1, Id-Squa-dra2, Da-taO-ra,
  CF[]Arbitro,CF[]Speaker,
  []
@@ -746,22 +746,22 @@ Package rerunfilecheck Info: File `Relazione_IVTOS.out' has not changed.
 (rerunfilecheck)             Checksum: DFD5B3A6FF4138B27739D7879F57D9CC;5328.
  ) 
 Here is how much of TeX's memory you used:
- 11714 strings out of 479321
- 186580 string characters out of 2856583
+ 11715 strings out of 479321
+ 186591 string characters out of 2856583
  565206 words of memory out of 3000000
  28958 multiletter control sequences out of 15000+600000
  409888 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,10n,74p,589b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,10n,74p,617b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Linda\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk><C:/Users/Linda/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx12.pfb><C:/Users/Linda/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmr12.pfb><C:/Users/Linda/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/Linda/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Relazione_IVTOS.pdf (25 pages, 341931 bytes).
+Output written on Relazione_IVTOS.pdf (25 pages, 344142 bytes).
 PDF statistics:
- 321 PDF objects out of 1000 (max. 8388607)
- 80 named destinations out of 1000 (max. 500000)
+ 322 PDF objects out of 1000 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
  234 words of extra memory for PDF output out of 10000 (max. 10000000)
 

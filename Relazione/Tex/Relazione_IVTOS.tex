@@ -281,6 +281,8 @@ riportante la loro descrizione e relativa frequenza:
 		\hline
 		10 & Mostrare le squadre a cui partecipa un player & 30 a settimana\\
 		\hline
+		11 & Nome Arena in cui si svolge una Partita & 30.000 a settimana\\
+		\hline
 	\end{tabular}
 \end{center}
 \section{Schemi di navigazione e tabelle degli accessi}
@@ -301,7 +303,7 @@ Nell'entità Player viene aggiunta una tupla.
 		Player & E & 1 & S\\
 		\hline\hline
 		\multicolumn{2}{l}{
-			\textbf{Totale:} 1S * 50 al giorno → 100 al giorno} \\
+			\textbf{Totale:} 1S * 50 al giorno → 100/giorno} \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -315,7 +317,7 @@ Presupponendo che sia Videogioco, sia Player siano già stati inseriti, è neces
 		Gioca & A & 1 & S\\
 		\hline\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} 1S * 400 a settimana → 800 a settimana} \\
+			\textbf{Totale:} 1S * 400 a settimana → 800/settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -329,7 +331,7 @@ Nell'entità spettatore viene aggiunta una tupla.
 		Spettatore & E & 1 & S\\
 		\hline\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:}  1S * 30.000 a settimana → 60.000 a settimana } \\
+			\textbf{Totale:}  1S * 30.000 a settimana → 60.000/settimana } \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -345,23 +347,23 @@ Viene aggiunta una tupla all'entità Squadra, inoltre automaticamente, il player
 		Adesione\_Player\_Squadra & A & 1 & S\\
 		\hline\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} (1S + 1S) * 100 al mese  → 400 al mese} \\
+			\textbf{Totale:} (1S + 1S) * 100 al mese  → 400/mese} \\
 		\hline\hline
 	\end{tabular}
 \end{center}
 \subsection*{(5) Aggiunta di un Player ad una Squadra}
-Inizialmente devo controllare che la squadra non sia completa, avendo una squadra da 1 a 5 membri, in media verranno fatte 3 letture, successivamente, se la squadra non è piena, viene aggiunta una tupla all'associazione Adesione\_Plyer\_Squadra.
+Inizialmente devo controllare che la squadra non sia completa, avendo una squadra da 1 a 5 membri, in media verranno fatte 3 letture, successivamente, se la squadra non è piena, viene aggiunta una tupla all'entità Adesione\_Plyer\_Squadra.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline\hline		
 		Adesione\_Plyer\_Squadra & E & 3 & L\\
-		Adesione\_Player\_Squadra & A & 1 & S\\
+		Adesione\_Player\_Squadra & E & 1 & S\\
 		\hline
 		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} (3L + 2S) * 150.000 al giorno → 1.050.000 al giorno} \\
+			\textbf{Totale:} (3L + 2S) * 150.000 al giorno → 1.050.000/giorno} \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -376,57 +378,58 @@ Viene aggiunta una tupla all'entità Torneo.
 		\hline
 		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} (1S) → 2 alla settimana} \\
+			\textbf{Totale:} (1S) → 72/settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
 \subsection*{(7) Iscrizione di una Squadra ad un Torneo}
+Presuppongo l'esistenza sia del Torneo che della Squadra, dunque devo aggiungere una tupla nell'associazione iscrizione.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline\hline		
-		Iscrizione Squadra & A & 1 & S\\
+		Iscrizione  & A & 1 & S\\
 		\hline
 		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:}  1S * 8 a settimana → 16 a settimana} \\
+			\textbf{Totale:}  (1S) → 20/settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
-\subsection*{(8) Creazione di nuove Partite in un Torneo}
+\subsection*{(8) Creazione delle Partite in un Torneo}
+Dalla tabella degli accessi si possono vedere 10.000 tornei e 450.000 partite, dunque in media ogni torneo sarà composto da 45 partite
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline\hline		
 		Partita & E & 45 & S\\
-		Partita Prevista & A & 45 & S\\
 		\hline
 		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} (45S + 45S)  → 180 a settimana} \\
+			\textbf{Totale:} (45S)  → 4.0507settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
 \subsection*{(9) Acquisto di un nuovo Biglietto}
-devo leggere il costo
+Faccio una lettura in Biglietto per controllare i posti rimanenti e il costo del biglietto, successivamente, se ci sono abbastanza posti disponibili verrà effettuata una scrittura nell'entità Acquisto\_Biglietto.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline\hline		
-		Acquistare & A & 1 & S\\
+		Acquisto\_Biglietto & E & 1 & S\\
+		\hline
 		Biglietto & E & 1 & L\\
 		\hline
-		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} 1L + 2S → 150.000} \\
+			\textbf{Totale:} (1L + 1S) → 90.000/settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
 \subsection*{(10) Mostrare le squadre a cui partecipa un player}
-Avendo nella tabella dei volumi 500.000 player totali e 600.000 adesione\_player\_squadra, ogni player partecipa in media a 1,2 squadre
+Avendo nella tabella dei volumi 500.000 player totali e 600.000 adesione\_player\_squadra, ogni player partecipa in media a 1,2 squadre.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
@@ -437,6 +440,24 @@ Avendo nella tabella dei volumi 500.000 player totali e 600.000 adesione\_player
 		\hline
 		\multicolumn{2}{l}{%
 			\textbf{Totale:} 1,2L → 36/settimana} \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection*{(11) Nome Arena in cui si svolge una Partita}
+Viene fatto un accesso in lettura in Partita per leggere l'id del torneo, un accesso in lettura per leggere l'id dell'arena, ed infine un accesso in lettura in arena per leggerne il nome.
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline		
+		Partita & E & 1 & L\\
+		\hline
+		Torneo & E & 1 & L\\
+		\hline
+		Arena & E & 1 & L\\
+		\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} (1L + 1L + 1L) → 90.000/settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -451,8 +472,8 @@ necessità che l’identificatore per tali entità sia globalmente univoco.
 \subsection*{Scelta delle Chiavi}
 Sin dall'inizio abbiamo scelto accuratamente tutte le chiavi per ogni entità; queste sono evidenziate senza ambiguità nello schema E-R.
 \section{Analisi delle ridondanze}
-\subsection*{Senza Ridondanza}
-senza la ridondanza sul numero di biglietti venduti, leggo il costo del biglietto; in media ho 500 letture su acquisto-biglietto per vedere quanti sono stati venduti; ho una lettura su arena per verificarne la capienza.
+\subsection*{Studio operazione 9 senza Ridondanza}
+Senza il campo in biglietto che mi indica il numero di biglietti rimanenti, tutte le volte che viene comprato un biglietto c'è la necessità di controllare se ci sono ancora posti disponibili. In questo modo c'è la necessità di fare molteplici letture: fare una lettura per sapere il costo del biglietto, una lettura in arena per sapere la capienza dell'arena corrispondente, in media 223 letture su acquiso\_biglietto(numero biglietti totali venduti / partite totali = quanti biglietti venduti in ogni partita -445-; in media uno spettatore dovrà compiere 223 letture).
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
@@ -460,27 +481,28 @@ senza la ridondanza sul numero di biglietti venduti, leggo il costo del bigliett
 		\hline\hline		
 		Acquistare & A & 1 & S\\
 		Biglietto & E & 1 & L\\
-		AcquistoBiglietto & E & 500 & L\\
+		Acquisto\_Biglietto & E & 223 & L\\
 		Arena & E & 1 & L\\
 		\hline
 		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} (502L + 2S) * 30.000 → 15.180.000 ogni settimana} \\
+			\textbf{Totale:} (224L + 2S) * 30.000 → 20.280.000 ogni settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
-\subsection*{Con la Ridondanza}
+\subsection*{Studio operazione 9 con la Ridondanza}
+Con la ridondanza, per sapere quanti biglietti sono ancora disponibili e per saperne il costo, basterà un'unica lettura su biglietto.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline\hline		
-		Acquistare & A & 1 & S\\
+		Acquisto\_Biglietto & A & 1 & S\\
 		Biglietto & E & 1 & L\\		
 		\hline
 		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} 1L + 2S → 150.000 ogni settimana} \\
+			\textbf{Totale:} 1L + 1S → 90.000 ogni settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
