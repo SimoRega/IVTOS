@@ -42,7 +42,7 @@ namespace IVTOS
 
         internal static string InsertBiglietto(string idarena, string id1,string id2,string data,string costo, string capienza)
         {
-            return "INSERT INTO biglietto VALUES ("+ idarena +","+ id1 +"," +id2 +",'" +data +"',"+ idarena+"," +costo +"," + capienza+");";
+            return "INSERT INTO biglietto VALUES ("+ idarena +","+ id1 +"," +id2 +",'" +data +"'," +costo +"," + capienza+");";
         }
 
         public static string VisualizzaPlayer()
