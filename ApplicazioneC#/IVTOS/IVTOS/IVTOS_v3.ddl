@@ -458,3 +458,6 @@ INSERT INTO arena VALUES (IdArena,"Sakamoto Stadium",200000,'Giappone','Tokyo');
 INSERT INTO arena VALUES (IdArena,"Savouir Fair",200000,'Francia','Parigi');
 INSERT INTO arena VALUES (IdArena,"Golden Dream Staidum",200000,'USA','New York');
 
+INSERT INTO iscrizione VALUES (1,1);
+Insert into iscrizione values(1,2);
+Insert into iscrizione values(2,1);

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,15 +40,16 @@ namespace IVTOS
 
             LoadQuery();
             LoadComboBox();
-            CreaBiglietti();
+            //CreaBiglietti();
         }
 
         private void CreaBiglietti()
         {
             Random rnd = new Random();
             DataSet setPartite = Queries.GetDataSet(QueryList.VisualizzaChiavePartite());
+            Queries.ExecuteOnly("DELETE FROM acquisto_biglietto;");
             Queries.ExecuteOnly("DELETE FROM biglietto;");
-            foreach(DataRow elem in setPartite.Tables[0].Rows)
+            foreach (DataRow elem in setPartite.Tables[0].Rows)
             {
                 string giornoGrezzo = elem.ItemArray[2].ToString();
                 string[] giornoSplittato = giornoGrezzo.Split(' ');
@@ -56,6 +58,8 @@ namespace IVTOS
                 string idArena = Queries.GetOneField(QueryList.IdArenaInCuiSiSvolgePartita(elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data));
                 string capienza= Queries.GetOneField(QueryList.CapienzaInCuiSiSvolgePartita(elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data));
                 Queries.ExecuteOnly(QueryList.InsertBiglietto(idArena, elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data,rnd.Next(30,200).ToString(),capienza));
+
+                File.AppendAllText("./biglietti.txt", QueryList.InsertBiglietto(idArena, elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data, rnd.Next(30, 200).ToString(), capienza)+"\n");
             }
         }
 
@@ -92,7 +96,7 @@ namespace IVTOS
             queryList.Add("Visualizza tutti i Tornei", QueryList.VisualizzaTornei());
             queryList.Add("Visualizza tutti i Tornei non conclusi", QueryList.VisualizzaTorneiAttivi());
             queryList.Add("Visualizza tutti Biglietti", QueryList.VisualizzaBiglietti());
-            queryList.Add("Visualizza tutte le Partite", QueryList.VisualizzaChiavePartite());
+            queryList.Add("Visualizza tutte le Partite", QueryList.VisualizzaPartite());
 
             stats.Add("I 20 Tornei con più Squadre Iscritte", QueryList.VisualizzaTorneiConPiuSquadre());
             stats.Add("I 20 Tornei con meno Squadre Iscritte", QueryList.VisualizzaTorneiConMenoSquadre());
@@ -115,7 +119,7 @@ namespace IVTOS
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaArena()).Tables[0].DefaultView;
             lastQuery = QueryList.VisualizzaArena();
             lblStep.Content = "<2° Step: Scegli Arena>";
-            MessageBox.Show("Selezionare un Arena");
+            MessageBox.Show("Selezionare un Arena e premere il tasto Avanti");
             steps = 0;
         }
 
@@ -131,7 +135,7 @@ namespace IVTOS
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (lastQuery == QueryList.VisualizzaTornei())
+            if (lastQuery == QueryList.VisualizzaTornei() || lastQuery == QueryList.VisualizzaTorneiAttivi())
             {
                 btnTerminaTorneo.IsEnabled = true;
                 btnAvanti.IsEnabled = false;
@@ -142,16 +146,6 @@ namespace IVTOS
                 btnAvanti.IsEnabled = false;
             }
 
-            if (lastQuery == QueryList.VisualizzaTorneiAttivi())
-            {
-                btnTerminaTorneo.IsEnabled = true;
-                btnAvanti.IsEnabled = false;
-            }
-            else
-            {
-                btnTerminaTorneo.IsEnabled = false;
-                btnAvanti.IsEnabled = false;
-            }
             if ((steps==0 && lastQuery== QueryList.VisualizzaArena()) ||
                 (steps == 1 && lastQuery == QueryList.VisualizzaVideogiochi()) ||
                     (steps == 2 && lastQuery == QueryList.VisualizzaSponsor()) )
@@ -177,7 +171,7 @@ namespace IVTOS
                     lastQuery = QueryList.VisualizzaVideogiochi();
                     steps++;
                     lblStep.Content = "<3° Step: Scegli Gioco>";
-                    MessageBox.Show("Selezionare un Videogioco");
+                    MessageBox.Show("Selezionare un Videogioco e premere il tasto Avanti");
                     break;
                 case 1:
                     DRV = (DataRowView)dataGrid.SelectedItem;
@@ -186,7 +180,7 @@ namespace IVTOS
                     dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaSponsor()).Tables[0].DefaultView;
                     lastQuery = QueryList.VisualizzaSponsor();
                     lblStep.Content = "<4° Step: Scegli Sponsor>";
-                    MessageBox.Show("Selezionare uno Sponsor");
+                    MessageBox.Show("Selezionare uno Sponsor e premere il tasto Avanti");
                     break;
                 case 2:
                     DRV = (DataRowView)dataGrid.SelectedItem;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,14 @@ namespace IVTOS
         static public void ExecuteOnly(string query)
         {
             Execute(query);
+        }
+
+        static public void ExecuteFile(string query, string connExecute)
+        {
+            MySqlConnection conn = new MySqlConnection(connExecute);
+            MySqlScript s = new MySqlScript(conn, query);
+            s.Execute();
+            conn.Close();
         }
 
     }

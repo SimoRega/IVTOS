@@ -151,6 +151,11 @@ namespace IVTOS
         {
             return "SELECT * FROM ivtos.squadra;";
         }
+        public static string VisualizzaPartite()
+        {
+            return "Select s1.nome as PrimaSquadra, s2.nome as SecondaSquadra, p.dataora " +
+                "from (partita p join squadra s1 on p.idsquadra1=s1.idsquadra) join squadra s2 on p.idsquadra2=s2.idsquadra ;";
+        }
         public static string VisualizzaChiavePartite()
         {
             return "SELECT idsquadra1, idsquadra2, dataora  FROM ivtos.partita;";
