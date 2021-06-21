@@ -79,6 +79,8 @@ namespace IVTOS
 
             btnMostraProssimaPartita.IsEnabled = false;
             btnMostraProssimaPartita.Visibility = Visibility.Hidden;
+
+            HideCreaSqElement();
         }
 
 
@@ -175,26 +177,40 @@ namespace IVTOS
 
         private void btnCreaSquadra_Click(object sender, RoutedEventArgs e)
         {
-            int idSquadra;
-            string res = Interaction.InputBox("Inserisci il nome della squadra che vuoi creare?", "Creazione squadra", "Default Text");
-            if (res != "")
-            {
-                try
-                {
-                    Queries.ExecuteOnly(QueryList.CreaSquadra(res));
-                    idSquadra = int.Parse(Queries.GetOneField("SELECT IdSquadra FROM squadra WHERE nome = '" + res + "';"));
-                    Queries.ExecuteOnly(QueryList.EntraSquadra(myCF, idSquadra));
-                    System.Windows.Forms.MessageBox.Show("Hai creato la squadra " + res);
-                }
-                catch
-                {
+            disableAllButton();
+            showCreaSqElement();
+        }
+        private void HideCreaSqElement()
+        {
+            sq_name.Visibility = Visibility.Hidden;
+            fifa.Visibility = Visibility.Hidden;
+            apex.Visibility = Visibility.Hidden;
+            fortnite.Visibility = Visibility.Hidden;
+            gta.Visibility = Visibility.Hidden;
+            hearthstone.Visibility = Visibility.Hidden;
+            overwatch.Visibility = Visibility.Hidden;
+            overwatch2.Visibility = Visibility.Hidden;
+            rainbow.Visibility = Visibility.Hidden;
+            rocket.Visibility = Visibility.Hidden;
+            starcraft.Visibility = Visibility.Hidden;
+            btc_crea.Visibility = Visibility.Hidden;
 
-                }
-
-
-
-            }
-
+            sq_name.Text = "Inserisci il nome della squadra";
+        }
+        private void showCreaSqElement()
+        {
+            sq_name.Visibility = Visibility.Visible;
+            fifa.Visibility = Visibility.Visible;
+            apex.Visibility = Visibility.Visible;
+            fortnite.Visibility = Visibility.Visible;
+            gta.Visibility = Visibility.Visible;
+            hearthstone.Visibility = Visibility.Visible;
+            overwatch.Visibility = Visibility.Visible;
+            overwatch2.Visibility = Visibility.Visible;
+            rainbow.Visibility = Visibility.Visible;
+            rocket.Visibility = Visibility.Visible;
+            starcraft.Visibility = Visibility.Visible;
+            btc_crea.Visibility = Visibility.Visible;
         }
 
         private void btnMostraMembri_Click(object sender, RoutedEventArgs e)
@@ -239,5 +255,82 @@ namespace IVTOS
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.MostraProssimePartita(idSquadra)).Tables[0].DefaultView;
 
         }
+
+        private void btc_crea_Click(object sender, RoutedEventArgs e)
+        {
+
+            int idSquadra;
+            string res = sq_name.Text.ToString();
+
+
+            if (!(bool)fifa.IsChecked && !(bool)apex.IsChecked && !(bool)fortnite.IsChecked && !(bool)gta.IsChecked && !(bool)hearthstone.IsChecked && !(bool)overwatch.IsChecked && !(bool)overwatch2.IsChecked && !(bool)rainbow.IsChecked && !(bool)rocket.IsChecked && !(bool)starcraft.IsChecked)
+            {
+
+                System.Windows.Forms.MessageBox.Show("Devi selezionare almeno un videogioco");
+                HideCreaSqElement();
+                return;
+            }
+
+            Queries.ExecuteOnly(QueryList.CreaSquadra(res));
+            idSquadra = int.Parse(Queries.GetOneField("SELECT IdSquadra FROM squadra WHERE nome = '" + res + "';"));
+            Queries.ExecuteOnly(QueryList.EntraSquadra(myCF, idSquadra));
+            try
+            {
+                if ((bool)fifa.IsChecked)
+                {
+                    Queries.ExecuteOnly(QueryList.InsertSquadraRiguarda(idSquadra, fifa.Content.ToString()));
+                }
+                if ((bool)apex.IsChecked)
+                {
+                    Queries.ExecuteOnly(QueryList.InsertSquadraRiguarda(idSquadra, apex.Content.ToString()));
+                }
+                if ((bool)fortnite.IsChecked)
+                {
+                    Queries.ExecuteOnly(QueryList.InsertSquadraRiguarda(idSquadra, fortnite.Content.ToString()));
+                }
+                if ((bool)gta.IsChecked)
+                {
+                    Queries.ExecuteOnly(QueryList.InsertSquadraRiguarda(idSquadra, gta.Content.ToString()));
+                }
+                if ((bool)hearthstone.IsChecked)
+                {
+                    Queries.ExecuteOnly(QueryList.InsertSquadraRiguarda(idSquadra, hearthstone.Content.ToString()));
+                }
+                if ((bool)overwatch.IsChecked)
+                {
+                    Queries.ExecuteOnly(QueryList.InsertSquadraRiguarda(idSquadra, overwatch.Content.ToString()));
+                }
+                if ((bool)overwatch2.IsChecked)
+                {
+                    Queries.ExecuteOnly(QueryList.InsertSquadraRiguarda(idSquadra, overwatch2.Content.ToString()));
+                }
+                if ((bool)rainbow.IsChecked)
+                {
+                    Queries.ExecuteOnly(QueryList.InsertSquadraRiguarda(idSquadra, rainbow.Content.ToString()));
+                }
+                if ((bool)rocket.IsChecked)
+                {
+                    Queries.ExecuteOnly(QueryList.InsertSquadraRiguarda(idSquadra, rocket.Content.ToString()));
+                }
+                if ((bool)starcraft.IsChecked)
+                {
+                    Queries.ExecuteOnly(QueryList.InsertSquadraRiguarda(idSquadra, starcraft.Content.ToString()));
+                }
+
+                System.Windows.Forms.MessageBox.Show("Congratulazioni, hai creato la squadra :" + res) ;
+
+            }
+            catch
+            {
+
+            }
+            HideCreaSqElement();
+        }
+
+        private void sq_name_GotFocus(object sender, RoutedEventArgs e)
+        {
+            sq_name.Clear();
+        }
+
     }
 }
