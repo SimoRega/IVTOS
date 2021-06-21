@@ -12,18 +12,21 @@
         <ComboBox x:Name="cmbSelect" HorizontalAlignment="Left" Margin="737,45,0,0" VerticalAlignment="Top" Width="226" Height="42" DropDownClosed="cmbSelect_DropDownClosed" />
         <GroupBox Header="Informazioni Generali" HorizontalAlignment="Left" Height="80" Margin="730,19,0,0" VerticalAlignment="Top" Width="323"/>
         <Button x:Name="btnTorneo" Content="Crea un Torneo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="737,210,0,0" Click="btnTorneo_Click" Height="41"/>
-        <GroupBox Header="Gestione Tornei" HorizontalAlignment="Left" Height="117" Margin="730,188,0,0" VerticalAlignment="Top" Width="321"/>
+        <GroupBox Header="Gestione Tornei" HorizontalAlignment="Left" Height="152" Margin="730,185,0,0" VerticalAlignment="Top" Width="321">
+            <Label x:Name="lblValue" Content="4" HorizontalAlignment="Left" Margin="267,99,0,0" VerticalAlignment="Top"/>
+        </GroupBox>
         <Button x:Name="btnAvanti" Content="Avanti --&gt;" HorizontalAlignment="Left" Margin="899,256,0,0" VerticalAlignment="Top" Width="142" Click="btnAvanti_Click" Height="41"/>
         <Label x:Name="lblStep" Content="&lt;1° Step: Crea Torneo &gt;" HorizontalAlignment="Left" Margin="730,260,0,0" VerticalAlignment="Top" Width="169" Height="45" FontSize="15"/>
-        <Button x:Name="btnIscrizioniTorneo" Content="Iscrizioni ad un Torneo" HorizontalAlignment="Left" Margin="737,338,0,0" VerticalAlignment="Top" Width="148" Click="btnIscrizioniTorneo_Click" Height="41"/>
-        <Button x:Name="btnSelezioneTorneo" Content="Seleziona Torneo" HorizontalAlignment="Left" Margin="899,338,0,0" VerticalAlignment="Top" Width="142" Click="btnSelezioneTorneo_Click" Height="41"/>
-        <GroupBox Header="Gestione Iscrizioni Torneo" HorizontalAlignment="Left" Height="123" Margin="730,314,0,0" VerticalAlignment="Top" Width="321"/>
-        <Button x:Name="btnIscrizioniSquadra" Content="Iscrizioni di una Squadra" HorizontalAlignment="Left" Margin="737,384,0,0" VerticalAlignment="Top" Width="148" Click="btnIscrizioniSquadra_Click" Height="41"/>
-        <Button x:Name="btnSelezioneSquadra" Content="Seleziona Squadra" HorizontalAlignment="Left" Margin="899,384,0,0" VerticalAlignment="Top" Width="142" Click="btnSelezioneSquadra_Click" Height="41"/>
+        <Button x:Name="btnIscrizioniTorneo" Content="Iscrizioni ad un Torneo" HorizontalAlignment="Left" Margin="737,376,0,0" VerticalAlignment="Top" Width="148" Click="btnIscrizioniTorneo_Click" Height="42"/>
+        <Button x:Name="btnSelezioneTorneo" Content="Seleziona Torneo" HorizontalAlignment="Left" Margin="899,376,0,0" VerticalAlignment="Top" Width="142" Click="btnSelezioneTorneo_Click" Height="42"/>
+        <GroupBox Header="Gestione Iscrizioni Torneo" HorizontalAlignment="Left" Height="124" Margin="730,352,0,0" VerticalAlignment="Top" Width="321"/>
+        <Button x:Name="btnIscrizioniSquadra" Content="Iscrizioni di una Squadra" HorizontalAlignment="Left" Margin="737,422,0,0" VerticalAlignment="Top" Width="148" Click="btnIscrizioniSquadra_Click" Height="42"/>
+        <Button x:Name="btnSelezioneSquadra" Content="Seleziona Squadra" HorizontalAlignment="Left" Margin="899,422,0,0" VerticalAlignment="Top" Width="142" Click="btnSelezioneSquadra_Click" Height="42"/>
         <Button x:Name="btnTerminaTorneo" Content="Termina Torneo" HorizontalAlignment="Left" Margin="899,210,0,0" VerticalAlignment="Top" Width="142" Click="btnTerminaTorneo_Click" Height="41"/>
         <ComboBox x:Name="cmbStatistiche" HorizontalAlignment="Left" Margin="737,129,0,0" VerticalAlignment="Top" Width="226" Height="41"/>
         <Button x:Name="btnEseguiStatistiche" Content="Esegui" HorizontalAlignment="Left" Margin="971,129,0,0" VerticalAlignment="Top" Width="75" Height="41" Click="btnEseguiStatistiche_Click"/>
         <GroupBox Header="Statistiche Generali Tornei" HorizontalAlignment="Left" Height="76" Margin="730,104,0,0" VerticalAlignment="Top" Width="323"/>
+        <Slider x:Name="sliderTorneo" IsSnapToTickEnabled="True" HorizontalAlignment="Left" Margin="737,305,0,0" VerticalAlignment="Top" Height="24" Width="226" Maximum="15" TickPlacement="BottomRight" TickFrequency="1" Minimum="4" ValueChanged="sliderTorneo_ValueChanged" />
 
     </Grid>
 </Window>

@@ -71,6 +71,7 @@ namespace IVTOS
             btnSelezioneSquadra.IsEnabled = false;
             btnTerminaTorneo.IsEnabled = false;
             btn.IsEnabled = false;
+            sliderTorneo.IsEnabled = false;
 
             foreach (var p in queryList)
             {
@@ -157,7 +158,7 @@ namespace IVTOS
         {
 
             DataRowView DRV;
-            if (dataGrid.SelectedItem == null && steps != 2)
+            if (dataGrid.SelectedItem == null && steps != 2 &&  steps != 3)
             {
                 MessageBox.Show("Prima di andare avanti selezionare una riga dalla tabella", "Creazione Torneo", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -185,6 +186,14 @@ namespace IVTOS
                     btnAvanti.IsEnabled = true;
                     break;
                 case 2:
+                    lblStep.Content = "<5° Step: N°Iscrizioni>";
+                    MessageBox.Show("Indicare con lo Slider il numero di Squadre che si desidera far partecipare al torneo", "Creazione Torneo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    sliderTorneo.IsEnabled = true;
+                    steps++;
+                    break;
+                case 3:
+                    capienzaTorneo = sliderTorneo.Value.ToString();
+                    sliderTorneo.IsEnabled = false;
                     try
                     {
 
@@ -200,6 +209,7 @@ namespace IVTOS
                     Queries.ExecuteOnly(newTorneo);
                     dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaTornei()).Tables[0].DefaultView;
                     lastQuery = QueryList.VisualizzaTornei();
+                    
                     steps = -1;
                     lblStep.Content = "<1° Step: Crea Torneo>";
                     btnAvanti.IsEnabled = false;
@@ -280,6 +290,11 @@ namespace IVTOS
                 btn.IsEnabled = true;
             else
                 btn.IsEnabled = false;
+        }
+
+        private void sliderTorneo_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            lblValue.Content = sliderTorneo.Value;
         }
     }
 }
