@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.15)  21 JUN 2021 12:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.15)  21 JUN 2021 17:39
 entering extended mode
 **./Relazione_IVTOS.tex
 (Relazione_IVTOS.tex
@@ -721,21 +721,36 @@ Package pdftex.def Info: img/SchemaRelazionale.png  used on input line 570.
 [21] [22 <./img/SchemaRelazionale.png>]
 Capitolo 5.
 
-Overfull \hbox (71.1356pt too wide) in paragraph at lines 598--600
-\OT1/cmr/m/n/12 Spon-sor, No-me-Vi-deo-gio-co,IdArena,IdSquadraVincitrice) []VA
--LUES[] (Id-Tor-neo,?,?,?,?,?,?,?); 
+Underfull \hbox (badness 10000) in paragraph at lines 590--592
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--599
+
  []
 
 [23
 
 ]
-Overfull \hbox (35.83218pt too wide) in paragraph at lines 606--608
+Overfull \hbox (71.1356pt too wide) in paragraph at lines 604--606
+\OT1/cmr/m/n/12 Spon-sor, No-me-Vi-deo-gio-co,IdArena,IdSquadraVincitrice) []VA
+-LUES[] (Id-Tor-neo,?,?,?,?,?,?,?); 
+ []
+
+
+Overfull \hbox (35.83218pt too wide) in paragraph at lines 613--615
 []\OT1/cmr/m/n/12 INSERT IN-TO[] par-ti-ta(IdSquadra1, Id-Squa-dra2, Da-taO-ra,
  CF[]Arbitro,CF[]Speaker,
  []
 
 
-Overfull \hbox (47.11018pt too wide) in paragraph at lines 616--617
+Underfull \hbox (badness 10000) in paragraph at lines 617--619
+
+ []
+
+
+Overfull \hbox (47.11018pt too wide) in paragraph at lines 630--631
 []\OT1/cmr/m/n/12 FROM[] squa-dra []JOIN[] ade-sio-ne[]player[]squadra []ON[] a
 de-sio-ne[]player[]squadra.IdSquadra
  []
@@ -765,7 +780,7 @@ ts/cm/cmbx12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmr12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Relazione_IVTOS.pdf (26 pages, 434280 bytes).
+Output written on Relazione_IVTOS.pdf (26 pages, 434576 bytes).
 PDF statistics:
  332 PDF objects out of 1000 (max. 8388607)
  85 named destinations out of 1000 (max. 500000)
