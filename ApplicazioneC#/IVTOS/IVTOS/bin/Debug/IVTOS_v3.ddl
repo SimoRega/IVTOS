@@ -433,10 +433,6 @@ INSERT INTO adesione_player_squadra VALUES(1, "XGESMN00D01H294G","2015-02-02",nu
 INSERT INTO adesione_player_squadra VALUES(2, "PLNMNV00H06XXXXX","2008-02-02",null);
 INSERT INTO adesione_player_squadra VALUES(2, "MGLGLC00H06XXXXX","2013-02-02",null);
 
-INSERT INTO riguarda VALUES (1, "Overwatch");
-INSERT INTO riguarda VALUES (1, "Rocket League");
-INSERT INTO riguarda VALUES (2, "HearthStone");
-
 INSERT INTO cittá VALUES ('Francia','Parigi',675417,68303234);
 INSERT INTO cittá VALUES ('Francia','Cannes',675417,68303234);
 INSERT INTO cittá VALUES ('Francia','Marsiglia',675417,68303234);
