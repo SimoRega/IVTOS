@@ -18,6 +18,14 @@
         <Label Content="DB Pwd" HorizontalAlignment="Left" Margin="244,99,0,0" VerticalAlignment="Top" Height="46" Width="80" FontSize="17"/>
         <Label Content="DB Port" HorizontalAlignment="Left" Margin="244,159,0,0" VerticalAlignment="Top" Height="47" Width="77" FontSize="17"/>
         <GroupBox Header="Autenticazione MySQL Server" HorizontalAlignment="Left" Height="206" Margin="221,0,0,0" VerticalAlignment="Top" Width="315" FontSize="15"/>
-        <Label Content="⚠Prima di effettuare il LOGIN assicurarsi che &#xD;&#xA;   le credenziali di MySql Server siano corrette" HorizontalAlignment="Left" Margin="0,211,0,0" VerticalAlignment="Top" Width="545" Background="#FFFFEB6A" Foreground="Red" Height="84" FontSize="26"/>
+        <Label Content="⚠Prima di effettuare il LOGIN assicurarsi che &#xD;&#xA;   le credenziali di MySql Server siano corrette" HorizontalAlignment="Left" Margin="0,211,0,0" VerticalAlignment="Top" Width="545" Foreground="Red" Height="84" FontSize="26">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FFFFE800" Offset="1"/>
+                    <GradientStop Color="#FFFFF97E" Offset="0.487"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
     </Grid>
 </Window>
