@@ -286,6 +286,14 @@ riportante la loro descrizione e relativa frequenza:
 		\hline
 		11 & Nome Arena in cui si svolge una Partita & 30.000 a settimana\\
 		\hline
+		12 & Visualizza Biglietti acquistati da uno spettatore & 30.000 a settimana\\
+		\hline
+		13 & Visualizza tutte le squadre che fanno parte di un determinato torneo & 10 a settimana\\
+		\hline
+		14 & Visualizza i 20 tornei con più squadre iscritte & 1 a settimana\\
+		\hline
+		15 & Visualizza tutti i membri che hanno fatto parte di una squadra & 1 a settimana\\
+		\hline
 	\end{tabular}
 \end{center}
 \section{Schemi di navigazione e tabelle degli accessi}
@@ -464,6 +472,65 @@ Viene fatto un accesso in lettura in Partita per leggere l'id del torneo, un acc
 		\hline
 	\end{tabular}
 \end{center}
+\subsection*{(12)  Visualizza Biglietti acquistati da uno spettatore}
+Avendo nella tabella dei volumi 200.000.000 Spettatori e 200.000.000 tuple in acquisto\_biglietto (cioè coppie spettatore-biglietto), in media uno spettatore acquista un solo biglietto, dunque per visualizzare i biglietti acquistati occorre fare una sola lettura nell'entità acquisto\_biglietto.
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline		
+		Acquisto\_Biglietto & E & 1 & L\\
+		\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} (1L) → 30.000/settimana} \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection*{(13)  Visualizza tutte le squadre che fanno parte di un determinato torneo}
+Avendo nella tabella dei volumi 10.000 Tornei e 100.000 Iscrizioni ad un torneo (cioè le coppie squadra-torneo), ad un torneo partecipano in media 10 squadre, dunque verranno effettuate 10 letture dell'associazione iscrizione.
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline		
+		Iscrizione & A & 10 & L\\
+		\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} (10L) → 100/settimana} \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection*{(14)  Visualizza i 20 tornei con più squadre iscritte}
+Per ogni Torneo (che in totale sono 10.000) vado a leggere le squadre che ne fanno parte(in media 10), in tutto vengono fatte 100.000 letture, poi vengono compiute 20 letture su Torneo per conoscere i dettagli dei 20 tornei con più squadre iscritte.
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline		
+		Iscrizione & A & 100.000 & L\\
+		\hline
+		Torneo & E & 20 & L\\
+		\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} (100.000L + 20L) → 100.020/settimana} \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection*{(15)  Visualizza tutti i membri che hanno fatto parte di una squadra}
+Avendo nella tabella dei volumi 100.000 squadre e 600.000 coppie player-squadra, in media ad ogni squadra hanno partecipato 6 player. Dunque sarà necessario leggere 6 tuple nell'entità adesione\_player\_squadra.
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline\rowcolor{pink}
+		Concetto & Costrutto & Accessi & Tipo\\
+		\hline\hline		
+		Adesione\_Player\_Squadra & E & 6 & L\\
+		\hline
+		\multicolumn{2}{l}{%
+			\textbf{Totale:} (6L) → 6/settimana} \\
+		\hline
+	\end{tabular}
+\end{center}
+
 \section{Raffinamento dello schema}
 \subsection*{Eliminazione Gerarchie}
 Eliminazione delle gerarchie
