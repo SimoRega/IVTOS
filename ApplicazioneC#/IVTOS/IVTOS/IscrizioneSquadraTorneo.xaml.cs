@@ -47,6 +47,14 @@ namespace IVTOS
                 DataRow DR = (DataRow)DRV.Row;
                 idTorneo = (int)DR.ItemArray[0];
                 //nomeSquadra = DR.ItemArray[0].ToString();
+
+                string giocoSquadra = Queries.GetOneField(QueryList.VisualizzaGiocoSquadra(idSquadra));
+                string giocoTorneo = Queries.GetOneField(QueryList.VisualizzaGiocoTorneo(idTorneo));
+                if (giocoSquadra!=giocoTorneo)
+                {
+                    MessageBox.Show("Non puoi iscrivere la tua squadra che gioca a "+giocoSquadra+" in un torneo di "+ giocoTorneo ,"Errore Iscrizione Squadra", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
             }
             catch
             {
