@@ -81,18 +81,17 @@ Di ogni squadra si vuole tenere traccia di tutti i player che ne hanno fatto par
 %
 %
 A seguito della lettura e comprensione dei requisiti, si procede redigendo un testo che ne
-riassuma tutti i concetti e in particolare ne estragga quelli principali eliminando le ambiguità
-sopra rilevate:\\
+riassuma tutti i concetti e in particolare ne estragga quelli principali eliminando le ambiguità:\\
 
-Per ogni \textbf{Player} si memorizzano: Codice Fiscale, nickname, nome e cognome, genere, mail e data di nascita. Ogni Player può partecipare a più squadre. Ogni \textbf{Player} può giocare a più Videogiochi.
+Per ogni \textbf{Player} si memorizzano: Codice Fiscale, nickname, nome e cognome, genere, mail e data di nascita. Ogni \textbf{Player} può partecipare a più squadre. Ogni \textbf{Player} può giocare a più \textbf{Videogiochi}.
 
 Per ogni \textbf{Videogame} si memorizzano: nome, data di creazione, tipologia di gioco.
 
-Per ogni \textbf{Squadra} si memorizzano: IdSquadra, nome e data di creazione. Una specifica squadra può giocare a più videogiochi.La \textbf{Squadra} è composta da 5 \textbf{Player} ed \textit{eventualmente} 1 \textbf{Coach}. La \textbf{Squadra} può iscriversi a più \textbf{Tornei} contemporaneamente, purchè la \textbf{squadra} giochi al \textbf{videogioco} che riguarda il \textbf{torne}o.
+Per ogni \textbf{Squadra} si memorizzano: IdSquadra, nome e data di creazione. Una specifica squadra può giocare a più videogiochi. La \textbf{Squadra} è composta da 5 \textbf{Player} ed \textit{eventualmente} 1 \textbf{Coach}. La \textbf{Squadra} può iscriversi a più \textbf{Tornei} contemporaneamente, purchè la \textbf{squadra} giochi al \textbf{videogioco} che riguarda il \textbf{torne}o.
 
-Per ogni \textbf{Torneo} si memorizzano : la data di inizio, il numero massimo di iscrizioni e, una  volta terminato, la data di fine. Il \textbf{Torneo} si svolge interamente in una singola \textbf{Arena} e può essere finanziato da uno \textbf{Sponsor}. Il \textbf{Torneo} inoltre riguarda un singolo \textbf{Videogioco} e prevede diverse \textbf{Partite}. Ad ogni \textbf{Torneo} possono partecipano un numero variabile di squadre (massimo 15) che si sfidano tutti contro tutti e la squadra con più partite vinte vincerà il torneo.
+Per ogni \textbf{Torneo} si memorizzano : la data di inizio, il numero massimo di iscrizioni e, una  volta terminato, la data di fine. Il \textbf{Torneo} si svolge interamente in una singola \textbf{Arena} e può essere finanziato da uno \textbf{Sponsor}. Il \textbf{Torneo} inoltre riguarda un singolo \textbf{Videogioco} e prevede diverse \textbf{Partite}. Ad ogni \textbf{Torneo} possono partecipano un numero variabile di squadre (massimo 15) che si sfidano tutti contro tutti e la \textbf{squadra} con più \textbf{partite} vinte vincerà il \textbf{torneo}.
 
-Per ogni \textbf{Partita} si memorizzano: le due squadre che si sfidano e la data dell'incontro.
+Per ogni \textbf{Partita} si memorizzano: le due \textbf{squadre} che si sfidano e la data dell'incontro.
 
 Per ogni \textbf{Biglietto} si memorizzano: il costo, la Partita e l'Arena in cui si disputa.
 
@@ -110,6 +109,13 @@ Segue un elenco delle principali azioni richieste:
 	\item Iscrizione di una Squadra ad un Torneo
 	\item Creazione di nuove Partite
 	\item Acquisto di Biglietti
+	\item Mostrare le squadre a cui partecipa un player
+	\item Nome Arena in cui si svolge una Partita
+	\item Visualizza Biglietti acquistati da uno spettatore
+	\item Visualizza tutte le squadre che fanno parte di un determinato torneo
+	\item Visualizza i 20 tornei con più squadre iscritte
+	\item Visualizza tutti i membri che hanno fatto parte di una squadra
+	
 \end{itemize}
 
 \chapter{Progettazione Concettuale}
@@ -129,7 +135,19 @@ Se necessario ogni entità figlia potrà aggiungere agli attributi del padre i p
 	\caption{Schema ER che espone le principali caratteristiche delle Persone}
 	\label{img:ER_Persona}
 \end{figure}
+\section{Anteprima sviluppo delle "Squadre"}
+Una \textbf{Squadra} è identificata da un idSquadra, possiede un nome e ha una data di creazione.
+ Ogni \textbf{Squadra} è composta da 0 a 5 \textbf{Player} e può avere un \textbf{Coach}. 
 
+Ogni \textbf{Squadra} riguarda uno o più \textbf{videogiochi}.  
+
+Una \textbf{Squadra} si può iscrivere ai \textbf{Tornei} che riguardano lo stesso gioco riguardante dalla squadra. All'interno di un torneo una squadra può giocare diverse \textbf{Partite}.
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=0.6]{img/ER_Squadra.png}}
+	\caption{Schema ER che espone le principali caratteristiche delle Squadre}
+	\label{img:ER_Squadra}
+\end{figure}
 \section{Anteprima sviluppo dei "Videogiochi"}
 In questa sezione verrà modellato l'aspetto di \textbf{Videogioco}. 
 Il \textbf{Videogioco} ha un Nome, dal quale viene identificato, e una data di creazione.
@@ -173,7 +191,7 @@ Ad ogni \textbf{Torneo} possono iscriversi più \textbf{Squadre} e si vuole memo
 	\label{img:ER_Tornei}
 \end{figure}
 \section{Schema Generale}
-Di seguito verrà riportato lo schema concettuale generale, contenente tutte le entità e associazioni prima citate nelle varie sezioni superiori con l'aggiunta di entità secondarie di minor importanza.
+Di seguito verrà riportato lo schema concettuale generale, contenente tutte le entità e associazioni prima citate nelle varie sezioni superiori collegate tra loro e con altre entità non spiegate nel dettaglio.
 \begin{figure}[!htb]
 	\centerline{\includegraphics[scale=0.55]{img/ER_Generale.png}}
 	\caption{Schema ER che espone lo schema concettuale finale}
@@ -455,7 +473,7 @@ Avendo nella tabella dei volumi 500.000 player totali e 600.000 adesione\_player
 	\end{tabular}
 \end{center}
 \subsection*{(11) Nome Arena in cui si svolge una Partita}
-Viene fatto un accesso in lettura in Partita per leggere l'id del torneo, un accesso in lettura per leggere l'id dell'arena, ed infine un accesso in lettura in arena per leggerne il nome.
+Viene fatto un accesso in lettura in Partita per leggere l'id del torneo, un accesso in lettura in torneo per leggere l'id dell'arena, ed infine un accesso in lettura in arena per leggerne il nome.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
@@ -472,8 +490,12 @@ Viene fatto un accesso in lettura in Partita per leggere l'id del torneo, un acc
 		\hline
 	\end{tabular}
 \end{center}
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=0.6]{img/op11.png}}
+	\caption{Operazione 11}
+\end{figure}
 \subsection*{(12)  Visualizza Biglietti acquistati da uno spettatore}
-Avendo nella tabella dei volumi 200.000.000 Spettatori e 200.000.000 tuple in acquisto\_biglietto (cioè coppie spettatore-biglietto), in media uno spettatore acquista un solo biglietto, dunque per visualizzare i biglietti acquistati occorre fare una sola lettura nell'entità acquisto\_biglietto.
+Avendo nella tabella dei volumi 200.000.000 Spettatori e 200.000.000 tuple in acquisto\_biglietto (cioè coppie spettatore-biglietto), in media uno spettatore acquista un solo biglietto, dunque per visualizzare i biglietti acquistati occorre fare una sola lettura nell'entità acquisto\_biglietto; inoltre si vuole riferire di quale arena e squadre si tratta, quindi occorreranno due letture su squadra e una su arena.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
@@ -481,11 +503,19 @@ Avendo nella tabella dei volumi 200.000.000 Spettatori e 200.000.000 tuple in ac
 		\hline\hline		
 		Acquisto\_Biglietto & E & 1 & L\\
 		\hline
+		Arena & E & 1 & L\\
+		\hline
+		Squadra & E & 2 & L\\
+		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} (1L) → 30.000/settimana} \\
+			\textbf{Totale:} (4L) → 120.000/settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=0.8]{img/op12.png}}
+	\caption{Operazione 12}
+\end{figure}
 \subsection*{(13)  Visualizza tutte le squadre che fanno parte di un determinato torneo}
 Avendo nella tabella dei volumi 10.000 Tornei e 100.000 Iscrizioni ad un torneo (cioè le coppie squadra-torneo), ad un torneo partecipano in media 10 squadre, dunque verranno effettuate 10 letture dell'associazione iscrizione.
 \begin{center}
@@ -500,6 +530,10 @@ Avendo nella tabella dei volumi 10.000 Tornei e 100.000 Iscrizioni ad un torneo 
 		\hline
 	\end{tabular}
 \end{center}
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=0.6]{img/op13.png}}
+	\caption{Operazione 13}
+\end{figure}
 \subsection*{(14)  Visualizza i 20 tornei con più squadre iscritte}
 Per ogni Torneo (che in totale sono 10.000) vado a leggere le squadre che ne fanno parte(in media 10), in tutto vengono fatte 100.000 letture, poi vengono compiute 20 letture su Torneo per conoscere i dettagli dei 20 tornei con più squadre iscritte.
 \begin{center}
@@ -584,13 +618,13 @@ ACQUISTO\_BIGLIETTO((\underline{IdArena}, \underline{IdSquadra1}, \underline{IdS
 
 \noindent ADESIONE\_PLAYER\_SQUADRA(\underline{IdSquadra}: SQUADRA, \underline{CF\_Player}: PLAYER, \underline{DataInizio}, DataFine*) \\
 
-\noindent ARBITRO(\underline{CF}, nome, cognome, genere, mail data\_di\_nascita, PartiteArbitrate) \\
+\noindent ARBITRO(\underline{CF}, nome, cognome, genere, mail,  data\_di\_nascita, PartiteArbitrate) \\
 
 \noindent ARENA(\underline{IdArena}, NomeArena, Capienza, (NomeStato, NomeCitta): CITTÀ) \\
 
 \noindent AZIENDA\_VIDEOGIOCO(nome, \underline{partitaIVA}) \\
 
-\noindent BIGLIETTO(\underline{IdArena} : ARENA, (\underline{IdSquadra1}, \underline{IdSquadra2}, \underline{DataOra}) : PARTITA, Costo) \\
+\noindent BIGLIETTO(\underline{IdArena} : ARENA, (\underline{IdSquadra1}, \underline{IdSquadra2}, \underline{DataOra}) : PARTITA, Costo, BigliettiRimanenti) \\
 
 \noindent CITTÀ(\underline{NomeStato}: STATO, \underline{Nome}, Superficie, NumAbitanti) \\
 
@@ -698,11 +732,112 @@ ACQUISTO\_BIGLIETTO((\underline{IdArena}, \underline{IdSquadra1}, \underline{IdS
 
 \noindent \textcolor{blue}{WHERE} CF\_Player = '????????????????' \textcolor{blue}{AND} DataFine is null;
 \subsection*{(11) Nome Arena in cui si svolge una Partita}
-
+\textcolor{blue}{SELECT} A.NomeArena \\
+\noindent \textcolor{blue}{FROM} (partita P \textcolor{blue}{JOIN} torneo T \textcolor{blue}{ON} P.IdTorneo = T.IdTorneo) \textcolor{blue}{JOIN} Arena A \textcolor{blue}{ON} T.IdArena = A.IdArena \\
+\noindent\textcolor{blue}{WHERE} P.IdSquadra1 = ? \\
+\noindent\textcolor{blue}{AND} P.IdSquadra2 = ?\\
+\noindent\textcolor{blue}{AND} P.DataOra = 'aaaa-mm-gg';
+\subsection*{(12)  Visualizza Biglietti acquistati da uno spettatore}
+\textcolor{blue}{SELECT} A.NomeArena, s1.nome \textcolor{blue}{AS} Nomesquadra1, s2.nome \textcolor{blue}{AS} Nomesquadra2, B.Dataora \\
+\noindent \textcolor{blue}{FROM} arena a, squadra s1, squadra s2, acquisto\_biglietto B\\
+\noindent \textcolor{blue}{WHERE} B.CF\_Spettatore = '????????????????' \\
+\noindent \textcolor{blue}{AND} s1.idSquadra = ?\\
+\noindent \textcolor{blue}{AND} s2.idSquadra = ?\\
+\noindent \textcolor{blue}{AND} A.IdArena = ?\\
+\subsection*{(13)  Visualizza tutte le squadre che fanno parte di un determinato torneo}
+\textcolor{blue}{SELECT} squadra.idsquadra \textcolor{blue}{AS} IdSquadra, squadra.nome \textcolor{blue}{AS} NomeSquadra\\
+\noindent \textcolor{blue}{FROM} iscrizione \textcolor{blue}{JOIN} squadra \textcolor{blue}{ON} iscrizione.IdSquadra = squadra.IdSquadra\\
+\noindent \textcolor{blue}{WHERE}  idTorneo = ?;\\
+\subsection*{(14)  Visualizza i 20 tornei con più squadre iscritte}
+\textcolor{blue}{SELECT} torneo.idTorneo, count() \textcolor{blue}{AS} NumeroSquadre,  torneo. DataInizio, torneo.NomeVideogioco, sponsor.Nome \\
+\noindent \textcolor{blue}{FROM} torneo \textcolor{blue}{JOIN} iscrizione \textcolor{blue}{ON} torneo.idtorneo = iscrizione.idtorneo  \textcolor{blue}{JOIN} sponsor \textcolor{blue}{ON} torneo.idsponsor = sponsor.idsponsor \\
+\noindent \textcolor{blue}{GROUP BY} torneo.idtorneo \\
+\noindent \textcolor{blue}{ORDER BY} count() \textcolor{blue}{DESC} \\
+\noindent \textcolor{blue}{LIMIT} 20;\\
+\subsection*{(15)  Visualizza tutti i membri che hanno fatto parte di una squadra}
+\textcolor{blue}{SELECT}  CF\_PLAYER\\
+\noindent\textcolor{blue}{FROM} adesione\_player\_squadra\\
+\noindent\textcolor{blue}{WHERE} DataFine \textcolor{blue}{is null}
 \chapter{Progettazione dell'Applicazione}
 \section{Descrizione della scelta del linguaggio e del DBMS}
+L’applicazione è stata realizzata in C\#, in particolare abbiamo utilizzato le WPF che ci hanno permesso di gestire in modo snello e veloce l’inserimento di vari comandi ed istruzioni per l’interrogazione al database. 
+
+Per la connessione al database e le relative richieste sono state fatte tramite il MySql.Data.EntityFramework. 
+
+Il database risiede in locale e il DBMS usato è mySQL.
+
 \section{Descrizione dell'architettura}
+Il programma è molto semplice ed intuitivo: prevede una finestra di login, la quale dopo l'autenticazione porta a 3 diverse finestre con funzionalità differenti. 
+
+Gli unici tre utenti disponibili sono Admin, Player e Spettatore.
 \section{Interfaccia Utente}
+\subsection{Autenticazione}
+L'interfaccia di Autenticazione permette di accedere all'interno sistema informativo tramite credenziali. 
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=\textwidth]{img/autenticazione.jpg}}
+	\caption{Schermata di Autenticazione}
+\end{figure}
+
+Poiché il database viene creato in locale abbiamo scelto di affiancare alla normale finestra di autenticazione una seconda finestra dove poter inserire le proprie credenziali di autenticazione al DBMS MySqlWorkbench. 
+
+Una volta premuto invio o cliccato sul tasto di login, se le credenziali sono corrette e l'autenticazione al DBMS è andata a buon fine, verranno lanciati due script sql per la creazione e popolazione del database locale, subito dopo si verrà reindirizzati alla propria finestra di visualizzazione.
 \subsection{Amministratore Torneo}
-\subsection{Giocatore}
+L’interfaccia Admin permette di eseguire tutte le istruzioni di controllo sui tornei, come la creazione di essi e controllarne le squadre iscritte.
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=0.6]{img/admin_filled.jpg}}
+	\caption{Schermata dell' Admin}
+\end{figure}
+
+È inoltre possibile monitorare in tempo reale lo stato del sistema informativo, nonché ottenere statistiche, ad esempio: 
+\begin{itemize}
+	\item I 20 tornei con più squadre iscritte
+	\item I 20 tornei con più biglietti venduti
+	\item I 3 videogiochi più giocati nei tornei
+	\item La squadra che ha partecipato a più tornei
+	\item Visualizzazione dei tornei non ancora conclusi
+\end{itemize}
+\subsection{Player}
+La schermata del player permette di eseguire tutte le operazioni che possono essere eseguite dai giocatori come:
+\begin{itemize}
+	\item Mostrare le proprie squadre
+	\item Iscrivere una squadra ad un torneo (\cref{img:player_iscrizione})
+	\item Mostrare i membri di una delle proprie squadre
+	\item Mostrare le prossime partite di una squadra
+	\item Abbandonare una squadra
+	\item Mostrare le squadre non complete di cui non fa parte (\cref{img:player_squadre_non_complete})
+	\item Iscriversi ad una di esse 
+	\item Creare una nuova squadra (\cref{img:player_crea_squadra})
+\end{itemize}  
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=0.85]{img/player_squadre_non_complete.jpg}}
+	\caption{Schermata del Player (Visualizzazione Squadre non complete)}
+	\label{img:player_squadre_non_complete}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=0.85]{img/player_crea_squadra.jpg}}
+	\caption{Schermata del Player (Creazione di una Squadra)}
+	\label{img:player_crea_squadra}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=1.5]{img/player_iscrizione.jpg}}
+	\caption{Schermata del Player (Iscrizione di una squadra ad un torneo)}
+	\label{img:player_iscrizione}
+\end{figure}
+
+\subsection{Spettatore}
+La schermata spettatore permette di acquistare i biglietti per le partite. Per l’acquisto è necessario selezionare un torneo, selezionare una delle partite in calendario e successivamente premere compra biglietto.
+
+È inoltre possibile, tramite la pressione del tasto visualizza biglietti acquistati,  visualizzare tutti i biglietti che sono stati acquistati dallo spettatore.
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=0.85]{img/spettatore_filled.jpg}}
+	\caption{Schermata dello Spettatore}
+	\label{img:spettatore_filled}
+\end{figure}
+
 \end{document}
