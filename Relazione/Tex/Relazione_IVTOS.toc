@@ -20,9 +20,11 @@
 \contentsline {section}{\numberline {4.7}Schema relazionale finale}{23}{section.4.7}%
 \contentsline {chapter}{\numberline {5}Progettazione Fisica}{25}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Traduzione in SQL}{25}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Progettazione dell'Applicazione}{27}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Descrizione della scelta del linguaggio e del DBMS}{27}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Descrizione dell'architettura}{27}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Interfaccia Utente}{27}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Amministratore Torneo}{27}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Giocatore}{27}{subsection.6.3.2}%
+\contentsline {chapter}{\numberline {6}Progettazione dell'Applicazione}{29}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Descrizione della scelta del linguaggio e del DBMS}{29}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Descrizione dell'architettura}{29}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Interfaccia Utente}{29}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Autenticazione}{29}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Amministratore Torneo}{30}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Player}{31}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Spettatore}{32}{subsection.6.3.4}%
