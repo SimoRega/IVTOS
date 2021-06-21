@@ -81,18 +81,17 @@ Di ogni squadra si vuole tenere traccia di tutti i player che ne hanno fatto par
 %
 %
 A seguito della lettura e comprensione dei requisiti, si procede redigendo un testo che ne
-riassuma tutti i concetti e in particolare ne estragga quelli principali eliminando le ambiguità
-sopra rilevate:\\
+riassuma tutti i concetti e in particolare ne estragga quelli principali eliminando le ambiguità:\\
 
-Per ogni \textbf{Player} si memorizzano: Codice Fiscale, nickname, nome e cognome, genere, mail e data di nascita. Ogni Player può partecipare a più squadre. Ogni \textbf{Player} può giocare a più Videogiochi.
+Per ogni \textbf{Player} si memorizzano: Codice Fiscale, nickname, nome e cognome, genere, mail e data di nascita. Ogni \textbf{Player} può partecipare a più squadre. Ogni \textbf{Player} può giocare a più \textbf{Videogiochi}.
 
 Per ogni \textbf{Videogame} si memorizzano: nome, data di creazione, tipologia di gioco.
 
-Per ogni \textbf{Squadra} si memorizzano: IdSquadra, nome e data di creazione. Una specifica squadra può giocare a più videogiochi.La \textbf{Squadra} è composta da 5 \textbf{Player} ed \textit{eventualmente} 1 \textbf{Coach}. La \textbf{Squadra} può iscriversi a più \textbf{Tornei} contemporaneamente, purchè la \textbf{squadra} giochi al \textbf{videogioco} che riguarda il \textbf{torne}o.
+Per ogni \textbf{Squadra} si memorizzano: IdSquadra, nome e data di creazione. Una specifica squadra può giocare a più videogiochi. La \textbf{Squadra} è composta da 5 \textbf{Player} ed \textit{eventualmente} 1 \textbf{Coach}. La \textbf{Squadra} può iscriversi a più \textbf{Tornei} contemporaneamente, purchè la \textbf{squadra} giochi al \textbf{videogioco} che riguarda il \textbf{torne}o.
 
-Per ogni \textbf{Torneo} si memorizzano : la data di inizio, il numero massimo di iscrizioni e, una  volta terminato, la data di fine. Il \textbf{Torneo} si svolge interamente in una singola \textbf{Arena} e può essere finanziato da uno \textbf{Sponsor}. Il \textbf{Torneo} inoltre riguarda un singolo \textbf{Videogioco} e prevede diverse \textbf{Partite}. Ad ogni \textbf{Torneo} possono partecipano un numero variabile di squadre (massimo 15) che si sfidano tutti contro tutti e la squadra con più partite vinte vincerà il torneo.
+Per ogni \textbf{Torneo} si memorizzano : la data di inizio, il numero massimo di iscrizioni e, una  volta terminato, la data di fine. Il \textbf{Torneo} si svolge interamente in una singola \textbf{Arena} e può essere finanziato da uno \textbf{Sponsor}. Il \textbf{Torneo} inoltre riguarda un singolo \textbf{Videogioco} e prevede diverse \textbf{Partite}. Ad ogni \textbf{Torneo} possono partecipano un numero variabile di squadre (massimo 15) che si sfidano tutti contro tutti e la \textbf{squadra} con più \textbf{partite} vinte vincerà il \textbf{torneo}.
 
-Per ogni \textbf{Partita} si memorizzano: le due squadre che si sfidano e la data dell'incontro.
+Per ogni \textbf{Partita} si memorizzano: le due \textbf{squadre} che si sfidano e la data dell'incontro.
 
 Per ogni \textbf{Biglietto} si memorizzano: il costo, la Partita e l'Arena in cui si disputa.
 
@@ -110,6 +109,13 @@ Segue un elenco delle principali azioni richieste:
 	\item Iscrizione di una Squadra ad un Torneo
 	\item Creazione di nuove Partite
 	\item Acquisto di Biglietti
+	\item Mostrare le squadre a cui partecipa un player
+	\item Nome Arena in cui si svolge una Partita
+	\item Visualizza Biglietti acquistati da uno spettatore
+	\item Visualizza tutte le squadre che fanno parte di un determinato torneo
+	\item Visualizza i 20 tornei con più squadre iscritte
+	\item Visualizza tutti i membri che hanno fatto parte di una squadra
+	
 \end{itemize}
 
 \chapter{Progettazione Concettuale}
@@ -455,7 +461,7 @@ Avendo nella tabella dei volumi 500.000 player totali e 600.000 adesione\_player
 	\end{tabular}
 \end{center}
 \subsection*{(11) Nome Arena in cui si svolge una Partita}
-Viene fatto un accesso in lettura in Partita per leggere l'id del torneo, un accesso in lettura per leggere l'id dell'arena, ed infine un accesso in lettura in arena per leggerne il nome.
+Viene fatto un accesso in lettura in Partita per leggere l'id del torneo, un accesso in lettura in torneo per leggere l'id dell'arena, ed infine un accesso in lettura in arena per leggerne il nome.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
@@ -584,13 +590,13 @@ ACQUISTO\_BIGLIETTO((\underline{IdArena}, \underline{IdSquadra1}, \underline{IdS
 
 \noindent ADESIONE\_PLAYER\_SQUADRA(\underline{IdSquadra}: SQUADRA, \underline{CF\_Player}: PLAYER, \underline{DataInizio}, DataFine*) \\
 
-\noindent ARBITRO(\underline{CF}, nome, cognome, genere, mail data\_di\_nascita, PartiteArbitrate) \\
+\noindent ARBITRO(\underline{CF}, nome, cognome, genere, mail,  data\_di\_nascita, PartiteArbitrate) \\
 
 \noindent ARENA(\underline{IdArena}, NomeArena, Capienza, (NomeStato, NomeCitta): CITTÀ) \\
 
 \noindent AZIENDA\_VIDEOGIOCO(nome, \underline{partitaIVA}) \\
 
-\noindent BIGLIETTO(\underline{IdArena} : ARENA, (\underline{IdSquadra1}, \underline{IdSquadra2}, \underline{DataOra}) : PARTITA, Costo) \\
+\noindent BIGLIETTO(\underline{IdArena} : ARENA, (\underline{IdSquadra1}, \underline{IdSquadra2}, \underline{DataOra}) : PARTITA, Costo, BigliettiRimanenti) \\
 
 \noindent CITTÀ(\underline{NomeStato}: STATO, \underline{Nome}, Superficie, NumAbitanti) \\
 
