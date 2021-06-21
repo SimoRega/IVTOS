@@ -18,11 +18,11 @@
 \contentsline {section}{\numberline {4.5}Analisi delle ridondanze}{19}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Traduzione di entità e associazioni in relazioni}{20}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Schema relazionale finale}{21}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Progettazione Fisica}{22}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Traduzione in SQL}{22}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Progettazione dell'Applicazione}{24}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Descrizione della scelta del linguaggio e del DBMS}{24}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Descrizione dell'architettura}{24}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Interfaccia Utente}{24}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Amministratore Torneo}{24}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Giocatore}{24}{subsection.6.3.2}%
+\contentsline {chapter}{\numberline {5}Progettazione Fisica}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Traduzione in SQL}{23}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Progettazione dell'Applicazione}{25}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Descrizione della scelta del linguaggio e del DBMS}{25}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Descrizione dell'architettura}{25}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Interfaccia Utente}{25}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Amministratore Torneo}{25}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Giocatore}{25}{subsection.6.3.2}%

@@ -566,6 +566,12 @@ ACQUISTO\_BIGLIETTO((\underline{IdArena}, \underline{IdSquadra1}, \underline{IdS
 \section{Schema relazionale finale}
 
 
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=0.6]{img/SchemaRelazionale.png}}
+	\caption{Schema Relazionale finale}
+	\label{img:Schema_Relazionale}
+\end{figure}
+
 \chapter{Progettazione Fisica}
 \section{Traduzione in SQL}
 \subsection*{(1) Aggiunta di un nuovo Player}
@@ -603,6 +609,14 @@ ACQUISTO\_BIGLIETTO((\underline{IdArena}, \underline{IdSquadra1}, \underline{IdS
 \subsection*{(9) Acquisto di un nuovo Biglietto}
 \textcolor{blue}{INSERT INTO} acquisto\_biglietto(IdArena, IdSquadra1, IdSquadra2, DataOra, CF\_Spettatore)
 \textcolor{blue}{VALUES} (?,?,?,?,?);
+
+\subsection*{(10) Mostrare le squadre a cui partecipa un player}
+\textcolor{blue}{SELECT} squadra.Nome, squadra.IdSquadra 
+
+\noindent \textcolor{blue}{FROM} squadra \textcolor{blue}{JOIN} adesione\_player\_squadra \textcolor{blue}{ON} adesione\_player\_squadra.IdSquadra = squadra.IdSquadra 
+
+\noindent \textcolor{blue}{WHERE} CF\_Player = '????????????????' \textcolor{blue}{AND} DataFine is null;
+\subsection*{(11) Nome Arena in cui si svolge una Partita}
 
 \chapter{Progettazione dell'Applicazione}
 \section{Descrizione della scelta del linguaggio e del DBMS}
