@@ -277,7 +277,11 @@ namespace IVTOS
 
         public static string VisualizzaBigliettiAcquistati(string cf)
         {
-            return "SELECT * FROM acquisto_biglietto WHERE CF_Spettatore = '" + cf + "';";
+            return "select A.NomeArena, s1.nome as Nomesquadra1, s2.nome as Nomesquadra2, B.Dataora " +
+                "from arena a, squadra s1, squadra s2, acquisto_biglietto B " +
+                "where B.CF_Spettatore = '"+ cf +"' and s1.idSquadra = B.IdSquadra1 " +
+                "and s2.idSquadra = B.IdSquadra2 " +
+                "and A.IdArena = B.IdArena; ";
         }
     }
 }

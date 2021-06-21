@@ -34,15 +34,16 @@ L'applicazione permetterà la creazione di vari tornei in tutto il mondo consult
 \chapter{Analisi dei Requisiti}
 La seguente descrizione riporta in linguaggio naturale i requisiti per il nostro sistema informativo, per poi poterne estrarre i principali concetti fondamentali:
 \section{Requisiti in linguaggio naturale}
-"Jeff Kaplan, prima di lasciare le redini del videogioco Overwatch, ha deciso di commissionare un sistema informativo di supporto per la gestione di tornei internazionali di cui finanzierà i premi.
-Si vuole creare una applicazione che dia la possibilità ai giocatori di iscriversi ad un torneo o venir reclutati in una squadra.
-Ogni giocatore può partecipare a più squadre contemporaneamente di giochi diversi, così come un Coach può allenare più squadre contemporaneamente.
-Ogni Squadra è allenata da un Coach e ha un numero massimo di Player che possono aderire ad essa e gioca ad un singolo Videogioco; il numero di adesioni è determinato dal Videogioco in questione.
+"Jeff Kaplan, prima di lasciare le redini del videogioco Overwatch, ha deciso di commissionare un sistema informativo di supporto per la gestione di tornei internazionali.
+Si vuole creare una applicazione che dia la possibilità ai giocatori di iscriversi ad un torneo o aggiungersi ad una squadra.
+Ogni giocatore può partecipare a più squadre simultaneamente, così come un Coach può essere l'allenatore  di più squadre nello stesso momento.
+Ogni Squadra è allenata da un Coach, è considerata "completa" al raggiungimento dei 5 Player e può giocare a più Videogiochi;
 Si vuole tenere traccia dei Player iscritti, memorizzando di ognuno il nome, cognome, nickname, codice fiscale, stato in cui risiede, mail e statistiche di gioco (per statistiche si intendono il numero di partite vinte e giocate).
-Una Squadra può partecipare a uno o più Tornei purché il Videogioco su cui esso si basa è lo stesso giocato dalla Squadra.
-Per quanto riguarda i Tornei si vuole memorizzare: Stato, Città e Arena in cui si svolge, numero di squadre totali, videogioco per cui si disputa il torneo in questione e lo Sponsor che finanzierà il torneo stesso.
-Di ogni Videogioco si vuole tener traccia del Nome, della data di creazione ,della sua azienda produttrice, della tipologia di gioco e del numero di componenti di ogni squadra.
-In ogni Arena possono assistere alle Partite un numero massimo di Spettatori, i quali per poter assistere dovranno pagare un Biglietto nominativo; ogni partita sarà visionata da un Arbitro e commentata da uno Speaker.
+Una Squadra può partecipare a uno o più Tornei.
+Per quanto riguarda i Tornei si vuole memorizzare: Stato, Città e Arena in cui si svolge, numero di squadre totali, videogioco per cui si disputa il torneo in questione e, se presente, lo Sponsor che finanzierà il torneo stesso.
+Di ogni Videogioco si vuole tener traccia del Nome, della data di creazione ,della sua azienda produttrice, della tipologia di gioco.
+In ogni Arena possono assistere alle Partite un numero massimo di Spettatori, i quali per poter assistere dovranno pagare un Biglietto nominativo, il quale dipende dall'arena e dalla partita; ogni partita sarà visionata da un Arbitro e commentata da uno Speaker.
+Di ogni squadra si vuole tenere traccia di tutti i player che ne hanno fatto parte.
 
 \section{Estrazione dei concetti fondamentali}
 \renewcommand{\arraystretch}{1.5}
