@@ -473,7 +473,7 @@ necessità che l’identificatore per tali entità sia globalmente univoco.
 Sin dall'inizio abbiamo scelto accuratamente tutte le chiavi per ogni entità; queste sono evidenziate senza ambiguità nello schema E-R.
 \section{Analisi delle ridondanze}
 \subsection*{Studio operazione 9 senza Ridondanza}
-Senza il campo in biglietto che mi indica il numero di biglietti rimanenti, tutte le volte che viene comprato un biglietto c'è la necessità di controllare se ci sono ancora posti disponibili. In questo modo c'è la necessità di fare molteplici letture: fare una lettura per sapere il costo del biglietto, una lettura in arena per sapere la capienza dell'arena corrispondente, in media 223 letture su acquiso\_biglietto(numero biglietti totali venduti / partite totali = quanti biglietti venduti in ogni partita -445-; in media uno spettatore dovrà compiere 223 letture).
+Senza il campo in biglietto che mi indica il numero di biglietti rimanenti, tutte le volte che viene comprato un biglietto c'è la necessità di controllare se ci sono ancora posti disponibili. In questo modo c'è la necessità di fare molteplici letture: fare una lettura per sapere il costo del biglietto, una lettura in arena per sapere la capienza dell'arena corrispondente, in media 223 letture su acquiso\_biglietto(numero biglietti totali venduti / partite totali = quanti biglietti venduti in ogni partita -445-; in media uno spettatore dovrà compiere 223 letture sui biglietti già venduti).
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
