@@ -426,6 +426,7 @@ INSERT INTO squadra values ("MontiFan", IdSquadra, "2010-12-05");
 INSERT INTO squadra values ("Olimpo", IdSquadra, "2020-10-01");
 
 INSERT INTO adesione_player_squadra VALUES(1, "RGESMN00D01H294G", "2015-02-02",null);
+INSERT INTO adesione_player_squadra VALUES(1, "MGLGLC00H06XXXXX", "2015-02-02",null);
 INSERT INTO adesione_player_squadra VALUES(1, "FBBLND00D01H294G","2015-02-02",null);
 INSERT INTO adesione_player_squadra VALUES(1, "XGESMN00D01H294G","2015-02-02",null);
 

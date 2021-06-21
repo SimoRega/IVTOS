@@ -363,13 +363,13 @@ Viene aggiunta una tupla all'entità Squadra, inoltre automaticamente, il player
 	\end{tabular}
 \end{center}
 \subsection*{(5) Aggiunta di un Player ad una Squadra}
-Inizialmente devo controllare che la squadra non sia completa, avendo una squadra da 1 a 5 membri, in media verranno fatte 3 letture, successivamente, se la squadra non è piena, viene aggiunta una tupla all'entità Adesione\_Plyer\_Squadra.
+Inizialmente devo controllare che la squadra non sia completa, avendo una squadra da 1 a 5 membri, in media verranno fatte 3 letture, successivamente, se la squadra non è piena, viene aggiunta una tupla all'entità Adesione\_Player\_Squadra.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
 		Concetto & Costrutto & Accessi & Tipo\\
 		\hline\hline		
-		Adesione\_Plyer\_Squadra & E & 3 & L\\
+		Adesione\_Player\_Squadra & E & 3 & L\\
 		Adesione\_Player\_Squadra & E & 1 & S\\
 		\hline
 		\hline
@@ -655,10 +655,16 @@ ACQUISTO\_BIGLIETTO((\underline{IdArena}, \underline{IdSquadra1}, \underline{IdS
 
 \subsection*{(4) Creazione di una Squadra}
 \textcolor{blue}{INSERT INTO} squadra(Nome, IdSquadra, data\_creazione)
-\textcolor{blue}{VALUES} (?,IdSquadra,?);
+\textcolor{blue}{VALUES} (?,IdSquadra,?);\\
+
+
+\noindent \textcolor{blue}{INSERT INTO} adesione\_player\_squadra(IdSquadra, CF\_Player, DataInizio, DataFine)
+\textcolor{blue}{VALUES} (?,?,?,null);
 
 \subsection*{(5) Aggiunta di un Player ad una Squadra}
-\textcolor{blue}{INSERT INTO} adesione\_player\_squadra(IdSquadra, CF\_Player, DataInizio, DataFine)
+\textcolor{blue}{SELECT} * \textcolor{blue}{FROM} adesione\_player\_squadra;\\
+
+\noindent \textcolor{blue}{INSERT INTO} adesione\_player\_squadra(IdSquadra, CF\_Player, DataInizio, DataFine)
 \textcolor{blue}{VALUES} (?,?,?,null);
 
 \subsection*{(6) Creazione di un Torneo}
@@ -669,13 +675,21 @@ ACQUISTO\_BIGLIETTO((\underline{IdArena}, \underline{IdSquadra1}, \underline{IdS
 \textcolor{blue}{INSERT INTO} iscrizione(IdTorneo, IdSquadra)
 \textcolor{blue}{VALUES} (?,?);
 
+
 \subsection*{(8) Creazione di nuove Partite in un Torneo}
 \textcolor{blue}{INSERT INTO} partita(IdSquadra1, IdSquadra2, DataOra, CF\_Arbitro,CF\_Speaker, IdSquadraVincitrice, IdTorneo)
 \textcolor{blue}{VALUES} (?,?,?,?,?,?,?);
 
 \subsection*{(9) Acquisto di un nuovo Biglietto}
 \textcolor{blue}{INSERT INTO} acquisto\_biglietto(IdArena, IdSquadra1, IdSquadra2, DataOra, CF\_Spettatore)
-\textcolor{blue}{VALUES} (?,?,?,?,?);
+\textcolor{blue}{VALUES} (?,?,?,?,?);\\
+
+\noindent\textcolor{blue}{SELECT} b.BigliettiRimanenti , b.costo
+
+\noindent \textcolor{blue}{FROM} biglietto b 
+
+\noindent \textcolor{blue}{WHERE} b.IdSquadra1 = ??" \textcolor{blue}{AND} b.IdSquadra2 = ?? \textcolor{blue}{AND} b.idArena = ?? \textcolor{blue}{AND} b.dataora = ??;
+
 
 \subsection*{(10) Mostrare le squadre a cui partecipa un player}
 \textcolor{blue}{SELECT} squadra.Nome, squadra.IdSquadra 

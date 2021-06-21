@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.24)  21 JUN 2021 17:37
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.15)  21 JUN 2021 17:39
+>>>>>>> 32d72769f5cef8e664fac32cfff346a580e0d5a6
 entering extended mode
 **./Relazione_IVTOS.tex
 (Relazione_IVTOS.tex
@@ -726,21 +730,50 @@ Package pdftex.def Info: img/SchemaRelazionale.png  used on input line 620.
  [23 <./img/SchemaRelazionale.png>]
 Capitolo 5.
 
+<<<<<<< HEAD
 Overfull \hbox (71.1356pt too wide) in paragraph at lines 648--650
 \OT1/cmr/m/n/12 Spon-sor, No-me-Vi-deo-gio-co,IdArena,IdSquadraVincitrice) []VA
 -LUES[] (Id-Tor-neo,?,?,?,?,?,?,?); 
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 590--592
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--599
+
+>>>>>>> 32d72769f5cef8e664fac32cfff346a580e0d5a6
  []
 
 [24
 
 ]
+<<<<<<< HEAD
 Overfull \hbox (35.83218pt too wide) in paragraph at lines 656--658
+=======
+Overfull \hbox (71.1356pt too wide) in paragraph at lines 604--606
+\OT1/cmr/m/n/12 Spon-sor, No-me-Vi-deo-gio-co,IdArena,IdSquadraVincitrice) []VA
+-LUES[] (Id-Tor-neo,?,?,?,?,?,?,?); 
+ []
+
+
+Overfull \hbox (35.83218pt too wide) in paragraph at lines 613--615
+>>>>>>> 32d72769f5cef8e664fac32cfff346a580e0d5a6
 []\OT1/cmr/m/n/12 INSERT IN-TO[] par-ti-ta(IdSquadra1, Id-Squa-dra2, Da-taO-ra,
  CF[]Arbitro,CF[]Speaker,
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (47.11018pt too wide) in paragraph at lines 666--667
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 617--619
+
+ []
+
+
+Overfull \hbox (47.11018pt too wide) in paragraph at lines 630--631
+>>>>>>> 32d72769f5cef8e664fac32cfff346a580e0d5a6
 []\OT1/cmr/m/n/12 FROM[] squa-dra []JOIN[] ade-sio-ne[]player[]squadra []ON[] a
 de-sio-ne[]player[]squadra.IdSquadra
  []
@@ -770,7 +803,11 @@ ts/cm/cmbx12.pfb><C:/Users/Linda/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmr12.pfb><C:/Users/Linda/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/Linda/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmti12.pfb>
+<<<<<<< HEAD
 Output written on Relazione_IVTOS.pdf (27 pages, 437319 bytes).
+=======
+Output written on Relazione_IVTOS.pdf (26 pages, 434576 bytes).
+>>>>>>> 32d72769f5cef8e664fac32cfff346a580e0d5a6
 PDF statistics:
  339 PDF objects out of 1000 (max. 8388607)
  89 named destinations out of 1000 (max. 500000)

@@ -56,10 +56,10 @@ namespace IVTOS
                 string[] dataFull = giornoSplittato[0].Split('/');
                 string data = dataFull[2] + "-" + dataFull[1] + "-" + dataFull[0];
                 string idArena = Queries.GetOneField(QueryList.IdArenaInCuiSiSvolgePartita(elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data));
-                string capienza= Queries.GetOneField(QueryList.CapienzaInCuiSiSvolgePartita(elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data));
-                Queries.ExecuteOnly(QueryList.InsertBiglietto(idArena, elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data,rnd.Next(30,200).ToString(),capienza));
+                string capienza = Queries.GetOneField(QueryList.CapienzaInCuiSiSvolgePartita(elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data));
+                Queries.ExecuteOnly(QueryList.InsertBiglietto(idArena, elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data, rnd.Next(30, 200).ToString(), capienza));
 
-                File.AppendAllText("./biglietti.txt", QueryList.InsertBiglietto(idArena, elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data, rnd.Next(30, 200).ToString(), capienza)+"\n");
+                File.AppendAllText("./biglietti.txt", QueryList.InsertBiglietto(idArena, elem.ItemArray[0].ToString(), elem.ItemArray[1].ToString(), data, rnd.Next(30, 200).ToString(), capienza) + "\n");
             }
         }
 
@@ -71,6 +71,7 @@ namespace IVTOS
             btnSelezioneSquadra.IsEnabled = false;
             btnTerminaTorneo.IsEnabled = false;
             btn.IsEnabled = false;
+            sliderTorneo.IsEnabled = false;
 
             foreach (var p in queryList)
             {
@@ -110,7 +111,7 @@ namespace IVTOS
         private void btn_Click(object sender, RoutedEventArgs e)
         {
             string query = queryList[cmbSelect.SelectedItem.ToString()];
-            lastQuery= queryList[cmbSelect.SelectedItem.ToString()];
+            lastQuery = queryList[cmbSelect.SelectedItem.ToString()];
             dataGrid.ItemsSource = Queries.GetDataSet(query).Tables[0].DefaultView;
         }
 
@@ -120,7 +121,7 @@ namespace IVTOS
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaArena()).Tables[0].DefaultView;
             lastQuery = QueryList.VisualizzaArena();
             lblStep.Content = "<2° Step: Scegli Arena>";
-            MessageBox.Show("Selezionare un Arena e premere il tasto Avanti","Creazione Torneo", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Selezionare un Arena e premere il tasto Avanti", "Creazione Torneo", MessageBoxButton.OK, MessageBoxImage.Information);
             steps = 0;
         }
 
@@ -147,9 +148,9 @@ namespace IVTOS
                 btnAvanti.IsEnabled = false;
             }
 
-            if ((steps==0 && lastQuery== QueryList.VisualizzaArena()) ||
+            if ((steps == 0 && lastQuery == QueryList.VisualizzaArena()) ||
                 (steps == 1 && lastQuery == QueryList.VisualizzaVideogiochi()) ||
-                    (steps == 2 && lastQuery == QueryList.VisualizzaSponsor()) )
+                    (steps == 2 && lastQuery == QueryList.VisualizzaSponsor()))
                 btnAvanti.IsEnabled = true;
         }
 
@@ -157,7 +158,7 @@ namespace IVTOS
         {
 
             DataRowView DRV;
-            if (dataGrid.SelectedItem == null)
+            if (dataGrid.SelectedItem == null && steps != 2 &&  steps != 3)
             {
                 MessageBox.Show("Prima di andare avanti selezionare una riga dalla tabella", "Creazione Torneo", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -181,15 +182,34 @@ namespace IVTOS
                     dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaSponsor()).Tables[0].DefaultView;
                     lastQuery = QueryList.VisualizzaSponsor();
                     lblStep.Content = "<4° Step: Scegli Sponsor>";
-                    MessageBox.Show("Selezionare uno Sponsor e premere il tasto Avanti", "Creazione Torneo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Selezionare uno Sponsor e premere il tasto Avanti \n(Non selezionare nulla per non inserire lo sponsor)", "Creazione Torneo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    btnAvanti.IsEnabled = true;
                     break;
                 case 2:
-                    DRV = (DataRowView)dataGrid.SelectedItem;
-                    sponsorTorneo = DRV.Row.ItemArray[0].ToString();
-                    newTorneo = String.Format("INSERT INTO torneo VALUES (IdTorneo,'{0}',NULL,{1},{2},'{3}',{4},NULL);", dataTorneo, capienzaTorneo, sponsorTorneo, videogameTorneo, arenaTorneo);
+                    lblStep.Content = "<5° Step: N°Iscrizioni>";
+                    MessageBox.Show("Indicare con lo Slider il numero di Squadre che si desidera far partecipare al torneo", "Creazione Torneo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    sliderTorneo.IsEnabled = true;
+                    steps++;
+                    break;
+                case 3:
+                    capienzaTorneo = sliderTorneo.Value.ToString();
+                    sliderTorneo.IsEnabled = false;
+                    try
+                    {
+
+                        DRV = (DataRowView)dataGrid.SelectedItem;
+                        sponsorTorneo = DRV.Row.ItemArray[0].ToString();
+                        newTorneo = String.Format("INSERT INTO torneo VALUES (IdTorneo,'{0}',NULL,{1},{2},'{3}',{4},NULL);", dataTorneo, capienzaTorneo, sponsorTorneo, videogameTorneo, arenaTorneo);
+                    }
+                    catch
+                    {
+                        newTorneo = String.Format("INSERT INTO torneo VALUES (IdTorneo,'{0}',NULL,{1},NULL,'{2}',{3},NULL);", dataTorneo, capienzaTorneo, videogameTorneo, arenaTorneo);
+
+                    }
                     Queries.ExecuteOnly(newTorneo);
                     dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaTornei()).Tables[0].DefaultView;
                     lastQuery = QueryList.VisualizzaTornei();
+                    
                     steps = -1;
                     lblStep.Content = "<1° Step: Crea Torneo>";
                     btnAvanti.IsEnabled = false;
@@ -235,7 +255,7 @@ namespace IVTOS
             DataRowView DRV;
             DRV = (DataRowView)dataGrid.SelectedItem;
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaIscrizioniSquadra(DRV.Row.ItemArray[1].ToString())).Tables[0].DefaultView;
-            lastQuery= QueryList.VisualizzaIscrizioniSquadra("LastQuery");
+            lastQuery = QueryList.VisualizzaIscrizioniSquadra("LastQuery");
         }
 
         private void btnIscrizioniSquadra_Click(object sender, RoutedEventArgs e)
@@ -270,6 +290,11 @@ namespace IVTOS
                 btn.IsEnabled = true;
             else
                 btn.IsEnabled = false;
+        }
+
+        private void sliderTorneo_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            lblValue.Content = sliderTorneo.Value;
         }
     }
 }

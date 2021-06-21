@@ -128,9 +128,9 @@ namespace IVTOS
 
         internal static string VisualizzaTorneiBiglietti()
         {
-            return "select partita.idtorneo, count(*) AS NumBigliettiVenduti, torneo.DataInizio, torneo.NomeVideogioco " +
+            return "select partita.idtorneo, count(*) AS NumBigliettiVenduti, torneo.NomeVideogioco " +
                 "from partita " +
-                "join torneo " +
+                "join torneo ON partita.idtorneo=torneo.idtorneo " +
                 "join biglietto on partita.idsquadra1 = biglietto.idsquadra1 AND partita.idsquadra2 = biglietto.idsquadra2 AND partita.dataora = biglietto.dataora " +
                 "join acquisto_biglietto on acquisto_biglietto.idsquadra1 = biglietto.idsquadra1 AND acquisto_biglietto.idsquadra2 = biglietto.idsquadra2 " +
                 "AND acquisto_biglietto.dataora = biglietto.dataora AND biglietto.idarena = acquisto_biglietto.idarena " +
@@ -195,7 +195,7 @@ namespace IVTOS
         public static string VisualizzaTornei()
         {
             return "SELECT idTorneo AS Torneo, nomevideogioco AS Videogioco, nomearena AS Arena, sponsor.Nome, DataInizio, DataFine, nmaxiscrizioni AS NumeroSquadre " +
-                        "FROM(torneo JOIN Arena ON torneo.IdArena = arena.IdArena) JOIN Sponsor on torneo.IdSponsor = sponsor.idsponsor ; ";
+                        "FROM(torneo JOIN Arena ON torneo.IdArena = arena.IdArena) left JOIN Sponsor on torneo.IdSponsor = sponsor.idsponsor ; ";
         }
         public static string VisualizzaSponsor()
         {
@@ -293,7 +293,11 @@ namespace IVTOS
 
         public static string VisualizzaBiglietti()
         {
-            return "SELECT * FROM biglietto;";
+            return "select A.NomeArena, s1.nome as Nomesquadra1, s2.nome as Nomesquadra2, B.Dataora , b.BigliettiRimanenti " +
+                "from arena a, squadra s1, squadra s2, biglietto B " +
+                "where s1.idSquadra = B.IdSquadra1 " +
+                "and s2.idSquadra = B.IdSquadra2 " +
+                "and A.IdArena = B.IdArena; ";
         }
 
         public static string VisualizzaBigliettiAcquistati(string cf)

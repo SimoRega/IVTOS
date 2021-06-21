@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using MySql.Data.MySqlClient;
 
 namespace IVTOS
@@ -57,10 +58,18 @@ namespace IVTOS
 
         static public void ExecuteFile(string query, string connExecute)
         {
-            MySqlConnection conn = new MySqlConnection(connExecute);
-            MySqlScript s = new MySqlScript(conn, query);
-            s.Execute();
-            conn.Close();
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(connExecute);
+                MySqlScript s = new MySqlScript(conn, query);
+                s.Execute();
+                conn.Close();
+                MessageBox.Show("Operazione andata a buon fine!", "Installazione Riuscita", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Stringa di connessione al DB errata, riprovare", "Errore", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
     }
