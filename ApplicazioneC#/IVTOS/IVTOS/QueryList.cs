@@ -89,7 +89,7 @@ namespace IVTOS
 
         internal static string VisualizzaVideogiochiTornei()
         {
-            return "SELECT videogioco.Nome, count(*) AS NumTorneiGiocati" +
+            return "SELECT videogioco.Nome, count(*) AS NumTorneiGiocati " +
                 "from videogioco join torneo on videogioco.nome = torneo.NomeVideogioco " +
                 "group by videogioco.Nome Order by count(*) desc " +
                 "Limit 3; ";

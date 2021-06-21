@@ -70,6 +70,7 @@ namespace IVTOS
             btnSelezioneTorneo.IsEnabled = false;
             btnSelezioneSquadra.IsEnabled = false;
             btnTerminaTorneo.IsEnabled = false;
+            btn.IsEnabled = false;
 
             foreach (var p in queryList)
             {
@@ -119,7 +120,7 @@ namespace IVTOS
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaArena()).Tables[0].DefaultView;
             lastQuery = QueryList.VisualizzaArena();
             lblStep.Content = "<2° Step: Scegli Arena>";
-            MessageBox.Show("Selezionare un Arena e premere il tasto Avanti");
+            MessageBox.Show("Selezionare un Arena e premere il tasto Avanti","Creazione Torneo", MessageBoxButton.OK, MessageBoxImage.Information);
             steps = 0;
         }
 
@@ -158,7 +159,7 @@ namespace IVTOS
             DataRowView DRV;
             if (dataGrid.SelectedItem == null)
             {
-                MessageBox.Show("Prima di andare avanti selezionare una riga dalla tabella");
+                MessageBox.Show("Prima di andare avanti selezionare una riga dalla tabella", "Creazione Torneo", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             switch (steps)
@@ -171,7 +172,7 @@ namespace IVTOS
                     lastQuery = QueryList.VisualizzaVideogiochi();
                     steps++;
                     lblStep.Content = "<3° Step: Scegli Gioco>";
-                    MessageBox.Show("Selezionare un Videogioco e premere il tasto Avanti");
+                    MessageBox.Show("Selezionare un Videogioco e premere il tasto Avanti", "Creazione Torneo", MessageBoxButton.OK, MessageBoxImage.Information);
                     break;
                 case 1:
                     DRV = (DataRowView)dataGrid.SelectedItem;
@@ -180,7 +181,7 @@ namespace IVTOS
                     dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaSponsor()).Tables[0].DefaultView;
                     lastQuery = QueryList.VisualizzaSponsor();
                     lblStep.Content = "<4° Step: Scegli Sponsor>";
-                    MessageBox.Show("Selezionare uno Sponsor e premere il tasto Avanti");
+                    MessageBox.Show("Selezionare uno Sponsor e premere il tasto Avanti", "Creazione Torneo", MessageBoxButton.OK, MessageBoxImage.Information);
                     break;
                 case 2:
                     DRV = (DataRowView)dataGrid.SelectedItem;
@@ -211,7 +212,7 @@ namespace IVTOS
         {
             if (dataGrid.SelectedItem == null)
             {
-                MessageBox.Show("Prima selezionare una riga dalla tabella");
+                MessageBox.Show("Prima selezionare una riga dalla tabella", "SelezioneTorneo", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             btnIscrizioniTorneo.IsEnabled = true;
@@ -226,7 +227,7 @@ namespace IVTOS
         {
             if (dataGrid.SelectedItem == null)
             {
-                MessageBox.Show("Prima selezionare una riga dalla tabella");
+                MessageBox.Show("Prima selezionare una riga dalla tabella", "SelezioneSquadra", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             btnIscrizioniSquadra.IsEnabled = true;
@@ -261,6 +262,14 @@ namespace IVTOS
             string query = stats[cmbStatistiche.SelectedItem.ToString()];
             lastQuery = stats[cmbStatistiche.SelectedItem.ToString()];
             dataGrid.ItemsSource = Queries.GetDataSet(query).Tables[0].DefaultView;
+        }
+
+        private void cmbSelect_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmbSelect.SelectedItem != null)
+                btn.IsEnabled = true;
+            else
+                btn.IsEnabled = false;
         }
     }
 }

@@ -48,11 +48,16 @@ namespace IVTOS
                 idTorneo = (int)DR.ItemArray[0];
                 //nomeSquadra = DR.ItemArray[0].ToString();
 
-                string giocoSquadra = Queries.GetOneField(QueryList.VisualizzaGiocoSquadra(idSquadra));
+                var giocoSquadra = Queries.GetDataSet(QueryList.VisualizzaGiocoSquadra(idSquadra)).Tables[0].Rows;
                 string giocoTorneo = Queries.GetOneField(QueryList.VisualizzaGiocoTorneo(idTorneo));
-                if (giocoSquadra!=giocoTorneo)
+                string listaGiochi = "";
+                foreach(DataRow elem in giocoSquadra)
                 {
-                    MessageBox.Show("Non puoi iscrivere la tua squadra che gioca a "+giocoSquadra+" in un torneo di "+ giocoTorneo ,"Errore Iscrizione Squadra", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    listaGiochi += elem.ItemArray[0].ToString() + " ";
+                }
+                if (!listaGiochi.Contains(giocoTorneo))
+                {
+                    MessageBox.Show("Non puoi iscrivere la tua squadra che gioca a : ("+listaGiochi+"), in un torneo di "+ giocoTorneo ,"Errore Iscrizione Squadra", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
             }

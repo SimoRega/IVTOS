@@ -5,25 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IVTOS"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="612.286" Width="1073.428">
+        Title="Finestra dell' Amministratore di Sistema" Height="612.286" Width="1073.428">
     <Grid>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="581" VerticalAlignment="Top" Width="725" SelectionMode="Single" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged" BorderBrush="Black" Background="{x:Null}"/>
-        <Button x:Name="btn" Content="Esegui" HorizontalAlignment="Left" Margin="971,35,0,0" VerticalAlignment="Top" Width="70" Click="btn_Click" Height="22"/>
-        <ComboBox x:Name="cmbSelect" HorizontalAlignment="Left" Margin="737,35,0,0" VerticalAlignment="Top" Width="226" Height="22" />
-        <GroupBox Header="Informazioni Generali" HorizontalAlignment="Left" Height="62" Margin="730,10,0,0" VerticalAlignment="Top" Width="323"/>
-        <Button x:Name="btnTorneo" Content="Crea un Torneo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="737,97,0,0" Click="btnTorneo_Click" Height="20"/>
-        <GroupBox Header="Gestione Tornei" HorizontalAlignment="Left" Height="90" Margin="730,72,0,0" VerticalAlignment="Top" Width="323"/>
-        <Button x:Name="btnAvanti" Content="Avanti --&gt;" HorizontalAlignment="Left" Margin="899,125,0,0" VerticalAlignment="Top" Width="142" Click="btnAvanti_Click"/>
-        <Label x:Name="lblStep" Content="&lt;1° Step: Crea Torneo &gt;" HorizontalAlignment="Left" Margin="730,122,0,0" VerticalAlignment="Top" Width="169" Height="45" FontSize="15"/>
-        <Button x:Name="btnIscrizioniTorneo" Content="Iscrizioni ad un Torneo" HorizontalAlignment="Left" Margin="737,193,0,0" VerticalAlignment="Top" Width="148" Click="btnIscrizioniTorneo_Click"/>
-        <Button x:Name="btnSelezioneTorneo" Content="Seleziona Torneo" HorizontalAlignment="Left" Margin="899,193,0,0" VerticalAlignment="Top" Width="142" Click="btnSelezioneTorneo_Click"/>
-        <GroupBox Header="Gestione Iscrizioni Torneo" HorizontalAlignment="Left" Height="80" Margin="730,167,0,0" VerticalAlignment="Top" Width="321"/>
-        <Button x:Name="btnIscrizioniSquadra" Content="Iscrizioni di una Squadra" HorizontalAlignment="Left" Margin="737,218,0,0" VerticalAlignment="Top" Width="148" Click="btnIscrizioniSquadra_Click"/>
-        <Button x:Name="btnSelezioneSquadra" Content="Seleziona Squadra" HorizontalAlignment="Left" Margin="899,218,0,0" VerticalAlignment="Top" Width="142" Click="btnSelezioneSquadra_Click"/>
-        <Button x:Name="btnTerminaTorneo" Content="Termina Torneo" HorizontalAlignment="Left" Margin="899,97,0,0" VerticalAlignment="Top" Width="142" Click="btnTerminaTorneo_Click"/>
-        <ComboBox x:Name="cmbStatistiche" HorizontalAlignment="Left" Margin="737,281,0,0" VerticalAlignment="Top" Width="226"/>
-        <Button x:Name="btnEseguiStatistiche" Content="Esegui" HorizontalAlignment="Left" Margin="971,281,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="btnEseguiStatistiche_Click"/>
-        <GroupBox Header="Statistiche Generali Tornei" HorizontalAlignment="Left" Height="55" Margin="730,261,0,0" VerticalAlignment="Top" Width="323"/>
+        <Button x:Name="btn" Content="Esegui" HorizontalAlignment="Left" Margin="971,45,0,0" VerticalAlignment="Top" Width="70" Click="btn_Click" Height="42"/>
+        <ComboBox x:Name="cmbSelect" HorizontalAlignment="Left" Margin="737,45,0,0" VerticalAlignment="Top" Width="226" Height="42" DropDownClosed="cmbSelect_DropDownClosed" />
+        <GroupBox Header="Informazioni Generali" HorizontalAlignment="Left" Height="80" Margin="730,19,0,0" VerticalAlignment="Top" Width="323"/>
+        <Button x:Name="btnTorneo" Content="Crea un Torneo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="737,210,0,0" Click="btnTorneo_Click" Height="41"/>
+        <GroupBox Header="Gestione Tornei" HorizontalAlignment="Left" Height="117" Margin="730,188,0,0" VerticalAlignment="Top" Width="321"/>
+        <Button x:Name="btnAvanti" Content="Avanti --&gt;" HorizontalAlignment="Left" Margin="899,256,0,0" VerticalAlignment="Top" Width="142" Click="btnAvanti_Click" Height="41"/>
+        <Label x:Name="lblStep" Content="&lt;1° Step: Crea Torneo &gt;" HorizontalAlignment="Left" Margin="730,260,0,0" VerticalAlignment="Top" Width="169" Height="45" FontSize="15"/>
+        <Button x:Name="btnIscrizioniTorneo" Content="Iscrizioni ad un Torneo" HorizontalAlignment="Left" Margin="737,338,0,0" VerticalAlignment="Top" Width="148" Click="btnIscrizioniTorneo_Click" Height="41"/>
+        <Button x:Name="btnSelezioneTorneo" Content="Seleziona Torneo" HorizontalAlignment="Left" Margin="899,338,0,0" VerticalAlignment="Top" Width="142" Click="btnSelezioneTorneo_Click" Height="41"/>
+        <GroupBox Header="Gestione Iscrizioni Torneo" HorizontalAlignment="Left" Height="123" Margin="730,314,0,0" VerticalAlignment="Top" Width="321"/>
+        <Button x:Name="btnIscrizioniSquadra" Content="Iscrizioni di una Squadra" HorizontalAlignment="Left" Margin="737,384,0,0" VerticalAlignment="Top" Width="148" Click="btnIscrizioniSquadra_Click" Height="41"/>
+        <Button x:Name="btnSelezioneSquadra" Content="Seleziona Squadra" HorizontalAlignment="Left" Margin="899,384,0,0" VerticalAlignment="Top" Width="142" Click="btnSelezioneSquadra_Click" Height="41"/>
+        <Button x:Name="btnTerminaTorneo" Content="Termina Torneo" HorizontalAlignment="Left" Margin="899,210,0,0" VerticalAlignment="Top" Width="142" Click="btnTerminaTorneo_Click" Height="41"/>
+        <ComboBox x:Name="cmbStatistiche" HorizontalAlignment="Left" Margin="737,129,0,0" VerticalAlignment="Top" Width="226" Height="41"/>
+        <Button x:Name="btnEseguiStatistiche" Content="Esegui" HorizontalAlignment="Left" Margin="971,129,0,0" VerticalAlignment="Top" Width="75" Height="41" Click="btnEseguiStatistiche_Click"/>
+        <GroupBox Header="Statistiche Generali Tornei" HorizontalAlignment="Left" Height="76" Margin="730,104,0,0" VerticalAlignment="Top" Width="323"/>
 
     </Grid>
 </Window>

@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IVTOS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="299.056" Width="569.471">
+        Title="Finestra di Autenticazione" Height="325.722" Width="552.805">
     <Grid>
-        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="43" Margin="15,37,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="189" GotFocus="txtUserName_GotFocus" KeyDown="txtUserName_KeyDown" FontSize="20"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="43" Margin="15,92,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="189" FontSize="20"/>
-        <Button x:Name="btnLogin" Content="LOGIN" HorizontalAlignment="Left" Margin="15,147,0,0" VerticalAlignment="Top" Width="189" Click="btnLogin_Click" Height="39" FontSize="20"/>
-        <GroupBox Header="Autenticazione" HorizontalAlignment="Left" Height="206" VerticalAlignment="Top" Width="204" Margin="10,0,0,0" FontSize="15"/>
-        <TextBox x:Name="txtUserDB" HorizontalAlignment="Left" Height="42" Margin="338,42,0,0" TextWrapping="Wrap" Text="root" VerticalAlignment="Top" Width="187" FontSize="20"/>
-        <TextBox x:Name="txtPasswordDB" HorizontalAlignment="Left" Height="43" Margin="338,96,0,0" TextWrapping="Wrap" Text="password" VerticalAlignment="Top" Width="187" FontSize="20"/>
-        <TextBox x:Name="txtPorta" HorizontalAlignment="Left" Height="43" Margin="338,153,0,0" TextWrapping="Wrap" Text="3306" VerticalAlignment="Top" Width="187" FontSize="20"/>
-        <Label Content="DB User" HorizontalAlignment="Left" Margin="252,42,0,0" VerticalAlignment="Top" Height="52" Width="81" FontSize="17"/>
-        <Label Content="DB Pwd" HorizontalAlignment="Left" Margin="253,99,0,0" VerticalAlignment="Top" Height="46" Width="80" FontSize="17"/>
-        <Label Content="DB Port" HorizontalAlignment="Left" Margin="253,159,0,0" VerticalAlignment="Top" Height="47" Width="77" FontSize="17"/>
-        <GroupBox Header="Autenticazione MySQL Server" HorizontalAlignment="Left" Height="206" Margin="230,0,0,0" VerticalAlignment="Top" Width="315" FontSize="15"/>
-        <Label Content="⚠ Prima di effettuare il LOGIN assicurarsi che le credenziali di MySql Server siano corrette" HorizontalAlignment="Left" Margin="0,211,0,0" VerticalAlignment="Top" Width="561" FontFamily="Gill Sans MT Condensed" Background="#FFFFFBAD" Foreground="Red" Height="47" FontSize="19"/>
+        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="43" Margin="11,37,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="189" GotFocus="txtUserName_GotFocus" KeyDown="txtUserName_KeyDown" FontSize="20"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="43" Margin="11,92,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="189" FontSize="20"/>
+        <Button x:Name="btnLogin" Content="LOGIN" HorizontalAlignment="Left" Margin="11,147,0,0" VerticalAlignment="Top" Width="189" Click="btnLogin_Click" Height="39" FontSize="20"/>
+        <GroupBox Header="Autenticazione" HorizontalAlignment="Left" Height="206" VerticalAlignment="Top" Width="204" FontSize="15" Margin="6,0,0,0"/>
+        <TextBox x:Name="txtUserDB" HorizontalAlignment="Left" Height="42" Margin="329,42,0,0" TextWrapping="Wrap" Text="root" VerticalAlignment="Top" Width="187" FontSize="20"/>
+        <TextBox x:Name="txtPasswordDB" HorizontalAlignment="Left" Height="43" Margin="329,96,0,0" TextWrapping="Wrap" Text="password" VerticalAlignment="Top" Width="187" FontSize="20"/>
+        <TextBox x:Name="txtPorta" HorizontalAlignment="Left" Height="43" Margin="329,153,0,0" TextWrapping="Wrap" Text="3306" VerticalAlignment="Top" Width="187" FontSize="20"/>
+        <Label Content="DB User" HorizontalAlignment="Left" Margin="243,42,0,0" VerticalAlignment="Top" Height="52" Width="81" FontSize="17"/>
+        <Label Content="DB Pwd" HorizontalAlignment="Left" Margin="244,99,0,0" VerticalAlignment="Top" Height="46" Width="80" FontSize="17"/>
+        <Label Content="DB Port" HorizontalAlignment="Left" Margin="244,159,0,0" VerticalAlignment="Top" Height="47" Width="77" FontSize="17"/>
+        <GroupBox Header="Autenticazione MySQL Server" HorizontalAlignment="Left" Height="206" Margin="221,0,0,0" VerticalAlignment="Top" Width="315" FontSize="15"/>
+        <Label Content="⚠Prima di effettuare il LOGIN assicurarsi che &#xD;&#xA;   le credenziali di MySql Server siano corrette" HorizontalAlignment="Left" Margin="0,211,0,0" VerticalAlignment="Top" Width="545" Background="#FFFFEB6A" Foreground="Red" Height="84" FontSize="26"/>
     </Grid>
 </Window>
