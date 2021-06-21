@@ -45,6 +45,16 @@ namespace IVTOS
             return "INSERT INTO biglietto VALUES ("+ idarena +","+ id1 +"," +id2 +",'" +data +"'," +costo +"," + capienza+");";
         }
 
+        internal static string VisualizzaGiocoTorneo(int idTorneo)
+        {
+            return "select t.nomevideogioco from torneo t where t.idtorneo="+idTorneo+";";
+        }
+
+        internal static string VisualizzaGiocoSquadra(int idSquadra)
+        {
+            return " select r.nomevideogioco from squadra s join riguarda r on s.idsquadra = r.idsquadra where r.idsquadra= "+idSquadra+"; ";
+        }
+
         public static string VisualizzaPlayer()
         {
             return "SELECT * FROM ivtos.player;";
