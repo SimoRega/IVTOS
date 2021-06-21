@@ -19,6 +19,18 @@
         <Button x:Name="btnMostraProssimaPartita" Content="Mostra prossima partita" HorizontalAlignment="Left" Margin="456,145,0,0" VerticalAlignment="Top" Width="200" Height="20" HorizontalContentAlignment="Center" Click="btnMostraProssimaPartita_Click"/>
         <GroupBox Header="Entra in una nuova squadra" HorizontalAlignment="Left" Height="91" Margin="426,262,0,0" VerticalAlignment="Top" Width="259"/>
         <GroupBox Header="Le mie squadre" HorizontalAlignment="Left" Height="194" Margin="426,41,0,0" VerticalAlignment="Top" Width="259"/>
+        <CheckBox x:Name="apex" Content="Apex Legends" HorizontalAlignment="Left" Margin="448,454,0,0" VerticalAlignment="Top" Width="99"/>
+        <CheckBox x:Name="fifa" Content="FIFA 21" HorizontalAlignment="Left" Margin="448,474,0,0" VerticalAlignment="Top" Width="99" Height="15"/>
+        <CheckBox x:Name="fortnite" Content="Fortnite" HorizontalAlignment="Left" Margin="448,494,0,0" VerticalAlignment="Top" Width="91"/>
+        <CheckBox x:Name="gta" Content="Gran Theft Auto V" HorizontalAlignment="Left" Margin="448,514,0,0" VerticalAlignment="Top" Width="91" Height="15"/>
+        <CheckBox x:Name="hearthstone" Content="HearthStone" HorizontalAlignment="Left" Margin="448,534,0,0" VerticalAlignment="Top" Width="91" Height="15"/>
+        <CheckBox x:Name="overwatch" Content="Overwatch" HorizontalAlignment="Left" Margin="582,454,0,0" VerticalAlignment="Top" Width="124"/>
+        <CheckBox x:Name="overwatch2" Content="Overwatch2" HorizontalAlignment="Left" Margin="582,474,0,0" VerticalAlignment="Top" Width="124"/>
+        <CheckBox x:Name="rainbow" Content="Rainbow Six Siege" HorizontalAlignment="Left" Margin="582,494,0,0" VerticalAlignment="Top" Width="124"/>
+        <CheckBox x:Name="rocket" Content="Rocket League" HorizontalAlignment="Left" Margin="582,514,0,0" VerticalAlignment="Top" Width="124"/>
+        <CheckBox x:Name="starcraft" Content="StarCraft" HorizontalAlignment="Left" Margin="582,534,0,0" VerticalAlignment="Top" Width="124"/>
+        <Button x:Name="btc_crea" Content="Crea" HorizontalAlignment="Left" Margin="496,570,0,0" VerticalAlignment="Top" Width="122" Click="btc_crea_Click"/>
+        <TextBox x:Name="sq_name" HorizontalAlignment="Left" Height="23" Margin="456,426,0,0" TextWrapping="Wrap" Text="Inserisci il nome della squadra" VerticalAlignment="Top" Width="200" GotFocus="sq_name_GotFocus"/>
 
     </Grid>
 </Window>

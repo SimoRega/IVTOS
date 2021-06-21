@@ -283,5 +283,10 @@ namespace IVTOS
                 "and s2.idSquadra = B.IdSquadra2 " +
                 "and A.IdArena = B.IdArena; ";
         }
+
+        public static string InsertSquadraRiguarda(int idsquadra, string nomevideogioco)
+        {
+            return "INSERT INTO riguarda VALUES(" + idsquadra + ", '" + nomevideogioco + "')";
+        }
     }
 }
