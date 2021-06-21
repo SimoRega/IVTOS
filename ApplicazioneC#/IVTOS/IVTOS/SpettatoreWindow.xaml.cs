@@ -35,7 +35,7 @@ namespace IVTOS
         {
             
 
-            dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaTorneiAttivi()).Tables[0].DefaultView;
+            dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaTorneiAttiviConIdArena()).Tables[0].DefaultView;
             btn_partite_torneo.IsEnabled = true;
             btnCompraBiglietto.IsEnabled = false;
             
@@ -51,7 +51,8 @@ namespace IVTOS
             DataRowView DRV = (DataRowView)dataGrid.SelectedItem;
             DRV = (DataRowView)dataGrid.SelectedItem;
             var torneo = DRV.Row.ItemArray[0].ToString();
-            dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaPartiteTorneo(torneo)).Tables[0].DefaultView;
+            var arena = DRV.Row.ItemArray[2].ToString();
+            dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaPartiteTorneo(torneo, arena)).Tables[0].DefaultView;
             btnCompraBiglietto.IsEnabled = true;
             btn_partite_torneo.IsEnabled = false;
 
@@ -88,28 +89,35 @@ namespace IVTOS
                 
             string caption = "Compra Biglietto";
 
-            if (System.Windows.Forms.MessageBox.Show(message, caption, MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            if (System.Windows.Forms.MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == System.Windows.Forms.DialogResult.Yes)
             {
                 try
                 {
                     Queries.ExecuteOnly(QueryList.CompraBiglietto(squadra1, squadra2, bella, arena, cf));
-                    System.Windows.Forms.MessageBox.Show("Hai comprato il biglietto");
+                    int br = Convert.ToInt32(Queries.GetOneField(QueryList.VisualizzaBigliettiRimanentiPerUnaPartita(squadra1, squadra2, arena, bella)));
+                    br--;
+                    Queries.ExecuteOnly(QueryList.UpdateBiglietto(br, arena, squadra1, squadra2, bella));
+                    System.Windows.Forms.MessageBox.Show("Hai comprato il biglietto", "Conferma Acquisto", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
+
                 }catch(Exception ex)
                 {
                     if(ex.Message.Contains("Duplicate entry"))
                     {
-                        System.Windows.Forms.MessageBox.Show("Hai già comprato questo biglietto");
+                        System.Windows.Forms.MessageBox.Show("Hai già comprato questo biglietto", "Errore Acquisto Biglietto", 
+                            (MessageBoxButtons)MessageBoxButton.OK , (MessageBoxIcon)MessageBoxImage.Stop);
 
                     }
                 }
 
             }
+            
 
         }
 
         private void btn_visualizzaBiglietti_Click(object sender, RoutedEventArgs e)
         {
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaBigliettiAcquistati(cf)).Tables[0].DefaultView;
+            btnCompraBiglietto.IsEnabled = false;
         }
     }
 }
