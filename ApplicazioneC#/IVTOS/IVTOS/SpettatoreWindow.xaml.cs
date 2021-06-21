@@ -22,6 +22,7 @@ namespace IVTOS
     public partial class SpettatoreWindow : Window
     {
         private string cf;
+        private string lastPartita;
         public SpettatoreWindow(string codice_fiscale)
         {
             cf = codice_fiscale;
@@ -53,6 +54,7 @@ namespace IVTOS
             var torneo = DRV.Row.ItemArray[0].ToString();
             var arena = DRV.Row.ItemArray[2].ToString();
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaPartiteTorneo(torneo, arena)).Tables[0].DefaultView;
+            lastPartita = QueryList.VisualizzaPartiteTorneo(torneo, arena);
             btnCompraBiglietto.IsEnabled = true;
             btn_partite_torneo.IsEnabled = false;
 
@@ -98,8 +100,9 @@ namespace IVTOS
                     br--;
                     Queries.ExecuteOnly(QueryList.UpdateBiglietto(br, arena, squadra1, squadra2, bella));
                     System.Windows.Forms.MessageBox.Show("Hai comprato il biglietto", "Conferma Acquisto", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Information);
-
-                }catch(Exception ex)
+                    dataGrid.ItemsSource = Queries.GetDataSet(lastPartita).Tables[0].DefaultView;
+                }
+                catch(Exception ex)
                 {
                     if(ex.Message.Contains("Duplicate entry"))
                     {

@@ -46,7 +46,7 @@ namespace IVTOS
                 Queries.ExecuteFile(allInsert, connExecute);
                 connString = "Persist Security Info=False;database=ivtos;server=localhost;port=" + txtPorta.Text + ";user id=" + txtUserDB.Text + ";Password=" + txtPasswordDB.Text + ";";
                 Queries.Connection = connString;
-                MessageBox.Show("Operazione andata a buon fine!","Installazione Riuscita",MessageBoxButton.OK,MessageBoxImage.Information);
+                
             }
             String testo = txtUserName.Text.ToUpper();
             switch (testo)

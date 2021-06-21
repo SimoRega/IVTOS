@@ -163,7 +163,7 @@ namespace IVTOS
                 idSquadra = (int)DR.ItemArray[1];
                 nomeSquadra = DR.ItemArray[0].ToString();
             }
-            catch
+            catch(Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show("Seleziona una squadra da iscrivere ad un torneo");
                 return;
