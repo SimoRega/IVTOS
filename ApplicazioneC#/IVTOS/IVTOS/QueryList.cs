@@ -95,6 +95,16 @@ namespace IVTOS
                 "Limit 3; ";
         }
 
+        internal static string UpdateBiglietto(int nr, string idArena, string idSquadra1, string idSquadra2, string data)
+        {
+            return "UPDATE biglietto " +
+                " SET BigliettiRimanenti = "+ nr+"" +
+                " WHERE idArena = "+idArena+"" +
+                " AND idSquadra1 = "+idSquadra1+"" +
+                " AND IdSquadra2 = "+ idSquadra2+"" +
+                " AND DataOra = '"+ data +"';";
+        }
+
         internal static string VisualizzaSquadraTornei()
         {
             return "select squadra.idSquadra, squadra.Nome, count(*) NumTorneiGiocati " +
@@ -203,11 +213,12 @@ namespace IVTOS
                 "from(iscrizione join torneo on iscrizione.Idtorneo = torneo.idtorneo) join sponsor on torneo.IdSponsor = sponsor.idsponsor " +
                 "where IdSquadra = " + torneo + "";
         }
-        public static string VisualizzaPartiteTorneo(string torneo)
+        public static string VisualizzaPartiteTorneo(string torneo, string idArena)
         {
             return "SELECT S1.IdSquadra as 'N1', S1.nome as \"prima squadra\",S2.IdSquadra as 'N2', S2.nome as \"seconda squadra\"," +
-                " P.DataOra as \"DATA E ORA\" FROM ivtos.squadra S1, ivtos.squadra S2, ivtos.partita P WHERE P.IdTorneo = "+ torneo +
-                " AND P.IdSquadra1 = S1.IdSquadra AND P.IdSquadra2 = S2.IdSquadra;";
+                " P.DataOra as \"DATA E ORA\", B.BigliettiRimanenti FROM ivtos.squadra S1, ivtos.squadra S2, ivtos.partita P, ivtos.biglietto B WHERE P.IdTorneo = "+ torneo +
+                " AND P.IdSquadra1 = S1.IdSquadra AND P.IdSquadra2 = S2.IdSquadra AND P.IdSquadra1 = B.IdSquadra1 AND P.IdSquadra2 = B.IdSquadra2 AND P.DataOra = B.DataOra AND B.IdArena = "+
+                idArena +";";
         }
         public static string TerminaTorneo(string torneo)
         {
@@ -298,5 +309,17 @@ namespace IVTOS
         {
             return "INSERT INTO riguarda VALUES(" + idsquadra + ", '" + nomevideogioco + "')";
         }
+        public static string VisualizzaTorneiAttiviConIdArena()
+        {
+            return "SELECT idTorneo AS Torneo, nomevideogioco AS Videogioco, A.idArena AS IdArena, nomearena AS Arena, sponsor.Nome, DataInizio, nmaxiscrizioni AS NumeroSquadre " +
+                        "FROM(torneo JOIN Arena A ON torneo.IdArena = A.IdArena)JOIN Sponsor on torneo.IdSponsor = sponsor.idsponsor " +
+                        "WHERE torneo.datafine is null; ";
+        }
+        public static string VisualizzaBigliettiRimanentiPerUnaPartita(string idSquadra1, string idSquadra2, string arena, string dataOra)
+        {
+            return "SELECT BigliettiRimanenti FROM biglietto b WHERE  " +
+                "b.IdSquadra1 = "+ idSquadra1+" AND b.IdSquadra2 = "+ idSquadra2+" AND b.idArena = "+ arena+" AND b.dataora = '"+ dataOra+"';";
+        }
+
     }
 }
