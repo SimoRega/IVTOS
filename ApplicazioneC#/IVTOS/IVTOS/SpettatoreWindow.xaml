@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IVTOS"
         mc:Ignorable="d"
-        Title="SpettatoreWindow" Height="450" Width="800">
+        Title="Finestra dello Spettatore" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="501" />
         <Button x:Name="btn_partite_torneo" Content="Visualizza Partite" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Margin="543,132,0,0" Height="36" Click="btn_partite_torneo_Click"/>

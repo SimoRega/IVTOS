@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IVTOS"
         mc:Ignorable="d"
-        Title="Finestra dell' Amministratore di Sistema" Height="612.286" Width="1073.428">
+        Title="Finestra dell' Amministratore di Sistema" Height="612.286" Width="1073.428" ResizeMode="NoResize">
     <Grid>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="581" VerticalAlignment="Top" Width="725" SelectionMode="Single" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged" BorderBrush="Black" Background="{x:Null}"/>
         <Button x:Name="btn" Content="Esegui" HorizontalAlignment="Left" Margin="971,45,0,0" VerticalAlignment="Top" Width="70" Click="btn_Click" Height="42"/>

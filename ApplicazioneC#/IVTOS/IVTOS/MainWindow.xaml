@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IVTOS"
         mc:Ignorable="d"
-        Title="Finestra di Autenticazione" Height="325.722" Width="552.805">
+        Title="Finestra di Autenticazione" Height="325.722" Width="552.805" ResizeMode="NoResize">
     <Grid>
         <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="43" Margin="11,37,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="189" GotFocus="txtUserName_GotFocus" KeyDown="txtUserName_KeyDown" FontSize="20"/>
         <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="43" Margin="11,92,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="189" FontSize="20"/>
