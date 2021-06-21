@@ -39,13 +39,14 @@ namespace IVTOS
             }
             catch (Exception E)
             {
-                MessageBox.Show("Prima installazione in corso. \n Creazione Database in corso. \n Attendere Prego");
+                MessageBox.Show("Creazione Database in corso. \nAttendere Prego", "Prima installazione in corso.",MessageBoxButton.OK,MessageBoxImage.Warning);
                 string createDB= System.IO.File.ReadAllText("./IVTOS_v3.ddl");
                 Queries.ExecuteFile(createDB, connExecute);
                 string allInsert = System.IO.File.ReadAllText("./allinsert.txt");
                 Queries.ExecuteFile(allInsert, connExecute);
                 connString = "Persist Security Info=False;database=ivtos;server=localhost;port=" + txtPorta.Text + ";user id=" + txtUserDB.Text + ";Password=" + txtPasswordDB.Text + ";";
                 Queries.Connection = connString;
+                MessageBox.Show("Operazione andata a buon fine!","Installazione Riuscita",MessageBoxButton.OK,MessageBoxImage.Information);
             }
             String testo = txtUserName.Text.ToUpper();
             switch (testo)
