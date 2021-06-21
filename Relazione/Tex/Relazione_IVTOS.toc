@@ -4,27 +4,28 @@
 \contentsline {chapter}{\numberline {2}Analisi dei Requisiti}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Requisiti in linguaggio naturale}{4}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Estrazione dei concetti fondamentali}{5}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Progettazione Concettuale}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Anteprima sviluppo delle "Persone"}{7}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Anteprima sviluppo dei "Videogiochi"}{7}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Anteprima sviluppo delle "Partite"}{8}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Anteprima sviluppo dei "Tornei"}{10}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Schema Generale}{11}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Progettazione Logica}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Stima del volume dei dati}{14}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Descrizione delle operazioni principali e stima della loro frequenza}{15}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Schemi di navigazione e tabelle degli accessi}{16}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Raffinamento dello schema}{20}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Analisi delle ridondanze}{20}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Traduzione di entità e associazioni in relazioni}{21}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Schema relazionale finale}{23}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Progettazione Fisica}{25}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Traduzione in SQL}{25}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Progettazione dell'Applicazione}{29}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Descrizione della scelta del linguaggio e del DBMS}{29}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Descrizione dell'architettura}{29}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Interfaccia Utente}{29}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Autenticazione}{29}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Amministratore Torneo}{30}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Player}{31}{subsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.3.4}Spettatore}{32}{subsection.6.3.4}%
+\contentsline {chapter}{\numberline {3}Progettazione Concettuale}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Anteprima sviluppo delle "Persone"}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Anteprima sviluppo delle "Squadre"}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Anteprima sviluppo dei "Videogiochi"}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Anteprima sviluppo delle "Partite"}{10}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Anteprima sviluppo dei "Tornei"}{11}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Schema Generale}{13}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Progettazione Logica}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stima del volume dei dati}{16}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Descrizione delle operazioni principali e stima della loro frequenza}{17}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Schemi di navigazione e tabelle degli accessi}{18}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Raffinamento dello schema}{24}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Analisi delle ridondanze}{25}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Traduzione di entità e associazioni in relazioni}{25}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Schema relazionale finale}{27}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Progettazione Fisica}{29}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Traduzione in SQL}{29}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Progettazione dell'Applicazione}{33}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Descrizione della scelta del linguaggio e del DBMS}{33}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Descrizione dell'architettura}{33}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Interfaccia Utente}{33}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Autenticazione}{33}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Amministratore Torneo}{34}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Player}{35}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Spettatore}{36}{subsection.6.3.4}%

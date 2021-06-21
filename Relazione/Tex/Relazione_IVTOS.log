@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.15)  21 JUN 2021 23:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.15)  22 JUN 2021 00:51
 entering extended mode
 **./Relazione_IVTOS.tex
 (Relazione_IVTOS.tex
@@ -391,7 +391,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ...rline {6.3.3}Player}{31}{subsection.6.3.3}
+l.29 ...ministratore Torneo}{34}{subsection.6.3.2}
                                                   % [1
 
 ])
@@ -417,264 +417,183 @@ Overfull \hbox (21.5763pt too wide) in paragraph at lines 51--80
 [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 83--86
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
-[6]
+[6] [7]
 Capitolo 3.
-<img/ER_Persona.png, id=179, 1035.11719pt x 655.69969pt>
+<img/ER_Persona.png, id=188, 1035.11719pt x 655.69969pt>
 File: img/ER_Persona.png Graphic file (type png)
 <use img/ER_Persona.png>
-Package pdftex.def Info: img/ER_Persona.png  used on input line 128.
+Package pdftex.def Info: img/ER_Persona.png  used on input line 134.
 (pdftex.def)             Requested size: 517.55733pt x 327.84904pt.
-<img/ER_Videogiochi.png, id=180, 1016.29688pt x 545.03625pt>
+<img/ER_Squadra.png, id=189, 983.17313pt x 576.65437pt>
+File: img/ER_Squadra.png Graphic file (type png)
+<use img/ER_Squadra.png>
+Package pdftex.def Info: img/ER_Squadra.png  used on input line 147.
+(pdftex.def)             Requested size: 589.90843pt x 345.99529pt.
+[8
+
+]
+<img/ER_Videogiochi.png, id=194, 1016.29688pt x 545.03625pt>
 File: img/ER_Videogiochi.png Graphic file (type png)
 <use img/ER_Videogiochi.png>
-Package pdftex.def Info: img/ER_Videogiochi.png  used on input line 142.
+Package pdftex.def Info: img/ER_Videogiochi.png  used on input line 160.
 (pdftex.def)             Requested size: 558.96501pt x 299.77086pt.
 
-Underfull \hbox (badness 1688) in paragraph at lines 143--143
-[]\OT1/cmr/m/n/12 Figura 3.2: []Schema ER che espo-ne le prin-ci-pa-li ca-rat-t
+Underfull \hbox (badness 1688) in paragraph at lines 161--161
+[]\OT1/cmr/m/n/12 Figura 3.3: []Schema ER che espo-ne le prin-ci-pa-li ca-rat-t
 e-ri-sti-che dei
  []
 
-[7
-
-] [8 <./img/ER_Persona.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
+[9 <./img/ER_Persona.png>] [10 <./img/ER_Squadra.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
-<img/ER_Partite.png, id=191, 999.735pt x 663.22781pt>
+<img/ER_Partite.png, id=207, 999.735pt x 663.22781pt>
 File: img/ER_Partite.png Graphic file (type png)
 <use img/ER_Partite.png>
-Package pdftex.def Info: img/ER_Partite.png  used on input line 156.
+Package pdftex.def Info: img/ER_Partite.png  used on input line 174.
 (pdftex.def)             Requested size: 599.84563pt x 397.93976pt.
-[9 <./img/ER_Videogiochi.png>] [10 <./img/ER_Partite.png>]
-<img/ER_Tornei.png, id=204, 925.20656pt x 613.54219pt>
+[11 <./img/ER_Videogiochi.png>]
+<img/ER_Tornei.png, id=214, 925.20656pt x 613.54219pt>
 File: img/ER_Tornei.png Graphic file (type png)
 <use img/ER_Tornei.png>
-Package pdftex.def Info: img/ER_Tornei.png  used on input line 171.
+Package pdftex.def Info: img/ER_Tornei.png  used on input line 189.
 (pdftex.def)             Requested size: 555.12822pt x 368.12816pt.
-<img/ER_Generale.png, id=205, 1080.28593pt x 665.48625pt>
+<img/ER_Generale.png, id=215, 1080.28593pt x 665.48625pt>
 File: img/ER_Generale.png Graphic file (type png)
 <use img/ER_Generale.png>
-Package pdftex.def Info: img/ER_Generale.png  used on input line 178.
+Package pdftex.def Info: img/ER_Generale.png  used on input line 196.
 (pdftex.def)             Requested size: 594.1591pt x 366.01857pt.
- [11 <./img/ER_Tornei.png>] [12 <./img/ER_Generale.png>]
+ [12 <./img/ER_Partite.png>] [13 <./img/ER_Tornei.png>] [14 <./img/ER_Generale.
+png>]
 Capitolo 4.
 
-Overfull \hbox (2.81888pt too wide) in paragraph at lines 197--197
+Overfull \hbox (2.81888pt too wide) in paragraph at lines 215--215
 []|\OT1/cmr/m/n/12 Videogiochi| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--199
+Underfull \hbox (badness 10000) in paragraph at lines 217--217
 []|\OT1/cmr/m/n/12 Tipologia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--203
+Underfull \hbox (badness 10000) in paragraph at lines 221--221
 []|\OT1/cmr/m/n/12 Azienda
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--205
+Underfull \hbox (badness 10000) in paragraph at lines 223--223
 []|\OT1/cmr/m/n/12 Squadra
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--205
+Underfull \hbox (badness 10000) in paragraph at lines 223--223
 \OT1/cmr/m/n/12 Ri-guar-da
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--214
+Underfull \hbox (badness 10000) in paragraph at lines 232--232
 []|\OT1/cmr/m/n/12 Adesione
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--214
+Underfull \hbox (badness 10000) in paragraph at lines 232--232
 \OT1/cmr/m/n/12 Player
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--216
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
 []|\OT1/cmr/m/n/12 Adesione
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--216
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
 \OT1/cmr/m/n/12 Coach
  []
 
 
-Overfull \hbox (2.49666pt too wide) in paragraph at lines 229--230
+Overfull \hbox (2.49666pt too wide) in paragraph at lines 247--248
 []|\OT1/cmr/m/n/12 200.000.000| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--231
+Underfull \hbox (badness 10000) in paragraph at lines 249--249
 []|\OT1/cmr/m/n/12 Acquisto
  []
 
 
-Overfull \hbox (2.49666pt too wide) in paragraph at lines 231--232
+Overfull \hbox (2.49666pt too wide) in paragraph at lines 249--250
 []|\OT1/cmr/m/n/12 200.000.000| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 261--261
 []|\OT1/cmr/m/n/12 Iscrizioni
  []
 
 
-Overfull \hbox (23.18298pt too wide) in paragraph at lines 190--259
+Overfull \hbox (23.18298pt too wide) in paragraph at lines 208--277
 []  [] 
  []
 
-[13
+[15
 
 ]
 Overfull \vbox (3.31296pt too high) has occurred while \output is active []
 
 
-[14]
-Overfull \hbox (34.91116pt too wide) in paragraph at lines 263--298
- [] 
- []
-
-[15]
-Overfull \hbox (11.2491pt too wide) in paragraph at lines 338--348
- [] 
- []
-
 [16]
-Overfull \hbox (38.04327pt too wide) in paragraph at lines 368--380
+Overfull \hbox (34.91116pt too wide) in paragraph at lines 281--316
  [] 
  []
 
 [17]
-Overfull \hbox (50.3943pt too wide) in paragraph at lines 443--444
+Overfull \hbox (11.2491pt too wide) in paragraph at lines 356--366
+ [] 
+ []
+
+[18]
+Overfull \hbox (38.04327pt too wide) in paragraph at lines 386--398
+ [] 
+ []
+
+[19]
+Overfull \hbox (50.3943pt too wide) in paragraph at lines 461--462
 \OT1/cmr/m/n/12 Avendo nel-la ta-bel-la dei vo-lu-mi 500.000 player to-ta-li e 
 600.000 ade-sio-ne[]player[]squadra,
  []
 
-[18] [19] [20]
-Overfull \hbox (42.67795pt too wide) in paragraph at lines 548--562
+[20]
+<img/op11.png, id=271, 656.4525pt x 505.13719pt>
+File: img/op11.png Graphic file (type png)
+<use img/op11.png>
+Package pdftex.def Info: img/op11.png  used on input line 494.
+(pdftex.def)             Requested size: 393.87454pt x 303.08466pt.
+ [21 <./img/op11.png>]
+<img/op12.png, id=280, 536.0025pt x 473.51906pt>
+File: img/op12.png Graphic file (type png)
+<use img/op12.png>
+Package pdftex.def Info: img/op12.png  used on input line 516.
+(pdftex.def)             Requested size: 428.80258pt x 378.81575pt.
+ [22 <./img/op12.png>]
+<img/op13.png, id=287, 490.08093pt x 533.74406pt>
+File: img/op13.png Graphic file (type png)
+<use img/op13.png>
+Package pdftex.def Info: img/op13.png  used on input line 534.
+(pdftex.def)             Requested size: 294.05083pt x 320.2489pt.
+ [23 <./img/op13.png>] [24]
+Overfull \hbox (42.67795pt too wide) in paragraph at lines 582--596
  [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 581--582
-
- []
-
-
-Overfull \hbox (23.41632pt too wide) in paragraph at lines 583--584
-\OT1/cmr/m/n/12 ADESIONE[]COACH[]SQUADRA($[]$: SQUA-DRA, $[]$ : COACH,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 583--584
-
- []
-
-
-Overfull \hbox (32.69963pt too wide) in paragraph at lines 585--586
-\OT1/cmr/m/n/12 ADESIONE[]PLAYER[]SQUADRA($[]$: SQUA-DRA, $[]$: PLAYER,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 585--586
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 587--588
-
- []
-
-[21]
-Overfull \hbox (5.26814pt too wide) in paragraph at lines 589--590
-\OT1/cmr/m/n/12 ARENA($[]$, No-meA-re-na, Ca-pien-za, (No-me-Sta-to, No-me-Cit-
-ta): CITT[]A) 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 589--590
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 591--592
-
- []
-
-
-Overfull \hbox (5.79736pt too wide) in paragraph at lines 593--594
-\OT1/cmr/m/n/12 BIGLIETTO($[]$ : ARE-NA, ($[]$, $[]$, $[]$) : PAR-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 593--594
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 595--596
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 597--598
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 601--602
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 603--604
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--606
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 607--608
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 609--610
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 611--612
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
-
  []
 
 
@@ -683,8 +602,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 615--616
  []
 
 
+Overfull \hbox (23.41632pt too wide) in paragraph at lines 617--618
+\OT1/cmr/m/n/12 ADESIONE[]COACH[]SQUADRA($[]$: SQUA-DRA, $[]$ : COACH,
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 617--618
 
+ []
+
+[25]
+Overfull \hbox (32.69963pt too wide) in paragraph at lines 619--620
+\OT1/cmr/m/n/12 ADESIONE[]PLAYER[]SQUADRA($[]$: SQUA-DRA, $[]$: PLAYER,
  []
 
 
@@ -692,9 +621,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 619--620
 
  []
 
-[22]
+
 Underfull \hbox (badness 10000) in paragraph at lines 621--622
 
+ []
+
+
+Overfull \hbox (5.26814pt too wide) in paragraph at lines 623--624
+\OT1/cmr/m/n/12 ARENA($[]$, No-meA-re-na, Ca-pien-za, (No-me-Sta-to, No-me-Cit-
+ta): CITT[]A) 
  []
 
 
@@ -703,137 +638,227 @@ Underfull \hbox (badness 10000) in paragraph at lines 623--624
  []
 
 
-Overfull \hbox (16.64809pt too wide) in paragraph at lines 625--626
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
+
+ []
+
+
+Overfull \hbox (5.79736pt too wide) in paragraph at lines 627--628
+\OT1/cmr/m/n/12 BIGLIETTO($[]$ : ARE-NA, ($[]$, $[]$, $[]$) : PAR-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 627--628
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--630
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 631--632
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 633--634
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 635--636
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 637--638
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 639--640
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 641--642
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--644
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 645--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--650
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 651--652
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--656
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--658
+
+ []
+
+
+Overfull \hbox (16.64809pt too wide) in paragraph at lines 659--660
 \OT1/cmr/m/n/12 VIDEOGIOCO($[]$, Da-ta-Crea-zio-ne, Ti-po-lo-gia-Gio-co : TI-PO
 -LO-GIA[]GIOCO,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--626
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
 
  []
 
-<img/SchemaRelazionale.png, id=279, 963.6pt x 675.27281pt>
+<img/SchemaRelazionale.png, id=314, 963.6pt x 675.27281pt>
 File: img/SchemaRelazionale.png Graphic file (type png)
 <use img/SchemaRelazionale.png>
-Package pdftex.def Info: img/SchemaRelazionale.png  used on input line 637.
+Package pdftex.def Info: img/SchemaRelazionale.png  used on input line 671.
 (pdftex.def)             Requested size: 578.16447pt x 405.16681pt.
-[23] [24 <./img/SchemaRelazionale.png>]
+[27] [28 <./img/SchemaRelazionale.png>]
 Capitolo 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 657--659
+Underfull \hbox (badness 10000) in paragraph at lines 691--693
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 665--666
+Underfull \hbox (badness 10000) in paragraph at lines 699--700
 
  []
 
-[25
+[29
 
 ]
-Overfull \hbox (71.1356pt too wide) in paragraph at lines 671--673
+Overfull \hbox (71.1356pt too wide) in paragraph at lines 705--707
 \OT1/cmr/m/n/12 Spon-sor, No-me-Vi-deo-gio-co,IdArena,IdSquadraVincitrice) []VA
 -LUES[] (Id-Tor-neo,?,?,?,?,?,?,?); 
  []
 
 
-Overfull \hbox (35.83218pt too wide) in paragraph at lines 680--682
+Overfull \hbox (35.83218pt too wide) in paragraph at lines 714--716
 []\OT1/cmr/m/n/12 INSERT IN-TO[] par-ti-ta(IdSquadra1, Id-Squa-dra2, Da-taO-ra,
  CF[]Arbitro,CF[]Speaker,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--686
+Underfull \hbox (badness 10000) in paragraph at lines 718--720
 
  []
 
 
-Overfull \hbox (47.11018pt too wide) in paragraph at lines 697--698
+Overfull \hbox (47.11018pt too wide) in paragraph at lines 731--732
 []\OT1/cmr/m/n/12 FROM[] squa-dra []JOIN[] ade-sio-ne[]player[]squadra []ON[] a
 de-sio-ne[]player[]squadra.IdSquadra
  []
 
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 707--713
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 741--747
 
  []
 
 
-Overfull \hbox (6.2948pt too wide) in paragraph at lines 714--717
+Overfull \hbox (6.2948pt too wide) in paragraph at lines 748--751
 []\OT1/cmr/m/n/12 FROM[] iscri-zio-ne []JOIN[] squa-dra []ON[] iscri-zio-ne.IdS
 quadra = squa-dra.IdSquadra 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--717
+Underfull \hbox (badness 10000) in paragraph at lines 748--751
 
  []
 
 
-Overfull \hbox (1.1032pt too wide) in paragraph at lines 718--723
+Overfull \hbox (1.1032pt too wide) in paragraph at lines 752--757
 []\OT1/cmr/m/n/12 FROM[] tor-neo []JOIN[] iscri-zio-ne []ON[] tor-neo.idtorneo 
 = iscri-zio-ne.idtorneo []JOIN[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 718--723
+Underfull \hbox (badness 10000) in paragraph at lines 752--757
 
  []
 
-[27] [28]
+[31] [32]
 Capitolo 6.
-<img/autenticazione.jpg, id=322, 405.6756pt x 239.9364pt>
+<img/autenticazione.jpg, id=357, 405.6756pt x 239.9364pt>
 File: img/autenticazione.jpg Graphic file (type jpg)
 <use img/autenticazione.jpg>
-Package pdftex.def Info: img/autenticazione.jpg  used on input line 744.
+Package pdftex.def Info: img/autenticazione.jpg  used on input line 778.
 (pdftex.def)             Requested size: 390.0pt x 230.67314pt.
-[29
+[33
 
 ]
-<img/admin_filled.jpg, id=327, 797.22844pt x 471.26062pt>
+<img/admin_filled.jpg, id=362, 797.22844pt x 471.26062pt>
 File: img/admin_filled.jpg Graphic file (type jpg)
 <use img/admin_filled.jpg>
-Package pdftex.def Info: img/admin_filled.jpg  used on input line 755.
+Package pdftex.def Info: img/admin_filled.jpg  used on input line 789.
 (pdftex.def)             Requested size: 478.34076pt x 282.75856pt.
- [30 <./img/autenticazione.jpg>]
-<img/player_squadre_non_complete.jpg, id=337, 539.01375pt x 520.94624pt>
+ [34 <./img/autenticazione.jpg>]
+<img/player_squadre_non_complete.jpg, id=371, 539.01375pt x 520.94624pt>
 File: img/player_squadre_non_complete.jpg Graphic file (type jpg)
 <use img/player_squadre_non_complete.jpg>
 Package pdftex.def Info: img/player_squadre_non_complete.jpg  used on input lin
-e 781.
+e 815.
 (pdftex.def)             Requested size: 458.16383pt x 442.8064pt.
-<img/player_crea_squadra.jpg, id=338, 539.01375pt x 520.94624pt>
+<img/player_crea_squadra.jpg, id=372, 539.01375pt x 520.94624pt>
 File: img/player_crea_squadra.jpg Graphic file (type jpg)
 <use img/player_crea_squadra.jpg>
-Package pdftex.def Info: img/player_crea_squadra.jpg  used on input line 787.
+Package pdftex.def Info: img/player_crea_squadra.jpg  used on input line 821.
 (pdftex.def)             Requested size: 458.16383pt x 442.8064pt.
-<img/player_iscrizione.jpg, id=339, 291.9708pt x 164.7756pt>
+<img/player_iscrizione.jpg, id=373, 291.9708pt x 164.7756pt>
 File: img/player_iscrizione.jpg Graphic file (type jpg)
 <use img/player_iscrizione.jpg>
-Package pdftex.def Info: img/player_iscrizione.jpg  used on input line 793.
+Package pdftex.def Info: img/player_iscrizione.jpg  used on input line 827.
 (pdftex.def)             Requested size: 437.95511pt x 247.16277pt.
- [31 <./img/admin_filled.jpg>]
-<img/spettatore_filled.jpg, id=348, 591.71063pt x 339.51843pt>
+ [35 <./img/admin_filled.jpg>]
+<img/spettatore_filled.jpg, id=382, 591.71063pt x 339.51843pt>
 File: img/spettatore_filled.jpg Graphic file (type jpg)
 <use img/spettatore_filled.jpg>
-Package pdftex.def Info: img/spettatore_filled.jpg  used on input line 804.
+Package pdftex.def Info: img/spettatore_filled.jpg  used on input line 838.
 (pdftex.def)             Requested size: 502.9564pt x 288.59203pt.
- [32 <./img/player_squadre_non_complete.jpg>] [33 <./img/player_crea_squadra.jp
-g>] [34 <./img/player_iscrizione.jpg>] [35 <./img/spettatore_filled.jpg>]
+ [36 <./img/player_squadre_non_complete.jpg>] [37 <./img/player_crea_squadra.jp
+g>] [38 <./img/player_iscrizione.jpg>] [39 <./img/spettatore_filled.jpg>]
 (Relazione_IVTOS.aux
 Package cleveref Info: loaded `italian' language definitions on input line 21.
 Package cleveref Info: loaded `italian' language definitions on input line 22.
 )
 Package rerunfilecheck Info: File `Relazione_IVTOS.out' has not changed.
-(rerunfilecheck)             Checksum: 746EA3A7286E5937B7B0FA4113FFF00F;5557.
+(rerunfilecheck)             Checksum: 2E358BF7E52B55E6F0801B62C4B5D848;5791.
  ) 
 Here is how much of TeX's memory you used:
- 11791 strings out of 479334
- 187939 string characters out of 2857084
+ 11827 strings out of 479334
+ 188452 string characters out of 2857084
  565126 words of memory out of 3000000
- 28990 multiletter control sequences out of 15000+200000
+ 29013 multiletter control sequences out of 15000+200000
  409888 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,10n,74p,644b,755s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -843,9 +868,9 @@ ts/cm/cmbx12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmr12.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/Simon/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Relazione_IVTOS.pdf (36 pages, 767758 bytes).
+Output written on Relazione_IVTOS.pdf (40 pages, 895271 bytes).
 PDF statistics:
- 411 PDF objects out of 1000 (max. 8388607)
- 111 named destinations out of 1000 (max. 500000)
- 285 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 449 PDF objects out of 1000 (max. 8388607)
+ 120 named destinations out of 1000 (max. 500000)
+ 313 words of extra memory for PDF output out of 10000 (max. 10000000)
 

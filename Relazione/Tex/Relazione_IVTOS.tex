@@ -135,7 +135,19 @@ Se necessario ogni entità figlia potrà aggiungere agli attributi del padre i p
 	\caption{Schema ER che espone le principali caratteristiche delle Persone}
 	\label{img:ER_Persona}
 \end{figure}
+\section{Anteprima sviluppo delle "Squadre"}
+Una \textbf{Squadra} è identificata da un idSquadra, possiede un nome e ha una data di creazione.
+ Ogni \textbf{Squadra} è composta da 0 a 5 \textbf{Player} e può avere un \textbf{Coach}. 
 
+Ogni \textbf{Squadra} riguarda uno o più \textbf{videogiochi}.  
+
+Una \textbf{Squadra} si può iscrivere ai \textbf{Tornei} che riguardano lo stesso gioco riguardante dalla squadra. All'interno di un torneo una squadra può giocare diverse \textbf{Partite}.
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=0.6]{img/ER_Squadra.png}}
+	\caption{Schema ER che espone le principali caratteristiche delle Squadre}
+	\label{img:ER_Squadra}
+\end{figure}
 \section{Anteprima sviluppo dei "Videogiochi"}
 In questa sezione verrà modellato l'aspetto di \textbf{Videogioco}. 
 Il \textbf{Videogioco} ha un Nome, dal quale viene identificato, e una data di creazione.
@@ -179,7 +191,7 @@ Ad ogni \textbf{Torneo} possono iscriversi più \textbf{Squadre} e si vuole memo
 	\label{img:ER_Tornei}
 \end{figure}
 \section{Schema Generale}
-Di seguito verrà riportato lo schema concettuale generale, contenente tutte le entità e associazioni prima citate nelle varie sezioni superiori con l'aggiunta di entità secondarie di minor importanza.
+Di seguito verrà riportato lo schema concettuale generale, contenente tutte le entità e associazioni prima citate nelle varie sezioni superiori collegate tra loro e con altre entità non spiegate nel dettaglio.
 \begin{figure}[!htb]
 	\centerline{\includegraphics[scale=0.55]{img/ER_Generale.png}}
 	\caption{Schema ER che espone lo schema concettuale finale}
@@ -478,8 +490,12 @@ Viene fatto un accesso in lettura in Partita per leggere l'id del torneo, un acc
 		\hline
 	\end{tabular}
 \end{center}
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=0.6]{img/op11.png}}
+	\caption{Operazione 11}
+\end{figure}
 \subsection*{(12)  Visualizza Biglietti acquistati da uno spettatore}
-Avendo nella tabella dei volumi 200.000.000 Spettatori e 200.000.000 tuple in acquisto\_biglietto (cioè coppie spettatore-biglietto), in media uno spettatore acquista un solo biglietto, dunque per visualizzare i biglietti acquistati occorre fare una sola lettura nell'entità acquisto\_biglietto.
+Avendo nella tabella dei volumi 200.000.000 Spettatori e 200.000.000 tuple in acquisto\_biglietto (cioè coppie spettatore-biglietto), in media uno spettatore acquista un solo biglietto, dunque per visualizzare i biglietti acquistati occorre fare una sola lettura nell'entità acquisto\_biglietto; inoltre si vuole riferire di quale arena e squadre si tratta, quindi occorreranno due letture su squadra e una su arena.
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline\rowcolor{pink}
@@ -487,11 +503,19 @@ Avendo nella tabella dei volumi 200.000.000 Spettatori e 200.000.000 tuple in ac
 		\hline\hline		
 		Acquisto\_Biglietto & E & 1 & L\\
 		\hline
+		Arena & E & 1 & L\\
+		\hline
+		Squadra & E & 2 & L\\
+		\hline
 		\multicolumn{2}{l}{%
-			\textbf{Totale:} (1L) → 30.000/settimana} \\
+			\textbf{Totale:} (4L) → 120.000/settimana} \\
 		\hline
 	\end{tabular}
 \end{center}
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=0.8]{img/op12.png}}
+	\caption{Operazione 12}
+\end{figure}
 \subsection*{(13)  Visualizza tutte le squadre che fanno parte di un determinato torneo}
 Avendo nella tabella dei volumi 10.000 Tornei e 100.000 Iscrizioni ad un torneo (cioè le coppie squadra-torneo), ad un torneo partecipano in media 10 squadre, dunque verranno effettuate 10 letture dell'associazione iscrizione.
 \begin{center}
@@ -506,6 +530,10 @@ Avendo nella tabella dei volumi 10.000 Tornei e 100.000 Iscrizioni ad un torneo 
 		\hline
 	\end{tabular}
 \end{center}
+\begin{figure}[!htb]
+	\centerline{\includegraphics[scale=0.6]{img/op13.png}}
+	\caption{Operazione 13}
+\end{figure}
 \subsection*{(14)  Visualizza i 20 tornei con più squadre iscritte}
 Per ogni Torneo (che in totale sono 10.000) vado a leggere le squadre che ne fanno parte(in media 10), in tutto vengono fatte 100.000 letture, poi vengono compiute 20 letture su Torneo per conoscere i dettagli dei 20 tornei con più squadre iscritte.
 \begin{center}
