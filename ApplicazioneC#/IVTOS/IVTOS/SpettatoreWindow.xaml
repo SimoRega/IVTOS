@@ -8,10 +8,12 @@
         Title="SpettatoreWindow" Height="450" Width="800">
     <Grid>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="501" />
-        <Button x:Name="btn_partite_torneo" Content="Visualizza Partite" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="532,108,0,0" Height="59" Click="btn_partite_torneo_Click"/>
-        <Button x:Name="MostraTornei" Content="Visualizza Tornei" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="532,26,0,0" Height="57" Click="MostraTornei_Click"/>
-        <Button x:Name="btnCompraBiglietto" Content="Compra Biglietto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="532,205,0,0" Height="61" Click="btnCompraBiglietto_Click"/>
-        <Button x:Name="btn_visualizzaBiglietti" Content="Visualizza Biglietti Acquistati" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="532,297,0,0" Height="58" Click="btn_visualizzaBiglietti_Click"/>
+        <Button x:Name="btn_partite_torneo" Content="Visualizza Partite" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Margin="543,132,0,0" Height="36" Click="btn_partite_torneo_Click"/>
+        <Button x:Name="MostraTornei" Content="Visualizza Tornei" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Margin="543,73,0,0" Height="36" Click="MostraTornei_Click"/>
+        <Button x:Name="btnCompraBiglietto" Content="Compra Biglietto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Margin="542,258,0,0" Height="33" Click="btnCompraBiglietto_Click"/>
+        <Button x:Name="btn_visualizzaBiglietti" Content="Visualizza Biglietti Acquistati" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Margin="542,321,0,0" Height="33" Click="btn_visualizzaBiglietti_Click"/>
+        <GroupBox x:Name="Ricerca" Header="Ricerca" Height="148" VerticalAlignment="Bottom" Width="214" Margin="531,0,0,226" FontSize="16" BorderBrush="Black" HorizontalAlignment="Left"/>
+        <GroupBox Header="Profilo Personale" HorizontalAlignment="Left" Height="148" VerticalAlignment="Top" Width="214" Margin="531,227,0,0" BorderBrush="Black" FontSize="16"/>
 
     </Grid>
 </Window>
