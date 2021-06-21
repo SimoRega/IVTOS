@@ -195,7 +195,7 @@ namespace IVTOS
         public static string VisualizzaTornei()
         {
             return "SELECT idTorneo AS Torneo, nomevideogioco AS Videogioco, nomearena AS Arena, sponsor.Nome, DataInizio, DataFine, nmaxiscrizioni AS NumeroSquadre " +
-                        "FROM(torneo JOIN Arena ON torneo.IdArena = arena.IdArena) JOIN Sponsor on torneo.IdSponsor = sponsor.idsponsor ; ";
+                        "FROM(torneo JOIN Arena ON torneo.IdArena = arena.IdArena) left JOIN Sponsor on torneo.IdSponsor = sponsor.idsponsor ; ";
         }
         public static string VisualizzaSponsor()
         {
