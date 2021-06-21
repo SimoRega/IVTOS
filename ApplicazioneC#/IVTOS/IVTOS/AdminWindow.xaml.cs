@@ -152,6 +152,16 @@ namespace IVTOS
                 (steps == 1 && lastQuery == QueryList.VisualizzaVideogiochi()) ||
                     (steps == 2 && lastQuery == QueryList.VisualizzaSponsor()))
                 btnAvanti.IsEnabled = true;
+
+            if(lastQuery == QueryList.VisualizzaSquadre())
+                btnSelezioneSquadra.IsEnabled = true;
+            else
+                btnSelezioneSquadra.IsEnabled = false;
+
+            if (lastQuery == QueryList.VisualizzaTorneiAttivi())
+                btnSelezioneTorneo.IsEnabled = true;
+            else
+                btnSelezioneTorneo.IsEnabled = false;
         }
 
         private void btnAvanti_Click(object sender, RoutedEventArgs e)
@@ -224,7 +234,6 @@ namespace IVTOS
         {
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaTorneiAttivi()).Tables[0].DefaultView;
             lastQuery = QueryList.VisualizzaTorneiAttivi();
-            btnIscrizioniTorneo.IsEnabled = false;
             btnSelezioneTorneo.IsEnabled = true;
         }
 
@@ -236,7 +245,6 @@ namespace IVTOS
                 return;
             }
             btnIscrizioniTorneo.IsEnabled = true;
-            btnSelezioneTorneo.IsEnabled = false;
             DataRowView DRV;
             DRV = (DataRowView)dataGrid.SelectedItem;
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaIscrizioniTorneo(DRV.Row.ItemArray[0].ToString())).Tables[0].DefaultView;
@@ -250,8 +258,6 @@ namespace IVTOS
                 MessageBox.Show("Prima selezionare una riga dalla tabella", "SelezioneSquadra", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            btnIscrizioniSquadra.IsEnabled = true;
-            btnSelezioneSquadra.IsEnabled = false;
             DataRowView DRV;
             DRV = (DataRowView)dataGrid.SelectedItem;
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaIscrizioniSquadra(DRV.Row.ItemArray[1].ToString())).Tables[0].DefaultView;
@@ -262,7 +268,6 @@ namespace IVTOS
         {
             dataGrid.ItemsSource = Queries.GetDataSet(QueryList.VisualizzaSquadre()).Tables[0].DefaultView;
             lastQuery = QueryList.VisualizzaSquadre();
-            btnIscrizioniSquadra.IsEnabled = false;
             btnSelezioneSquadra.IsEnabled = true;
         }
 

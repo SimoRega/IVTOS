@@ -8,6 +8,12 @@ namespace IVTOS
 {
     class QueryList
     {
+        public static string ControlloIscrizioneSquadraTorneo(string idSquadra)
+        {
+            return "SELECT count(*) " +
+                "from squadra s join adesione_player_squadra a on s.idsquadra = a.idsquadra " +
+                "where s.idsquadra = "+idSquadra+" AND a.datafine is null; ";
+        }
         public static string MostraMieSquadre(string codiceFiscale)
         {
             return "SELECT squadra.Nome, squadra.IdSquadra " +

@@ -162,12 +162,23 @@ namespace IVTOS
                 DataRow DR = (DataRow)DRV.Row;
                 idSquadra = (int)DR.ItemArray[1];
                 nomeSquadra = DR.ItemArray[0].ToString();
+
+
+                int check = Convert.ToInt32(Queries.GetOneField(QueryList.ControlloIscrizioneSquadraTorneo(idSquadra.ToString())));
+                if (check < 5)
+                {
+                    System.Windows.Forms.MessageBox.Show("La tua squadra non può iscriversi al torneo, per iscriversi al torneo la squadra deve essere composta da" +
+                        " 5 partecipanti mentre la tua ne ha solo "+check+"!","Errore Iscrizione",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
+                }
             }
             catch(Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show("Seleziona una squadra da iscrivere ad un torneo");
                 return;
             }
+
+
 
             IscrizioneSquadraTorneo iscrizione = new IscrizioneSquadraTorneo(idSquadra, this);
             iscrizione.Show();
