@@ -43,7 +43,7 @@ Una Squadra può partecipare a uno o più Tornei.
 Per quanto riguarda i Tornei si vuole memorizzare: Stato, Città e Arena in cui si svolge, numero di squadre totali, videogioco per cui si disputa il torneo in questione e, se presente, lo Sponsor che finanzierà il torneo stesso.
 Di ogni Videogioco si vuole tener traccia del Nome, della data di creazione ,della sua azienda produttrice, della tipologia di gioco.
 In ogni Arena possono assistere alle Partite un numero massimo di Spettatori, i quali per poter assistere dovranno pagare un Biglietto nominativo, il quale dipende dall'arena e dalla partita; ogni partita sarà visionata da un Arbitro e commentata da uno Speaker.
-Di ogni squadra si vuole tenere traccia di tutti i player che ne hanno fatto parte.
+Di ogni squadra si vuole tenere traccia di tutti i player che ne hanno fatto parte."
 
 \section{Estrazione dei concetti fondamentali}
 \renewcommand{\arraystretch}{1.5}
@@ -52,9 +52,9 @@ Di ogni squadra si vuole tenere traccia di tutti i player che ne hanno fatto par
 	\hline\rowcolor{pink}
 	Soggetto & Descrizione & Sinonimi\\
 	\hline\hline
-	Player & Colui che gioca ad almeno un videogioco e si iscrive ad un Torneo previ adesione ad una Squadra & Videogiocatore\\
+	Player & Colui che gioca ai videogiochi e può far parte di più squadre & Videogiocatore\\
 	\hline
-	Squadra & Gruppo di persone che giocano allo stesso videogioco, la sua grandezza è determinata dal videogioco stesso & Team\\
+	Squadra & Gruppo di persone che giocano allo stesso videogioco, si può iscrivere ad un torneo se i partecipanti sono 5, cioè che la squadra è completa& Team\\
 	\hline
 	Coach & Colui che allena la Squadra & Allenatore\\
 	\hline
@@ -78,17 +78,19 @@ Di ogni squadra si vuole tenere traccia di tutti i player che ne hanno fatto par
 	\hline
 \end{tabular}
 
+%
+%
 A seguito della lettura e comprensione dei requisiti, si procede redigendo un testo che ne
 riassuma tutti i concetti e in particolare ne estragga quelli principali eliminando le ambiguità
 sopra rilevate:\\
 
-Per ogni \textbf{Player} si memorizzano: Codice Fiscale, nickname, nome e cognome, genere, mail e data di nascita. Ogni Player può partecipare ad una sola squadra per volta. Ogni \textbf{Player} può giocare a più Videogiochi.
+Per ogni \textbf{Player} si memorizzano: Codice Fiscale, nickname, nome e cognome, genere, mail e data di nascita. Ogni Player può partecipare a più squadre. Ogni \textbf{Player} può giocare a più Videogiochi.
 
-Per ogni \textbf{Videogame} si memorizzano: nome, data di creazione.
+Per ogni \textbf{Videogame} si memorizzano: nome, data di creazione, tipologia di gioco.
 
-Per ogni \textbf{Squadra} si memorizzano: IdSquadra, nome e data di creazione. Una specifica squadra può giocare a più videogiochi.La \textbf{Squadra} è composta da 5 \textbf{Player} ed \textit{eventualmente} 1 \textbf{Coach}. La \textbf{Squadra} può iscriversi a più \textbf{Tornei} contemporaneamente.
+Per ogni \textbf{Squadra} si memorizzano: IdSquadra, nome e data di creazione. Una specifica squadra può giocare a più videogiochi.La \textbf{Squadra} è composta da 5 \textbf{Player} ed \textit{eventualmente} 1 \textbf{Coach}. La \textbf{Squadra} può iscriversi a più \textbf{Tornei} contemporaneamente, purchè la \textbf{squadra} giochi al \textbf{videogioco} che riguarda il \textbf{torne}o.
 
-Per ogni \textbf{Torneo} si memorizzano : la data di inizio, la data di fine e il numero massimo di iscrizioni. Il \textbf{Torneo} si svolge interamente in una singola \textbf{Arena} e può essere finanziato da uno \textbf{Sponsor}. Il \textbf{Torneo} inoltre riguarda un singolo \textbf{Videogioco} e prevede diverse \textbf{Partite}. Ad ogni \textbf{Torneo} possono partecipano un numero variabile di squadre (che non superano mai le 15 squadre) che si sfidano tutti contro tutti e la squadra con più partite vinte vincerà il torneo.
+Per ogni \textbf{Torneo} si memorizzano : la data di inizio, il numero massimo di iscrizioni e, una  volta terminato, la data di fine. Il \textbf{Torneo} si svolge interamente in una singola \textbf{Arena} e può essere finanziato da uno \textbf{Sponsor}. Il \textbf{Torneo} inoltre riguarda un singolo \textbf{Videogioco} e prevede diverse \textbf{Partite}. Ad ogni \textbf{Torneo} possono partecipano un numero variabile di squadre (massimo 15) che si sfidano tutti contro tutti e la squadra con più partite vinte vincerà il torneo.
 
 Per ogni \textbf{Partita} si memorizzano: le due squadre che si sfidano e la data dell'incontro.
 
